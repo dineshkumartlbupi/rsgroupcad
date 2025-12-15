@@ -1,0 +1,105 @@
+import React, { useEffect, useRef, useState } from 'react';
+import Hero from '../components/Hero';
+import WhyChooseUs from '../components/WhyChooseUs';
+import CoreOfferings from '../components/CoreOfferings';
+import OurProcess from '../components/OurProcess';
+import Sustainability from '../components/Sustainability';
+import Overview from '../components/Overview';
+import GreenEra from '../components/GreenEra';
+import { Link } from 'react-router-dom';
+
+// Simple Fade In Hook
+const useFadeInOnScroll = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const domRef = useRef();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => setIsVisible(entry.isIntersecting));
+        }, { threshold: 0.1 });
+        const currentRef = domRef.current;
+        if (currentRef) observer.observe(currentRef);
+        return () => {
+            if (currentRef) observer.unobserve(currentRef);
+        };
+    }, []);
+
+    return [isVisible, domRef];
+};
+
+const FadeInSection = ({ children }) => {
+    const [isVisible, domRef] = useFadeInOnScroll();
+    return (
+        <div
+            ref={domRef}
+            className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                }`}
+        >
+            {children}
+        </div>
+    );
+};
+
+const Home = () => {
+    return (
+        <>
+            <Hero />
+
+            {/* Welcome Banner */}
+            <section className="bg-gradient-to-b from-gray-50 to-white py-24 text-center px-4 relative overflow-hidden">
+                <div className="absolute top-10 left-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+                <div className="absolute top-10 right-10 w-40 h-40 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+                <FadeInSection>
+                    <h2 className="text-2xl md:text-4xl font-light text-gray-800 max-w-5xl mx-auto leading-normal z-10 relative">
+                        <span className="font-bold text-rsBlue block mb-4 text-3xl md:text-5xl">Your Dedicated Partner</span>
+                        In Advancing <span className="text-rsRed font-medium">Solar Energy</span> Initiatives Through Cutting-Edge <span className="text-rsBlue font-medium">CAD Solutions</span>.
+                    </h2>
+                    <div className="mt-8 flex justify-center space-x-2">
+                        <span className="inline-block w-3 h-3 bg-rsRed rounded-full animate-bounce delay-100"></span>
+                        <span className="inline-block w-3 h-3 bg-rsBlue rounded-full animate-bounce delay-200"></span>
+                        <span className="inline-block w-3 h-3 bg-rsRed rounded-full animate-bounce delay-300"></span>
+                    </div>
+                </FadeInSection>
+            </section>
+
+            <FadeInSection>
+                <WhyChooseUs />
+            </FadeInSection>
+
+            <CoreOfferings />
+
+            <FadeInSection>
+                <OurProcess />
+            </FadeInSection>
+
+            <FadeInSection>
+                <Overview />
+            </FadeInSection>
+
+            {/* Replaced generic sustainability with specific RS Solar text or kept generic if fitting */}
+            <Sustainability />
+
+            <FadeInSection>
+                <section className="py-24 bg-white relative overflow-hidden">
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-50 rounded-full opacity-50 z-0"></div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                        <h2 className="text-4xl md:text-5xl font-bold text-rsBlue mb-8">Ready to Start Your Project?</h2>
+                        <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
+                            Our team ensures quick turnaround times and precise, well-documented plan sets, helping you move forward without unnecessary delays.
+                        </p>
+                        <Link to="/contact-us" className="inline-block bg-rsBlue text-white px-12 py-4 rounded-full font-bold hover:bg-rsRed transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                            CONTACT US TODAY
+                        </Link>
+                    </div>
+                </section>
+            </FadeInSection>
+
+            <FadeInSection>
+                <GreenEra />
+            </FadeInSection>
+        </>
+    );
+};
+
+export default Home;
