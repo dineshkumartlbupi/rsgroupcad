@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Linkedin, Youtube } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
@@ -13,16 +15,30 @@ const Footer = () => {
                             Quality Design, On Time. Providing top-tier solar and architectural design solutions.
                         </p>
                         <div className="flex space-x-4">
-                            {/* Social Icons Placeholder */}
-                            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors cursor-pointer">
-                                <span className="text-xs">FB</span>
-                            </div>
-                            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors cursor-pointer">
-                                <span className="text-xs">TW</span>
-                            </div>
-                            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors cursor-pointer">
-                                <span className="text-xs">LN</span>
-                            </div>
+                            <a
+                                href="https://www.facebook.com/people/RS-Solar-CAD-Group/100093924699182/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors"
+                            >
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="https://in.linkedin.com/company/rs-solar-cad-group"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors"
+                            >
+                                <Linkedin className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/channel/UCj9YDXvQPPZ0yukcwbloqpw/videos"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rsRed transition-colors"
+                            >
+                                <Youtube className="w-5 h-5" />
+                            </a>
                         </div>
                     </div>
 
@@ -53,18 +69,24 @@ const Footer = () => {
                     {/* Contact */}
                     <div>
                         <h3 className="text-lg font-semibold mb-6 text-rsRed">Contact Us</h3>
-                        <p className="text-gray-400 mb-2">123 Solar Tech Park,</p>
-                        <p className="text-gray-400 mb-4">Innovation City, India</p>
-                        <p className="text-gray-400 mb-2">info@rssolarcad.com</p>
-                        <p className="text-gray-400">+91 98765 43210</p>
+                        <p className="text-gray-400 mb-4">
+                            <span className="block text-white font-medium mb-1">Email :</span>
+                            <a href="mailto:contact@rscadgroup.com" className="hover:text-rsRed transition-colors">contact@rscadgroup.com</a><br />
+                            <a href="mailto:sales@rscadgroup.com" className="hover:text-rsRed transition-colors">sales@rscadgroup.com</a>
+                        </p>
+                        <p className="text-gray-400">
+                            <span className="block text-white font-medium mb-1">Phone :</span>
+                            <a href="tel:+13472188830" className="block hover:text-rsRed transition-colors">+1 347 218 8830</a>
+                            <a href="tel:+919958060424" className="block hover:text-rsRed transition-colors">+91 9958060424</a>
+                        </p>
                     </div>
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                     <p>&copy; {new Date().getFullYear()} RS Solar CAD Group. All rights reserved.</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white">Privacy Policy</a>
-                        <a href="#" className="hover:text-white">Terms of Service</a>
+                        <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+                        <Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link>
                     </div>
                 </div>
             </div>

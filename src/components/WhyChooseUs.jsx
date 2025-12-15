@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, Clock, Leaf, Settings, FileCheck, Layers } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const features = [
     {
@@ -34,29 +35,80 @@ const features = [
     }
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
+    }
+};
+
 const WhyChooseUs = () => {
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-lg font-bold text-rsRed uppercase tracking-widest mb-2">Our Key Differentiators</h2>
-                    <h3 className="text-3xl md:text-5xl font-bold text-rsBlue mb-4">Why Choose RS Solar CAD?</h3>
-                    <div className="w-24 h-1 bg-rsRed mx-auto rounded-full"></div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-lg font-bold text-rsRed uppercase tracking-widest mb-2"
+                    >
+                        Our Key Differentiators
+                    </motion.h2>
+                    <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-3xl md:text-5xl font-bold text-rsBlue mb-4"
+                    >
+                        Why Choose RS Solar CAD?
+                    </motion.h3>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 96 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="h-1 bg-rsRed mx-auto rounded-full"
+                    />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100 group">
-                            <div className="w-16 h-16 bg-rsBlue rounded-xl flex items-center justify-center mb-6 group-hover:bg-rsRed transition-colors duration-300 shadow-lg">
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                            className="bg-gray-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-default"
+                        >
+                            <div className="w-16 h-16 bg-rsBlue rounded-xl flex items-center justify-center mb-6 group-hover:bg-rsRed transition-colors duration-300 shadow-lg transform group-hover:rotate-6">
                                 {feature.icon}
                             </div>
                             <h4 className="text-xl font-bold text-gray-800 mb-3">{feature.title}</h4>
                             <p className="text-gray-600 leading-relaxed">
                                 {feature.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

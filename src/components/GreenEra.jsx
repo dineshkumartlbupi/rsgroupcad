@@ -4,8 +4,8 @@ import { ArrowRight } from 'lucide-react';
 const articles = [
     {
         title: "Blogs",
-        image: "https://images.unsplash.com/photo-1497435334941-8c884d50a283?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        description: "Insights into the latest trends in green energy and technology.",
+        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        description: "Insights into the latest trends in renewable energy design and CAD technologies.",
         link: "/blogs"
     },
     {
@@ -16,8 +16,8 @@ const articles = [
     },
     {
         title: "Media",
-        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        description: "Geon in the news and media features.",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        description: "Highlights of our impact and features in industry leading publications.",
         link: "/media"
     }
 ];
@@ -27,7 +27,7 @@ const GreenEra = () => {
         <section className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-geonBlue mb-4">A New Era Of Green Energy Solutions</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-geonBlue mb-4">A New Era Of RS Solar CAD Solutions</h2>
                     <div className="w-24 h-1 bg-rsRed mx-auto rounded-full"></div>
                 </div>
 

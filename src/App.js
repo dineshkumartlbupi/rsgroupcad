@@ -9,6 +9,8 @@ import Services from './pages/Services';
 import Blogs from './pages/Blogs';
 import ClientPortal from './pages/ClientPortal';
 import Careers from './pages/Careers';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import {
   SolarDesign, EVPermit, ArchitectureDesign, BIM
 } from './pages/BusinessPages';
@@ -41,12 +43,14 @@ function App() {
             <Route path="/architecture-designing" element={<ArchitectureDesign />} />
             <Route path="/bim" element={<BIM />} />
 
-
             {/* Other Pages */}
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/press-release" element={<PlaceholderPage title="Press Release" />} />
+            <Route path="/media" element={<PlaceholderPage title="Media" />} />
             <Route path="/client-portal" element={<ClientPortal />} />
             <Route path="/career" element={<Careers />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
 
             {/* Fallback */}
             <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />
