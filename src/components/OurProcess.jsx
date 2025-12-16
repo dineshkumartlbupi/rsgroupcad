@@ -1,53 +1,97 @@
 import React from 'react';
 import { PenTool, ClipboardCheck, Stamp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const steps = [
     {
-        title: "Design Proposal & Consulting",
-        description: "Expert Design Proposal Services tailored for residential and commercial solar projects. We deliver detailed, compliant designs ensuring smooth project approval from concept to execution.",
-        icon: <PenTool className="w-10 h-10 text-rsRed" />
+        title: "Design & Consulting",
+        description: "Expert proposals tailored for residential and commercial projects. We analyze site constraints and energy goals to deliver the perfect preliminary design.",
+        icon: <PenTool className="w-8 h-8 text-white" />,
+        image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=800&auto=format&fit=crop"
     },
     {
-        title: "PV Permit Design",
-        description: "Precise layouts, structural details, and electrical plans that ensure compliance with local codes. We simplify the permitting process to ensure your solar projects succeed seamlessly.",
-        icon: <ClipboardCheck className="w-10 h-10 text-rsRed" />
+        title: "PV Permit Engineering",
+        description: "Precise layouts, single-line diagrams, and structural analysis. Our AHJ-compliant plan sets are designed for rapid approval and seamless installation.",
+        icon: <ClipboardCheck className="w-8 h-8 text-white" />,
+        image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?q=80&w=800&auto=format&fit=crop"
     },
     {
         title: "PE Stamping & Compliance",
-        description: "Reliable PE Stamps for structural and electrical engineering to guarantee safety and efficiency. Trust us for accurate, professional stamping to streamline your installations.",
-        icon: <Stamp className="w-10 h-10 text-rsRed" />
+        description: "Final engineering review and PE stamping for structural and electrical safety. We ensure every bolt and wire meets strict US code requirements.",
+        icon: <Stamp className="w-8 h-8 text-white" />,
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop"
     }
 ];
 
 const OurProcess = () => {
     return (
-        <section className="py-24 bg-rsBlue text-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute -top-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-rsRed rounded-full blur-3xl"></div>
-            </div>
-
+        <section className="py-24 bg-white relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-lg font-bold text-rsRed uppercase tracking-widest mb-2">How We Work</h2>
-                    <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Process & Offers</h3>
-                    <p className="max-w-3xl mx-auto text-blue-100 text-lg">
-                        From initial proposal to final stamping, we streamline your solar journey with expert engineering.
-                    </p>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-sm font-bold text-rsRed uppercase tracking-widest mb-2"
+                    >
+                        How We Work
+                    </motion.h2>
+                    <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-3xl md:text-5xl font-extrabold text-rsBlue mb-6"
+                    >
+                        Our Process & Offers
+                    </motion.h3>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 80 }}
+                        viewport={{ once: true }}
+                        className="h-1 bg-rsRed mx-auto rounded-full"
+                    />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {steps.map((step, index) => (
-                        <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center hover:bg-white/10 transition-colors duration-300">
-                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
-                                {step.icon}
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2 }}
+                            whileHover={{ y: -10 }}
+                            className="relative group rounded-2xl overflow-hidden h-[450px] shadow-xl"
+                        >
+                            {/* Background Image */}
+                            <img
+                                src={step.image}
+                                alt={step.title}
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-rsBlue/95 via-rsBlue/70 to-transparent group-hover:via-rsBlue/80 transition-colors duration-300"></div>
+
+                            {/* Content */}
+                            <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                                <div className="absolute top-6 right-6 w-14 h-14 bg-rsRed/90 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                                    <span className="text-2xl font-bold text-white">0{index + 1}</span>
+                                </div>
+
+                                <div className="mb-4 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
+                                    {step.icon}
+                                </div>
+
+                                <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-rsRed transition-colors">
+                                    {step.title}
+                                </h4>
+                                <p className="text-blue-100 text-lg leading-relaxed opacity-90 group-hover:opacity-100">
+                                    {step.description}
+                                </p>
                             </div>
-                            <h4 className="text-2xl font-bold text-white mb-4">{step.title}</h4>
-                            <p className="text-blue-100 leading-relaxed">
-                                {step.description}
-                            </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,4 @@
-import React from 'react';
-import officeImage from '../assets/office.png';
-
+import logo from '../assets/header_logo.png';
 
 const Overview = () => {
     return (
@@ -33,11 +31,19 @@ const Overview = () => {
                     </div>
                     <div className="lg:w-1/2 relative">
                         <div className="absolute inset-0 bg-rsBlue transform rotate-3 rounded-3xl opacity-10"></div>
-                        <img
-                            src={officeImage}
-                            alt="RS Solar Office"
-                            className="relative rounded-3xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500"
-                        />
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 group">
+                            <img
+                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="RS Solar Office"
+                                className="w-full h-full object-cover"
+                            />
+                            {/* Logo Overlay */}
+                            <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
+                                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
+                                    <img src={logo} alt="RS Solar CAD Group" className="h-16 w-auto" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,34 +4,40 @@ import { motion } from 'framer-motion';
 
 const features = [
     {
-        title: "Expertise in BIM, CAD & GIS",
-        description: "We excel in delivering precision, innovation, and efficiency for every project through advanced engineering solutions.",
-        icon: <Layers className="w-8 h-8 text-white" />
+        title: "1.5 GW+ Design Experience",
+        description: "Proven track record delivering over 1.5 GW of high-quality solar designs across the United States since 2020.",
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        icon: <Layers className="w-6 h-6 text-white" />
     },
     {
-        title: "Efficiency & Precision",
-        description: "Through precise designs and advanced technology, we ensure high-quality results delivered faster and more reliably.",
-        icon: <CheckCircle className="w-8 h-8 text-white" />
+        title: "100% AHJ-Compliant",
+        description: "Revision-free plans thoroughly vetted for NEC, Fire, and local utility codes to ensure smooth approvals.",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
+        icon: <CheckCircle className="w-6 h-6 text-white" />
     },
     {
-        title: "Tailored Solutions",
-        description: "We adapt our designs and services to meet unique project requirements with maximum efficiency.",
-        icon: <Settings className="w-8 h-8 text-white" />
+        title: "Fast Turnaround",
+        description: "Speed that scales: Proposals in 30 minutes, full permit plan sets delivered in just 7 hours.",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        icon: <Clock className="w-6 h-6 text-white" />
     },
     {
-        title: "Sustainability",
-        description: "Creating eco-friendly, energy-efficient solutions that promote long-term environmental benefits.",
-        icon: <Leaf className="w-8 h-8 text-white" />
+        title: "Field-Ready Experts",
+        description: "Our engineers are trained on real installation sites, ensuring 10x more accurate and practical designs.",
+        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        icon: <Settings className="w-6 h-6 text-white" />
     },
     {
-        title: "Error-Free Documentation",
-        description: "We provide precise, well-documented plan sets that minimize delays or rejections during approval.",
-        icon: <FileCheck className="w-8 h-8 text-white" />
+        title: "Affordable & Scalable",
+        description: "A reliable outsourcing partner that adapts to your volume, cutting operational costs without compromising quality.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        icon: <FileCheck className="w-6 h-6 text-white" />
     },
     {
-        title: "Quick Turnaround",
-        description: "Our team ensures valid and fast delivery, helping you move forward without unnecessary delays.",
-        icon: <Clock className="w-8 h-8 text-white" />
+        title: "Real On-Ground Knowledge",
+        description: "We don't just design; we install. Our own teams have installed over 5MW, bringing field reality to every drawing.",
+        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        icon: <Leaf className="w-6 h-6 text-white" />
     }
 ];
 
@@ -40,7 +46,7 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2
+            staggerChildren: 0.15
         }
     }
 };
@@ -56,33 +62,35 @@ const itemVariants = {
 
 const WhyChooseUs = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-20 relative">
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-rsRed font-bold tracking-widest uppercase text-sm"
+                    >
+                        Our Key Differentiators
+                    </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-lg font-bold text-rsRed uppercase tracking-widest mb-2"
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-extrabold text-rsBlue mt-3 mb-6"
                     >
-                        Our Key Differentiators
+                        Why Choose RS Solar CAD?
                     </motion.h2>
-                    <motion.h3
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-3xl md:text-5xl font-bold text-rsBlue mb-4"
+                        className="max-w-3xl mx-auto text-lg text-gray-600 font-light"
                     >
-                        Why Choose RS Solar CAD?
-                    </motion.h3>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: 96 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="h-1 bg-rsRed mx-auto rounded-full"
-                    />
+                        We combine engineering precision with real-world installation experience to deliver designs that work.
+                    </motion.p>
                 </div>
 
                 <motion.div
@@ -96,16 +104,32 @@ const WhyChooseUs = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                            className="bg-gray-50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-default"
+                            whileHover={{ y: -10 }}
+                            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
                         >
-                            <div className="w-16 h-16 bg-rsBlue rounded-xl flex items-center justify-center mb-6 group-hover:bg-rsRed transition-colors duration-300 shadow-lg transform group-hover:rotate-6">
-                                {feature.icon}
+                            {/* Image Header */}
+                            <div className="relative h-56 overflow-hidden">
+                                <img
+                                    src={feature.image}
+                                    alt={feature.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                                    <h3 className="text-2xl font-bold text-white drop-shadow-md group-hover:text-rsRed transition-colors">
+                                        {feature.title}
+                                    </h3>
+                                </div>
+                                <div className="absolute top-4 right-4 w-12 h-12 bg-rsRed rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                    {feature.icon}
+                                </div>
                             </div>
-                            <h4 className="text-xl font-bold text-gray-800 mb-3">{feature.title}</h4>
-                            <p className="text-gray-600 leading-relaxed">
-                                {feature.description}
-                            </p>
+
+                            {/* Content Detail */}
+                            <div className="p-8">
+                                <p className="text-gray-600 leading-relaxed text-base">
+                                    {feature.description}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

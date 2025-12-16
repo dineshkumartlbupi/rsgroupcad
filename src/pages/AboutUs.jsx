@@ -10,8 +10,8 @@ const AboutUs = () => {
             <div className="bg-rsBlue py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-rsRed rounded-full opacity-10 blur-3xl"></div>
                 <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide relative z-10">About RS Solar CAD Group</h1>
-                <p className="mt-6 text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed relative z-10">
-                    "Our mission is to streamline solar and EV charger design, engineering, and field services for contractors."
+                <p className="mt-6 text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed relative z-10 font-light">
+                    "Powering the Global Solar Revolution with Precision, Innovation & Real-World Expertise"
                 </p>
                 <div className="w-24 h-1 bg-rsRed mx-auto mt-8 rounded-full relative z-10"></div>
             </div>
@@ -46,13 +46,13 @@ const AboutUs = () => {
                         >
                             <h2 className="text-3xl font-bold text-rsBlue mb-6">Who We Are</h2>
                             <h3 className="text-xl font-semibold text-gray-700 mb-6 border-l-4 border-rsRed pl-4">
-                                Empowering solar installers with the tools and expertise needed for successful projects.
+                                Since 2020, we have delivered more than 1.5 GW of high-quality solar designs across the United States.
                             </h3>
                             <p className="text-gray-600 leading-relaxed mb-6 font-light text-lg">
-                                RS Solar CAD Group is a premier provider of solar design and engineering solutions. Specializing in designing for both residential and commercial sectors, we offer a wide range of services, including <strong>solar permit plan set designs</strong>, structural and electrical stamps, and detailed engineering reviews.
+                                RS Solar CAD Group operates on a simple principle: <strong>We don't just create drawings—we build engineering confidence.</strong> We partner with solar installers, contractors, EPCs, and engineering firms to help them scale faster and cut operational costs.
                             </p>
                             <p className="text-gray-600 leading-relaxed font-light text-lg">
-                                Whether it’s a rooftop installation, ground-mounted solar array, or solar carport, we provide the comprehensive support needed to ensure the success of every project. We guarantee accuracy, safety, and reliability in all designs, instilling confidence in the integrity of each solar system.
+                                Unlike typical outsourcing firms, we serve as a true strategic partner. We offer collaborative engineering, employee exchange programs, and a dedicated back-office for your design and sales proposals. We blend seamlessly into your culture, becoming your captive offshore design team.
                             </p>
                         </motion.div>
                     </div>
@@ -111,7 +111,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* Top-Quality Solutions Section */}
+            {/* Industry-First Training Section */}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
@@ -126,15 +126,27 @@ const AboutUs = () => {
                             </div>
                         </div>
                         <div className="md:w-1/2">
-                            <h2 className="text-3xl font-bold text-rsBlue mb-6">Top-Quality Solar Solutions with Unmatched Precision</h2>
+                            <h2 className="text-3xl font-bold text-rsBlue mb-6">Industry-First On-Site Installation Training</h2>
+                            <h3 className="text-lg font-bold text-rsRed mb-4 uppercase tracking-wide">Why Our Designers Are Different</h3>
                             <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                                At RS Solar CAD Group, we deliver exceptional PV permit designs tailored for U.S. solar installers. With specialized knowledge of U.S. solar industry regulations, we ensure compliance and precision in every project.
+                                The biggest weakness in outsourcing? Designers who have never been on a roof. We changed that.
+                                In 2025, we launched India’s first Solar Design Training Program with Real On-Site Installation.
                             </p>
-                            <p className="text-gray-600 leading-relaxed mb-8 text-lg">
-                                Our focus on enhancing data management streamlines processes, boosting efficiency for our clients. Beyond solar design, we are committed to sustainability, actively maintaining plants with trees to contribute to a greener future.
-                            </p>
+                            <ul className="space-y-4 mb-8">
+                                {[
+                                    "Real PV layout & stringing techniques",
+                                    "Structural mounting & load understanding",
+                                    "Electrical wiring, conduit routing & safety",
+                                    "Signage, labelling & BOS specifications"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-center text-gray-700">
+                                        <CheckCircle className="w-5 h-5 text-rsRed mr-3" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
                             <a href="/contact-us" className="inline-block px-8 py-3 bg-rsRed text-white font-bold rounded-full hover:bg-red-700 transition-colors shadow-lg">
-                                Start Your Project
+                                Work With Field-Trained Experts
                             </a>
                         </div>
                     </div>

@@ -45,7 +45,7 @@ const CoreOfferings = () => {
                 <div className="space-y-12">
                     <OfferingSection
                         title="Solar Designing"
-                        description="RS Solar CAD Group delivers precise, code-compliant solar designs for residential and commercial projects. Ensuring efficiency, accuracy, and seamless project execution. We offer permit plan sets, CAD drafting, and engineering layouts."
+                        description="We design all types of solar projects: Residential, Commercial, New Construction, and Custom Designs. Whether it's Roof Mount, Ground Mount, or Combo systems, we deliver precision. Our services include As-Built drawings, Flush Mounts, and detailed PV Layouts."
                         image="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                         link="/solar-design-services"
                         alignRight={false}
@@ -53,15 +53,15 @@ const CoreOfferings = () => {
 
                     <OfferingSection
                         title="EV Permit / Charging Station"
-                        description="Expert EV permit, charging station layout, and approval services. We ensure regulatory compliance, safety, and fast turnaround for residential and commercial projects. Drive into sustainability with our tailored designs."
+                        description="Comprehensive EV charging infrastructure designs and permit plans. We handle everything from station layout to electrical load calculations, ensuring your projects are safe, compliant, and ready for the future of mobility."
                         image="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                         link="/ev-permit-charging-station"
                         alignRight={true}
                     />
 
                     <OfferingSection
-                        title="Architecture Designing"
-                        description="Specialized architectural designing for solar-integrated structures. Functional, compliant, and visually appealing layouts for homes, businesses, and industrial spaces. We integrate energy efficiency directly into the building's DNA."
+                        title="Architecture & Engineering"
+                        description="Beyond basic design, we offer full Structural and Electrical engineering support. This includes PE Stamping, wiring diagrams, mounting method analysis, and BIM modeling to ensure structural integrity and electrical safety."
                         image="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                         link="/architecture-designing"
                         alignRight={false}
