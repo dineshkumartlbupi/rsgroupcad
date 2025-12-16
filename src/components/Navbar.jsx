@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logoColored from '../assets/logo_colored.png';
+import logoWhite from '../assets/whitelogo.svg';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +40,8 @@ const Navbar = () => {
     // Real site might have specific behavior. For now, keep scroll logic but maybe default to dark text if not home.
     const textColorClass = (isHome && !isScrolled) ? 'text-white' : 'text-gray-800';
     const navBgClass = (isHome && !isScrolled) ? 'bg-transparent' : 'bg-white shadow-lg';
+    // Logic for logo switching
+    const currentLogo = (isHome && !isScrolled) ? logoWhite : logoColored;
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${navBgClass} py-4`}>
@@ -46,7 +49,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0 flex items-center">
-                        <img src={logo} alt="RS Solar CAD Group" className="h-16 w-auto" />
+                        <img src={currentLogo} alt="RS Solar CAD Group" className="h-12 w-auto " />
                     </Link>
 
                     {/* Desktop Menu */}
