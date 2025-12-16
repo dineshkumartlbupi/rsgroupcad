@@ -1,52 +1,84 @@
 import React, { useState, useEffect } from 'react';
 import videoBg from '../assets/desktop_cover_video.mp4';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle } from 'lucide-react';
 
 const sliderContent = [
     {
-        title: "RS Solar CAD Group",
-        subtitle: "Powering the Global Solar Revolution",
-        description: "1.5 GW+ of high-quality solar designs delivered across the United States since 2020."
+        id: "design",
+        tabTitle: "Solar Design Services",
+        title: "Precision in Every Solar Design",
+        subtitle: "RS Solar CAD Group",
+        description: "Experience the power of 1.5 GW+ delivered designs. We guide your projects from concept to interconnection with unmatched accuracy and speed.",
+        features: [
+            "1.5 GW+ Design Experience",
+            "Residential & Commercial Specialists",
+            "Nationwide AHJ Compliance"
+        ]
     },
     {
+        id: "speed",
+        tabTitle: "Speed & Precision",
         title: "Unmatched Speed & Precision",
         subtitle: "Rapid Turnaround Times",
-        description: "Proposals in 30 minutes. AHJ-compliant permit plans delivered in just 7 hours."
+        description: "Don't let design delays stall your sales. Get proposals in 30 minutes and full permit plans in just 7 hours.",
+        features: [
+            "Proposals in 30 Minutes",
+            "Permit Plans in 7 Hours",
+            "98% First-Time Approval Rate"
+        ]
     },
     {
+        id: "field",
+        tabTitle: "Field-Ready Experts",
         title: "Field-Ready Accuracy",
         subtitle: "The Only Field-Trained Team",
-        description: "Our designers train on live installation sites for 10x more accurate, error-free plans."
+        description: "Our designers train on live installation sites. We understand rafter spacing, conduit routing, and real-world constructability.",
+        features: [
+            "Installation-Trained Designers",
+            "Zero Construction-Phase Errors",
+            "Practical Site Logic"
+        ]
     },
     {
-        title: "Beyond Outsourcing",
-        subtitle: "Your Strategic Engineering Partner",
-        description: "We provide resident engineers, dedicated back-office support, and seamless workflow integration."
-    },
-    {
+        id: "engineering",
+        tabTitle: "Engineering & PE",
         title: "Comprehensive Engineering",
         subtitle: "One-Stop Solution",
-        description: "Residential & Commercial Solar, EV Charging, BIM, Structural Engineering, and PE Stamping."
+        description: "From structural analysis to PE stamping and BIM modeling, we handle every complex engineering challenge.",
+        features: [
+            "Structural & Electrical PE Stamps",
+            "BIM & 3D Modeling",
+            "EV Charging Infrastructure"
+        ]
     },
     {
-        title: "Proven Impact",
-        subtitle: "Real-World Installation Experience",
-        description: "Over 5MW of commercial and residential projects physically installed by our own teams in 2025."
+        id: "partnership",
+        tabTitle: "Strategic Partnership",
+        title: "Beyond Outsourcing",
+        subtitle: "Your Strategic Engineering Partner",
+        description: "We integrate seamlessly into your workflow with dedicated resident engineers and back-office support teams.",
+        features: [
+            "Dedicated Resident Engineers",
+            "Seamless Workflow Integration",
+            "Employee Exchange Programs"
+        ]
     }
 ];
 
 const Hero = () => {
     const [current, setCurrent] = useState(0);
 
+    // Auto-play logic
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % sliderContent.length);
-        }, 6000);
+        }, 8000);
         return () => clearInterval(timer);
     }, []);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden">
+        <div className="relative h-screen w-full overflow-hidden font-sans">
             {/* Background Video/Image */}
             <div className="absolute inset-0 w-full h-full">
                 <video
@@ -58,87 +90,112 @@ const Hero = () => {
                     <source src={videoBg} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+                <div className="absolute inset-0 bg-slate-900/80"></div>
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            {/* Content Container */}
+            <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto w-full">
 
-                {/* Expanded Slider Component */}
-                <div className="w-full max-w-6xl relative mb-12 min-h-[300px] flex items-center justify-center">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={current}
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="flex flex-col items-center justify-center p-6"
-                        >
-                            <motion.span
-                                className="inline-block py-1 px-3 rounded-full bg-rsRed/20 border border-rsRed/50 text-rsRed text-sm md:text-base font-bold tracking-wider mb-4 uppercase backdrop-blur-sm"
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
+                {/* Main Text Content Area */}
+                <div className="flex-grow flex items-center">
+                    <div className="w-full max-w-4xl">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={current}
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 20 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                className="flex flex-col items-start text-left"
                             >
-                                {sliderContent[current].subtitle}
-                            </motion.span>
+                                <motion.span
+                                    className="inline-block py-1.5 px-4 rounded-full bg-rsRed/20 border border-rsRed text-rsRed text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-md"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                >
+                                    {sliderContent[current].subtitle}
+                                </motion.span>
 
-                            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-2xl">
-                                {sliderContent[current].title}
-                            </h1>
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+                                    {sliderContent[current].title}
+                                </h1>
 
-                            <p className="text-xl md:text-3xl text-gray-100 max-w-4xl mx-auto font-light leading-relaxed drop-shadow-md">
-                                {sliderContent[current].description}
-                            </p>
-                        </motion.div>
-                    </AnimatePresence>
+                                <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl font-light">
+                                    {sliderContent[current].description}
+                                </p>
+
+                                {/* Feature List */}
+                                <ul className="space-y-3 mb-10">
+                                    {sliderContent[current].features.map((feature, idx) => (
+                                        <motion.li
+                                            key={idx}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.3 + (idx * 0.1) }}
+                                            className="flex items-center text-white text-lg font-medium"
+                                        >
+                                            <CheckCircle className="w-5 h-5 text-rsRed mr-3 flex-shrink-0" />
+                                            {feature}
+                                        </motion.li>
+                                    ))}
+                                </ul>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                                    className="flex gap-4"
+                                >
+                                    <a href="#services" className="px-8 py-3.5 bg-white text-rsBlue text-base font-bold rounded hover:bg-gray-100 transition-all duration-300 shadow-xl hover:-translate-y-1">
+                                        Learn More
+                                    </a>
+                                    <a href="/contact-us" className="px-8 py-3.5 bg-transparent border border-white text-white text-base font-bold rounded hover:bg-white/10 transition-all duration-300 shadow-lg hover:-translate-y-1">
+                                        Contact Us
+                                    </a>
+                                </motion.div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
                 </div>
 
-                {/* Navigation Dots */}
-                <div className="flex space-x-3 mb-12 z-20">
+                {/* Bottom Navigation Tabs - "Centralized" */}
+                <div className="relative w-full pb-10 hidden md:block">
+                    {/* Dashed Line Background */}
+                    <div className="absolute top-1/2 left-0 w-full h-px border-t border-dashed border-gray-500/50 -translate-y-1/2 z-0"></div>
+
+                    <div className="flex justify-between items-center relative z-10">
+                        {sliderContent.map((item, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrent(index)}
+                                className="group flex flex-col items-center focus:outline-none"
+                            >
+                                {/* Dot/Indicator */}
+                                <div className={`w-3 h-3 rounded-full mb-3 transition-all duration-300 ${index === current ? "bg-rsRed scale-125 ring-4 ring-rsRed/30" : "bg-gray-400 group-hover:bg-white"
+                                    }`}></div>
+
+                                {/* Label */}
+                                <span className={`text-xs md:text-sm font-bold tracking-wide transition-colors duration-300 ${index === current ? "text-rsRed" : "text-gray-400 group-hover:text-white"
+                                    }`}>
+                                    {item.tabTitle}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+                {/* Mobile Dots */}
+                <div className="flex justify-center space-x-2 md:hidden pb-8">
                     {sliderContent.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrent(index)}
-                            className={`h-2 rounded-full transition-all duration-500 ${index === current ? "bg-rsRed w-12" : "bg-white/40 hover:bg-white w-4"
+                            className={`h-1.5 rounded-full transition-all duration-300 ${index === current ? "bg-rsRed w-8" : "bg-white/40 w-2"
                                 }`}
-                            aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="flex flex-col sm:flex-row gap-6"
-                >
-                    <a href="#services" className="px-10 py-4 bg-rsRed text-white text-lg font-bold rounded-full hover:bg-red-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 ring-2 ring-rsRed ring-offset-2 ring-offset-black">
-                        EXPLORE SERVICES
-                    </a>
-                    <a href="/contact-us" className="px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold rounded-full hover:bg-white hover:text-rsBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 backdrop-blur-sm">
-                        GET IN TOUCH
-                    </a>
-                </motion.div>
             </div>
-
-            {/* Scroll Down Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer hidden md:block"
-                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            >
-                <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center p-2 relative group hover:border-white transition-colors">
-                    <motion.div
-                        animate={{ y: [0, 12, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-1 h-3 bg-white rounded-full group-hover:bg-rsRed transition-colors"
-                    />
-                </div>
-            </motion.div>
         </div>
     );
 };

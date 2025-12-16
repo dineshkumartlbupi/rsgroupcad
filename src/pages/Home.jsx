@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import InteractiveServices from '../components/InteractiveServices';
 import WhyChooseUs from '../components/WhyChooseUs';
 import CoreOfferings from '../components/CoreOfferings';
 import OurProcess from '../components/OurProcess';
@@ -27,31 +28,12 @@ const Home = () => {
         <>
             <Hero />
 
-            {/* Welcome Banner */}
-            <section className="bg-gradient-to-b from-gray-50 to-white py-24 text-center px-4 relative overflow-hidden">
-                <AnimatedBackground /> {/* Canvas Particles */}
+            <InteractiveServices />
 
-                <div className="absolute top-10 left-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-                <div className="absolute top-10 right-10 w-40 h-40 bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-
-                <div className="relative z-10">
-                    <SectionWrapper>
-                        <h2 className="text-2xl md:text-4xl font-light text-gray-800 max-w-5xl mx-auto leading-normal">
-                            <span className="font-bold text-rsBlue block mb-4 text-3xl md:text-5xl">Your Dedicated Partner</span>
-                            In Advancing <span className="text-rsRed font-medium">Solar Energy</span> Initiatives Through Cutting-Edge <span className="text-rsBlue font-medium">CAD Solutions</span>.
-                        </h2>
-                        <div className="mt-8 flex justify-center space-x-2">
-                            <span className="inline-block w-3 h-3 bg-rsRed rounded-full animate-bounce delay-100"></span>
-                            <span className="inline-block w-3 h-3 bg-rsBlue rounded-full animate-bounce delay-200"></span>
-                            <span className="inline-block w-3 h-3 bg-rsRed rounded-full animate-bounce delay-300"></span>
-                        </div>
-                    </SectionWrapper>
-                </div>
-            </section>
-
-            <SectionWrapper>
+            <section className="bg-gradient-to-b from-gray-50 to-white  text-center px-4 relative overflow-hidden">
+                <AnimatedBackground />
                 <WhyChooseUs />
-            </SectionWrapper>
+            </section>
 
             <CoreOfferings />
 

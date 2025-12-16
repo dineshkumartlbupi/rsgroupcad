@@ -34,9 +34,9 @@ const OfferingSection = ({ title, description, image, link, alignRight }) => {
 
 const CoreOfferings = () => {
     return (
-        <section id="solutions" className="py-20 bg-gray-50">
+        <section id="solutions" className="py-4 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
+                <div className="text-center mb-4">
                     <h2 className="text-sm font-bold text-rsRed uppercase tracking-widest mb-2">Our Solutions</h2>
                     <h3 className="text-4xl md:text-5xl font-bold text-geonBlue">Our Core Offerings</h3>
                     <div className="w-24 h-1 bg-rsRed mx-auto mt-4 rounded-full"></div>
