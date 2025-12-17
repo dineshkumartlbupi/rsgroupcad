@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe } from 'lucide-react';
+import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe, Heart } from 'lucide-react';
+
+import ClientSlider from './ClientSlider';
 
 const stats = [
-    { icon: <Handshake className="w-8 h-8" />, value: "100+", label: "Success Stories" },
-    { icon: <FileCog className="w-8 h-8" />, value: "20+", label: "Years Experience" },
-    { icon: <Users className="w-8 h-8" />, value: "500+", label: "Employees" },
+    { icon: <Handshake className="w-8 h-8" />, value: "200+", label: "Success Stories" },
+    { icon: <FileCog className="w-8 h-8" />, value: "5+", label: "Years Experience" },
     { icon: <Layers className="w-8 h-8" />, value: "10x", label: "Multiple Services" },
     { icon: <Globe className="w-8 h-8" />, value: "24/7", label: "Global Operations" },
 ];
@@ -89,21 +90,33 @@ const InteractiveServices = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Stats Bar */}
-                <div className="mb-24">
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div className="mb-24 relative">
+                    {/* Background Hearts Decoration */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+                        {/* Large Top Right Heart */}
+                        <Heart className="absolute -top-10 right-0 w-64 h-64 text-gray-200 opacity-50 transform rotate-12 fill-current blur-sm" />
+                        {/* Medium Top Center Heart */}
+                        <Heart className="absolute top-0 left-1/2 w-48 h-48 text-gray-200 opacity-40 transform -rotate-12 fill-current blur-sm" />
+                        {/* Small Bottom Left Heart */}
+                        <Heart className="absolute -bottom-10 left-10 w-32 h-32 text-gray-200 opacity-60 transform rotate-6 fill-current blur-sm" />
+                        {/* Medium Bottom Right Heart */}
+                        <Heart className="absolute bottom-10 right-1/4 w-40 h-40 text-gray-200 opacity-40 transform -rotate-12 fill-current blur-sm" />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform duration-300"
+                                className="bg-white p-8 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300 relative z-10"
                             >
-                                <div className="text-[#001528] mb-3 p-3 bg-gray-50 rounded-full">
+                                <div className="text-[#001528] mb-4 p-4 bg-gray-50 rounded-full">
                                     {stat.icon}
                                 </div>
-                                <h3 className="text-3xl font-extrabold text-[#001528] mb-1">{stat.value}</h3>
-                                <p className="text-gray-500 text-sm font-medium">{stat.label}</p>
+                                <h3 className="text-4xl font-extrabold text-[#001528] mb-2">{stat.value}</h3>
+                                <p className="text-gray-500 text-sm font-semibold tracking-wide uppercase">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -211,6 +224,8 @@ const InteractiveServices = () => {
                     ))}
                 </div>
             </div>
+
+
         </section>
     );
 };
