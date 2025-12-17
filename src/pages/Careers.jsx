@@ -66,7 +66,7 @@ const Careers = () => {
                     <div className="mt-16 text-center bg-blue-50 rounded-2xl p-10">
                         <h3 className="text-2xl font-bold text-geonBlue mb-4">Don't see a fit?</h3>
                         <p className="text-gray-600 mb-6">
-                            We are growing fast. Send your resume to <a href="mailto:careers@geon-energy.com" className="text-rsRed font-bold hover:underline">careers@geon-energy.com</a> and we'll keep you on file.
+                            We are growing fast. Send your resume to <a href="mailto:careers@rs-solarcad.com" className="text-rsRed font-bold hover:underline">careers@rs-solarcad.com</a> and we'll keep you on file.
                         </p>
                     </div>
                 </div>

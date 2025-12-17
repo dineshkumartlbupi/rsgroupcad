@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool } from 'lucide-react';
+import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe } from 'lucide-react';
+
+const stats = [
+    { icon: <Handshake className="w-8 h-8" />, value: "100+", label: "Success Stories" },
+    { icon: <FileCog className="w-8 h-8" />, value: "20+", label: "Years Experience" },
+    { icon: <Users className="w-8 h-8" />, value: "500+", label: "Employees" },
+    { icon: <Layers className="w-8 h-8" />, value: "10x", label: "Multiple Services" },
+    { icon: <Globe className="w-8 h-8" />, value: "24/7", label: "Global Operations" },
+];
 
 const services = [
     {
@@ -69,36 +77,70 @@ const cardVariants = {
 
 const InteractiveServices = () => {
     return (
-        <section className="relative z-10 w-full bg-[#001528] py-24 font-sans text-white overflow-hidden border-b border-gray-800">
-            {/* Background Tech Grid Pattern */}
-            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #E6A93E 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+        <section className="relative w-full bg-white py-24 font-sans overflow-hidden">
+            {/* Right Side Wireframe Decoration */}
+            <div className="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10 pointer-events-none hidden lg:block">
+                <img
+                    src="https://img.freepik.com/premium-vector/city-buildings-wireframe-blue-background-vector-illustration_547674-325.jpg?w=1060"
+                    alt="Wireframe"
+                    className="w-full h-full object-cover object-left grayscale"
+                />
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-20">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="inline-block py-1 px-3 rounded-full bg-[#E6A93E]/10 border border-[#E6A93E]/20 text-[#E6A93E] text-xs font-bold tracking-widest uppercase mb-4"
-                    >
-                        Our Expertise
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-2xl font-extrabold text-white mb-0"
-                    >
-                        Not Just an Outsourcing Firm — A True Strategic Partner
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed"
-                    >
-                        RS Solar CAD Group has grown into one of the world’s most trusted
-                        providers of Solar PV Design and Engineering Services
-                    </motion.p>
+                {/* Stats Bar */}
+                <div className="mb-24">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                        {stats.map((stat, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform duration-300"
+                            >
+                                <div className="text-[#001528] mb-3 p-3 bg-gray-50 rounded-full">
+                                    {stat.icon}
+                                </div>
+                                <h3 className="text-3xl font-extrabold text-[#001528] mb-1">{stat.value}</h3>
+                                <p className="text-gray-500 text-sm font-medium">{stat.label}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Header Section - Full Width */}
+                <div className="mb-20">
+                    <div className="w-full text-left">
+                        <motion.span
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="inline-block py-1 px-3 rounded-full bg-gray-100 text-gray-600 text-xs font-bold tracking-widest uppercase mb-4"
+                        >
+                            Our Expertise
+                        </motion.span>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-4xl md:text-5xl font-extrabold text-[#001528] mb-6"
+                        >
+                            Services Suite
+                        </motion.h2>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-gray-600 text-lg leading-relaxed space-y-4"
+                        >
+                            <p>
+                                RS Solar CAD Group provides an integrated outsourcing model supporting solar installers, EPCs, and engineering firms across the U.S. and Canada. We act as a captive offshore extension of your in-house team, ensuring high-quality, scalable execution aligned with your standards.
+                            </p>
+                            <p>
+                                Our engineering expertise is strengthened by real-world field experience from our own India-based installations, guaranteeing practical, buildable designs. Comprehensive support extends to technical staffing and procurement, offering a complete solution to reduce risk and drive growth.
+                            </p>
+                        </motion.div>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

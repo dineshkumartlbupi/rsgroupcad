@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Sun, Zap, PenTool, Layers, Settings, CheckCircle } from 'lucide-react';
 import logoColored from '../assets/logo_colored.png';
 import logoWhite from '../assets/whitelogo.svg';
 
@@ -16,10 +17,36 @@ const Navbar = () => {
             name: 'Services',
             path: '/services',
             dropdown: [
-                { name: 'Solar Design Services', path: '/solar-design-services' },
-                { name: 'EV Permit / Charging -Station', path: '/ev-permit-charging-station' },
-                { name: 'Architecture Designing', path: '/architecture-designing' },
-                { name: 'BIM', path: '/bim' },
+                {
+                    name: 'Solar Design & Engineering',
+                    path: '/solar-design-services',
+                    icon: <Sun className="w-5 h-5" />
+                },
+                {
+                    name: 'EV Charging Station Plans',
+                    path: '/ev-charging-station',
+                    icon: <Zap className="w-5 h-5" />
+                },
+                {
+                    name: 'CAD Design & Drafting',
+                    path: '/cad-design',
+                    icon: <PenTool className="w-5 h-5" />
+                },
+                {
+                    name: 'Workforce & Technical Staffing',
+                    path: '/workforce-staffing',
+                    icon: <Layers className="w-5 h-5" />
+                },
+                {
+                    name: 'Solar Installation Services',
+                    path: '/solar-installation',
+                    icon: <Settings className="w-5 h-5" />
+                },
+                {
+                    name: 'Trading & Procurement',
+                    path: '/trading-procurement',
+                    icon: <CheckCircle className="w-5 h-5" />
+                },
             ]
         },
         { name: 'Blogs', path: '/blogs' },
@@ -36,8 +63,6 @@ const Navbar = () => {
     }, []);
 
     const isHome = location.pathname === '/';
-    // If not home, always show white background navbar or similar, adjust logic as needed.
-    // Real site might have specific behavior. For now, keep scroll logic but maybe default to dark text if not home.
     const textColorClass = (isHome && !isScrolled) ? 'text-white' : 'text-gray-800';
     const navBgClass = (isHome && !isScrolled) ? 'bg-transparent' : 'bg-white shadow-lg';
     // Logic for logo switching
@@ -68,14 +93,17 @@ const Navbar = () => {
 
                                 {/* Dropdown */}
                                 {item.dropdown && (
-                                    <div className="absolute left-0 top-full pt-4 w-64 hidden group-hover:block">
+                                    <div className="absolute left-0 top-full pt-4 w-80 hidden group-hover:block">
                                         <div className="bg-white shadow-xl rounded-md py-2 border-t-4 border-rsRed">
                                             {item.dropdown.map(subItem => (
                                                 <Link
                                                     key={subItem.name}
                                                     to={subItem.path}
-                                                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-rsRed border-b border-gray-100 last:border-0"
+                                                    className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-rsRed border-b border-gray-100 last:border-0 group/item transition-colors"
                                                 >
+                                                    <span className="mr-3 text-gray-400 group-hover/item:text-rsRed transition-colors">
+                                                        {subItem.icon}
+                                                    </span>
                                                     {subItem.name}
                                                 </Link>
                                             ))}
@@ -87,7 +115,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Contact Button */}
-                    < div className="hidden lg:flex" >
+                    <div className="hidden lg:flex">
                         <Link to="/contact-us" className="bg-rsRed text-white px-6 py-2 rounded-full font-medium hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200">
                             Contact Us
                         </Link>
@@ -129,9 +157,12 @@ const Navbar = () => {
                                         <Link
                                             key={subItem.name}
                                             to={subItem.path}
-                                            className="block text-sm text-gray-600"
+                                            className="flex items-center text-sm text-gray-600 py-2"
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
+                                            <span className="mr-3 text-gray-400">
+                                                {subItem.icon}
+                                            </span>
                                             {subItem.name}
                                         </Link>
                                     ))}

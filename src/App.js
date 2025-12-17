@@ -12,7 +12,12 @@ import Careers from './pages/Careers';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import {
-  SolarDesign, EVPermit, ArchitectureDesign, BIM
+  SolarDesign,
+  EVCharging,
+  CADDesign,
+  WorkforceStaffing,
+  SolarInstallation,
+  TradingProcurement
 } from './pages/BusinessPages';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -39,9 +44,11 @@ function App() {
             {/* Services */}
             <Route path="/services" element={<Services />} />
             <Route path="/solar-design-services" element={<SolarDesign />} />
-            <Route path="/ev-permit-charging-station" element={<EVPermit />} />
-            <Route path="/architecture-designing" element={<ArchitectureDesign />} />
-            <Route path="/bim" element={<BIM />} />
+            <Route path="/ev-charging-station" element={<EVCharging />} />
+            <Route path="/cad-design" element={<CADDesign />} />
+            <Route path="/workforce-staffing" element={<WorkforceStaffing />} />
+            <Route path="/solar-installation" element={<SolarInstallation />} />
+            <Route path="/trading-procurement" element={<TradingProcurement />} />
 
             {/* Other Pages */}
             <Route path="/blogs" element={<Blogs />} />

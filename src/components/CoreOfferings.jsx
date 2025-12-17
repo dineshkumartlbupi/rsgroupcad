@@ -1,72 +1,125 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ClipboardList, Lightbulb, Settings, Target, Users, Globe, BarChart3, Scale, BrainCircuit } from 'lucide-react';
 
-const OfferingSection = ({ title, description, image, link, alignRight }) => {
-    return (
-        <div className={`flex flex-col ${alignRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 py-16`}>
-            <div className="md:w-1/2 w-full">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
-                    <img
-                        src={image}
-                        alt={title}
-                        className="w-full h-80 md:h-[500px] object-cover transform transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-500"></div>
-                </div>
-            </div>
-            <div className="md:w-1/2 w-full space-y-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-geonBlue relative inline-block">
-                    {title}
-                    <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-rsRed rounded-full"></span>
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                    {description}
-                </p>
-                <Link to={link || "#"} className="inline-flex items-center text-rsRed font-bold hover:text-green-800 transition-colors group">
-                    READ MORE
-                    <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-            </div>
-        </div>
-    );
-};
+const processSteps = [
+    {
+        icon: <ClipboardList className="w-10 h-10" />,
+        title: "Requirement Mapping",
+        desc: "Validate and verify requirements, adding more details if necessary and mapping business pain points."
+    },
+    {
+        icon: <Lightbulb className="w-10 h-10" />,
+        title: "Process Vision",
+        desc: "Define and elaborate all details to start the technical implementation of your project."
+    },
+    {
+        icon: <Settings className="w-10 h-10" />,
+        title: "Process Execution",
+        desc: "Engineer the solution to meet your requirements and defined design process."
+    },
+    {
+        icon: <Target className="w-10 h-10" />,
+        title: "Execution Readiness",
+        desc: "Make sure your product or solution is ready to be easily deployed to production."
+    }
+];
+
+const benefits = [
+    {
+        icon: <Users className="w-12 h-12" />,
+        title: "Dedicated Team"
+    },
+    {
+        icon: <Globe className="w-12 h-12" />,
+        title: "Business Continuity"
+    },
+    {
+        icon: <BarChart3 className="w-12 h-12" />,
+        title: "MIS Dashboard"
+    },
+    {
+        icon: <Scale className="w-12 h-12" />,
+        title: "No Overtime Payments"
+    },
+    {
+        icon: <BrainCircuit className="w-12 h-12" />,
+        title: "Knowledge Partner"
+    }
+];
 
 const CoreOfferings = () => {
     return (
-        <section id="solutions" className="py-4 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-4">
-                    <h2 className="text-sm font-bold text-rsRed uppercase tracking-widest mb-2">Our Solutions</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-geonBlue">Our Core Offerings</h3>
-                    <div className="w-24 h-1 bg-rsRed mx-auto mt-4 rounded-full"></div>
+        <section className="py-24 bg-[#f8f9fa] relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                {/* --- Section 1: Behind The Magic --- */}
+                <div className="mb-24">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-12"
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#001528] mb-2">Back Office Support</h2>
+                        <div className="w-24 h-1.5 bg-[#E6A93E] rounded-full"></div>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {processSteps.map((step, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="bg-[#414141] text-white p-8 rounded-lg shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center group"
+                            >
+                                <div className="mb-6 p-4 bg-white/10 rounded-full text-[#E6A93E] group-hover:bg-[#E6A93E] group-hover:text-[#001528] transition-colors duration-300">
+                                    {step.icon}
+                                </div>
+                                <h3 className="text-xl font-bold mb-4 border-b-2 border-[#E6A93E] pb-2 inline-block">
+                                    {step.title}
+                                </h3>
+                                <p className="text-gray-300 text-sm leading-relaxed">
+                                    {step.desc}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="space-y-12">
-                    <OfferingSection
-                        title="Solar Designing"
-                        description="We design all types of solar projects: Residential, Commercial, New Construction, and Custom Designs. Whether it's Roof Mount, Ground Mount, or Combo systems, we deliver precision. Our services include As-Built drawings, Flush Mounts, and detailed PV Layouts."
-                        image="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        link="/solar-design-services"
-                        alignRight={false}
-                    />
+                {/* --- Section 2: What You Get --- */}
+                <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-12"
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#001528] mb-2">What You Get</h2>
+                        <div className="w-24 h-1.5 bg-[#E6A93E] rounded-full"></div>
+                    </motion.div>
 
-                    <OfferingSection
-                        title="EV Permit / Charging Station"
-                        description="Comprehensive EV charging infrastructure designs and permit plans. We handle everything from station layout to electrical load calculations, ensuring your projects are safe, compliant, and ready for the future of mobility."
-                        image="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        link="/ev-permit-charging-station"
-                        alignRight={true}
-                    />
-
-                    <OfferingSection
-                        title="Architecture & Engineering"
-                        description="Beyond basic design, we offer full Structural and Electrical engineering support. This includes PE Stamping, wiring diagrams, mounting method analysis, and BIM modeling to ensure structural integrity and electrical safety."
-                        image="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        link="/architecture-designing"
-                        alignRight={false}
-                    />
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {benefits.map((benefit, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                className="bg-[#E6A93E] p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center text-center h-48 md:h-64"
+                            >
+                                <div className="text-[#001528] mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                    {benefit.icon}
+                                </div>
+                                <h3 className="text-[#001528] font-bold text-lg md:text-xl leading-tight">
+                                    {benefit.title}
+                                </h3>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
+
             </div>
         </section>
     );

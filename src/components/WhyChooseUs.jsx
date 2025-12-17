@@ -80,7 +80,7 @@ const WhyChooseUs = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-extrabold text-rsBlue mt-3 mb-6"
                     >
-                        Why Choose RS Solar CAD?
+                        Why Choose RS Solar CAD Group?
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
