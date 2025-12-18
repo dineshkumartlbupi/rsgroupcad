@@ -10,6 +10,13 @@ import sunivaLogo from '../assets/clients/suniva.jpg';
 import greenlinkLogo from '../assets/clients/greenlink.jpg';
 import axiomLogo from '../assets/clients/axiom.jpg';
 import supernovaLogo from '../assets/clients/supernova.jpg';
+import noondayLogo from '../assets/clients/noonday.jpg';
+import adaptiveLogo from '../assets/clients/adaptive.jpg';
+import michiganLogo from '../assets/clients/michigan.jpg';
+import bayouLogo from '../assets/clients/bayou.jpg';
+import energybriteLogo from '../assets/clients/energybrite.jpg';
+import coastalLogo from '../assets/clients/coastal.jpg';
+import firstlightLogo from '../assets/clients/firstlight.jpg';
 
 const clients = [
     { name: 'American Solar Advantage', logo: asaLogo },
@@ -20,6 +27,13 @@ const clients = [
     { name: 'Greenlink Solar', logo: greenlinkLogo },
     { name: 'Axiom 360', logo: axiomLogo },
     { name: 'Supernova', logo: supernovaLogo },
+    { name: 'Noonday Solar', logo: noondayLogo },
+    { name: 'Adaptive Solar', logo: adaptiveLogo },
+    { name: 'Michigan Solar & Roofing', logo: michiganLogo },
+    { name: 'Bayou Solar Systems', logo: bayouLogo },
+    { name: 'EnergyBrite', logo: energybriteLogo },
+    { name: 'Coastal Solar', logo: coastalLogo },
+    { name: 'First Light Solar', logo: firstlightLogo },
 ];
 
 const ClientSlider = () => {

@@ -62,7 +62,7 @@ const itemVariants = {
 
 const WhyChooseUs = () => {
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20 relative">
                     <motion.span
@@ -105,28 +105,28 @@ const WhyChooseUs = () => {
                             key={index}
                             variants={itemVariants}
                             whileHover={{ y: -10 }}
-                            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100"
                         >
                             {/* Image Header */}
-                            <div className="relative h-56 overflow-hidden">
+                            <div className="relative h-64 overflow-hidden">
                                 <img
                                     src={feature.image}
                                     alt={feature.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                                    <h3 className="text-2xl font-bold text-white drop-shadow-md group-hover:text-rsRed transition-colors">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-center p-6">
+                                    <h3 className="text-2xl font-bold text-white text-center drop-shadow-md">
                                         {feature.title}
                                     </h3>
                                 </div>
-                                <div className="absolute top-4 right-4 w-12 h-12 bg-rsRed rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                <div className="absolute top-4 right-4 w-10 h-10 bg-[#FF4500] rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:rotate-12">
                                     {feature.icon}
                                 </div>
                             </div>
 
                             {/* Content Detail */}
-                            <div className="p-8">
-                                <p className="text-gray-600 leading-relaxed text-base">
+                            <div className="p-8 text-center">
+                                <p className="text-gray-500 leading-relaxed text-[0.95rem] font-medium">
                                     {feature.description}
                                 </p>
                             </div>
