@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform, useInView, animate } from "framer-motion";
 import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe, Heart } from 'lucide-react';
 
 import ClientSlider from './ClientSlider';
@@ -60,8 +60,46 @@ const services = [
         details: ["PV Modules & Inverters", "Mounting Structures", "Battery Storage", "Monitoring Systems"],
         image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&q=80&w=800"
     },
-
 ];
+
+const Counter = ({ value }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+    // Parse the value
+    const match = value.match(/(\d+(?:\.\d+)?)/);
+    const numericValue = match ? parseFloat(match[0]) : 0;
+    const prefix = match ? value.slice(0, match.index) : "";
+    const suffix = match ? value.slice(match.index + match[0].length) : value;
+
+    const count = useMotionValue(0);
+    const rounded = useTransform(count, (latest) => {
+        if (Number.isInteger(numericValue)) {
+            return Math.floor(latest);
+        } else {
+            return latest.toFixed(1);
+        }
+    });
+
+    useEffect(() => {
+        if (isInView && match) {
+            const controls = animate(count, numericValue, { duration: 2.5, ease: "circOut" });
+            return controls.stop;
+        }
+    }, [isInView, numericValue, count, match]);
+
+    if (!match) return <span>{value}</span>;
+
+    return (
+        <span ref={ref} className="inline-flex">
+            {prefix}
+            <motion.span>{rounded}</motion.span>
+            {suffix}
+        </span>
+    );
+};
+
+
 
 const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -115,7 +153,9 @@ const InteractiveServices = () => {
                                 <div className="text-[#001528] mb-4 p-4 bg-gray-50 rounded-full">
                                     {stat.icon}
                                 </div>
-                                <h3 className="text-4xl font-extrabold text-[#001528] mb-2">{stat.value}</h3>
+                                <h3 className="text-4xl font-extrabold text-[#001528] mb-2">
+                                    <Counter value={stat.value} />
+                                </h3>
                                 <p className="text-gray-500 text-sm font-semibold tracking-wide uppercase">{stat.label}</p>
                             </motion.div>
                         ))}
