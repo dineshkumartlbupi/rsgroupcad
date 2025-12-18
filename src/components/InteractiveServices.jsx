@@ -6,7 +6,7 @@ import ClientSlider from './ClientSlider';
 
 const stats = [
     { icon: <Handshake className="w-8 h-8" />, value: "200+", label: "Success Stories" },
-    { icon: <FileCog className="w-8 h-8" />, value: "15k+", label: "Product Delivered" },
+    { icon: <FileCog className="w-8 h-8" />, value: "15k+", label: "Project Delivered" },
     { icon: <Layers className="w-8 h-8" />, value: "10x", label: "Multiple Services" },
     { icon: <Globe className="w-8 h-8" />, value: "24/7", label: "Global Operations" },
 ];
