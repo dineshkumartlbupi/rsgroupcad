@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Target, Zap, Globe } from 'lucide-react';
+import Team from '../components/Team';
 
 const AboutUs = () => {
     return (
@@ -110,6 +111,9 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Team Section */}
+            <Team />
 
             {/* Industry-First Training Section */}
             <section className="py-20 bg-white">

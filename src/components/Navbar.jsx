@@ -18,7 +18,7 @@ const Navbar = () => {
             path: '/services',
             dropdown: [
                 {
-                    name: 'Solar Design & Engineering',
+                    name: 'Solar Design & Engineering Stamp',
                     path: '/solar-design-services',
                     icon: <Sun className="w-5 h-5" />
                 },
