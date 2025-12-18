@@ -94,7 +94,7 @@ const Hero = () => {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto w-full">
+            <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto w-full pt-24 md:pt-32">
 
                 {/* Main Text Content Area */}
                 <div className="flex-grow flex items-center">

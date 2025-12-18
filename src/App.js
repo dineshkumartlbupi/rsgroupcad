@@ -47,7 +47,7 @@ function App() {
             <Route path="/ev-charging-station" element={<EVCharging />} />
             <Route path="/cad-design" element={<CADDesign />} />
             <Route path="/workforce-staffing" element={<WorkforceStaffing />} />
-            <Route path="/solar-installation" element={<SolarInstallation />} />
+            <Route path="/indian-solar-installation" element={<SolarInstallation />} />
             <Route path="/trading-procurement" element={<TradingProcurement />} />
 
             {/* Other Pages */}

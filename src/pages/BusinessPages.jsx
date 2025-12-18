@@ -268,7 +268,7 @@ export const WorkforceStaffing = () => (
 // 5. Solar Installation Services
 export const SolarInstallation = () => (
     <BusinessPage
-        title="Solar Installation Services"
+        title="Indian Solar Installation Services"
         subTitle="Expert installation crews for residential and commercial solar projects."
         image="https://plus.unsplash.com/premium_photo-1663076292870-8de8281bd817?q=80&w=1170&auto=format&fit=crop"
         description={[

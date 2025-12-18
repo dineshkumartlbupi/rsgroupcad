@@ -36,12 +36,16 @@ const Home = () => {
                 <WhyChooseUs />
             </section>
 
-            <CoreOfferings />
+
             <SectionWrapper>
                 {/* Client Slider Section */}
                 <div className="mt-0">
                     <ClientSlider />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <CoreOfferings />
             </SectionWrapper>
             <SectionWrapper>
                 <OurProcess />

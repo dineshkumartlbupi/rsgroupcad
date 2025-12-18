@@ -38,8 +38,8 @@ const Navbar = () => {
                     icon: <Layers className="w-5 h-5" />
                 },
                 {
-                    name: 'Solar Installation Services',
-                    path: '/solar-installation',
+                    name: 'Indian Solar Installation Services',
+                    path: '/indian-solar-installation',
                     icon: <Settings className="w-5 h-5" />
                 },
                 {
