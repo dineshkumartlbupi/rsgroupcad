@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform, useInView, animate } from "framer-motion";
 import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe, Heart } from 'lucide-react';
 
-import ClientSlider from './ClientSlider';
 
 const stats = [
     { icon: <Handshake className="w-8 h-8" />, value: "200+", label: "Success Stories" },

@@ -3,15 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, ClipboardList, PenTool, ShieldCheck, Truck, Users, Activity, Layers, Zap, Search, FileCheck, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const ProcessStep = ({ number, title, desc }) => (
-    <div className="relative pl-8 md:pl-0">
-        <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-gray-200"></div>
-        <div className="md:hidden absolute left-[-4px] top-0 w-2.5 h-2.5 rounded-full bg-[#E6A93E]"></div>
-        <div className="mb-2 text-[#E6A93E] font-bold text-xl">0{number}</div>
-        <h4 className="text-lg font-bold text-[#001528] mb-2">{title}</h4>
-        <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
-    </div>
-);
+
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -145,7 +137,7 @@ export const SolarDesign = () => (
         image="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
         description={[
             "RS Solar CAD Group specializes in delivering high-quality, code-compliant solar design plan sets for residential and commercial projects across the USA. Our team of experienced engineers and designers ensures that every plan meets strict AHJ (Authority Having Jurisdiction) and utility requirements to minimize rejection rates.",
-            "We go beyond basic drafting. We perform in-depth shading analysis, structural load calculations, and electrical string sizing to optimize system performance. Whether you are scaling up residential installs or tackling complex commercial arrays, our designs are built to streamline your permitting process."
+            "Solar permit design involves creating detailed blueprints for PV system installations, ensuring safety, code compliance, and efficient performance. We focus on specific engineering documentation and calculations to secure authorization from local authorities."
         ]}
         features={[
             "Proposal Drawings & Sales Layouts",
@@ -156,8 +148,22 @@ export const SolarDesign = () => (
             "Battery Storage Integration"
         ]}
         process={[
-            { title: "Data Collection", desc: "We gather site details, utility bills, and AHJ requirements to kickstart the design." },
-            { title: "Preliminary Design", desc: "Our team creates an optimized PV layout ensuring maximum production and aesthetics." },
+            {
+                title: "Data Collection",
+                desc: "We gather site details, utility bills, and AHJ requirements to kickstart the design."
+            },
+            {
+                title: "Preliminary Design",
+                desc: "Our team creates an optimized PV layout ensuring maximum production and aesthetics."
+            },
+            {
+                title: "Permit Design",
+                desc: "Solar permit design involves creating detailed blueprints for PV system installations, ensuring safety, code compliance, and efficient performance."
+            },
+            {
+                title: "E-Stamping",
+                desc: "Professional electrical and structural engineering stamps (PE/SE) applied to plan sets for AHJ approval."
+            },
             { title: "Engineering Review", desc: "Designs undergo rigorous structural and electrical checks for code compliance." },
             { title: "Final Delivery", desc: "You receive a complete permit package ready for submission to the city/utility." }
         ]}
