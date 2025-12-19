@@ -57,7 +57,7 @@ const teamMembers = [
         bio: 'Guiding teams towards operational excellence and project success.'
     },
     {
-        name: 'Mr. Abhishek',
+        name: 'Abhishek Kashyap',
         role: 'Sales Manager',
         image: abhishekImg,
         bio: 'Driving sales strategies and expanding market reach.'
