@@ -11,14 +11,12 @@ import ClientPortal from './pages/ClientPortal';
 import Careers from './pages/Careers';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import {
-  SolarDesign,
-  EVCharging,
-  CADDesign,
-  WorkforceStaffing,
-  SolarInstallation,
-  TradingProcurement
-} from './pages/BusinessPages';
+import SolarDesign from './pages/services/SolarDesign';
+import EVCharging from './pages/services/EVChargingStation';
+import CADDesign from './pages/services/CADDesign';
+import WorkforceStaffing from './pages/services/WorkforceStaffing';
+import SolarInstallation from './pages/services/SolarInstallation';
+import TradingProcurement from './pages/services/TradingProcurement';
 import ScrollToTop from './components/ScrollToTop';
 
 // Placeholder pages for others if not yet fully implemented

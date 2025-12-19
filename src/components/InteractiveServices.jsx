@@ -17,7 +17,8 @@ const services = [
         icon: <Sun className="w-6 h-6" />,
         desc: "Precise, code-compliant solar designs for residential & commercial projects. We optimize every layout for maximum energy production.",
         details: ["Proposal Drawings", "Permit Plan Sets", "As-Built Drawings", "Commercial Designs"],
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800",
+        highlight: true
     },
     {
         id: 'ev-permit',
@@ -25,7 +26,8 @@ const services = [
         icon: <Zap className="w-6 h-6" />,
         desc: "Expert EV permit, charging station layout, and approval services. Ensuring regulatory compliance and safety.",
         details: ["EV Charger Designs", "Load Calculations", "Site Layouts", "Safety Compliance"],
-        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800",
+        highlight: true
     },
     {
         id: 'cad-design',
@@ -33,7 +35,8 @@ const services = [
         icon: <PenTool className="w-6 h-6" />,
         desc: "High-quality CAD drafting for architectural, structural, and electrical requirements.",
         details: ["Architectural Drawings", "Structural Drafting", "Civil Layouts", "Electrical Schematics"],
-        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
+        highlight: true
     },
     {
         id: 'workforce-staffing',
@@ -239,7 +242,7 @@ const InteractiveServices = () => {
                                         {service.desc}
                                     </p>
 
-                                    <div className="space-y-2 mb-6">
+                                    <div className={`space-y-2 mb-6 ${service.highlight ? 'border-l-4 border-red-500 pl-4' : ''}`}>
                                         {service.details.map((detail, idx) => (
                                             <div key={idx} className="flex items-center text-xs text-gray-500">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mr-2"></div>

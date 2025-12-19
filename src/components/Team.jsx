@@ -3,14 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 
-import jitendraImg from '../assets/team/jitendra_kumar.jpg';
+import jitendraImg from '../assets/team/jitendra_kumar_v2.png';
 import sauravImg from '../assets/team/saurav_kumar.jpg';
 import rahulImg from '../assets/team/rahul_kumar.jpg';
 import amreenImg from '../assets/team/amreen_jahan.jpg';
 import kailashImg from '../assets/team/kailash_singh.jpg';
 import agamImg from '../assets/team/agam_bhardwaj.jpg';
 import shaliniImg from '../assets/team/shalini_shah.jpg';
-import abhishekImg from '../assets/team/abhishek.jpg';
+import abhishekImg from '../assets/team/abhishek_kashyap.png';
 import mohitImg from '../assets/team/mohit.jpg';
 
 const teamMembers = [
@@ -116,15 +116,15 @@ const Team = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: idx * 0.1 }}
-                            className="group relative"
+                            className="group relative h-full"
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white">
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white h-full flex flex-col">
                                 <div className="aspect-w-3 aspect-h-4 relative overflow-hidden group-hover:shadow-2xl transition-all duration-500">
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className="w-full h-96 object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                                        className="w-full h-96 object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
                                     />
 
                                     {/* Social Icons Overlay */}
@@ -141,7 +141,7 @@ const Team = () => {
                                     </div>
                                 </div>
 
-                                <div className="p-6 text-center border-b-4 border-rsBlue group-hover:border-rsRed transition-colors duration-300">
+                                <div className="p-6 text-center border-b-4 border-rsBlue group-hover:border-rsRed transition-colors duration-300 flex-grow flex flex-col justify-between">
                                     <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-rsBlue transition-colors">{member.name}</h3>
                                     <p className="text-sm font-semibold text-rsRed uppercase tracking-wider mb-4">{member.role}</p>
                                     <p className="text-gray-500 text-sm leading-relaxed mb-2 opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto transition-all duration-300 overflow-hidden transform translate-y-4 group-hover:translate-y-0">

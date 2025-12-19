@@ -91,6 +91,20 @@ const WhyChooseUs = () => {
                     >
                         We combine engineering precision with real-world installation experience to deliver designs that work.
                     </motion.p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed space-y-4 mt-6"
+                    >
+                        <p>
+                            Clients trust RS Solar CAD Group for our consistency, technical depth, and execution reliability. Our engineers are not only design experts but also field-trained professionals who understand real-world installation challenges.
+                        </p>
+                        <p>
+                            By offering flexible engagement models, quick turnaround times, and performance-driven SLAs, we allow our partners to focus on growth while we manage design complexity with confidence and accountability.
+                        </p>
+                    </motion.div>
                 </div>
 
                 <motion.div

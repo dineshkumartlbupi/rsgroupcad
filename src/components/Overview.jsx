@@ -1,4 +1,4 @@
-import logo from '../assets/header_logo.png';
+import officeBrandingImg from '../assets/office_branding_v2.png';
 
 const Overview = () => {
     return (
@@ -10,26 +10,26 @@ const Overview = () => {
                         <h2 className="text-lg font-bold text-rsRed uppercase tracking-widest mb-2">Who We Are</h2>
                         <h3 className="text-4xl md:text-5xl font-bold text-rsBlue mb-6">Our Company Overview</h3>
                         <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                            Welcome to <span className="font-bold text-rsBlue">RS Solar CAD Group</span>. Beyond just design, we provide a complete back-office ecosystem that empowers your solar business to scale efficiently.
+                            <span className="font-bold text-rsBlue">RS Solar CAD Group</span> is a global solar engineering and design services firm delivering precise, code-compliant solutions to solar installers, contractors, and EPCs throughout the United States. Our focus is on simplifying design complexity and enhancing execution efficiency through dependable engineering support.
+                        </p>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            With a strong foundation in the engineering and design domain, we have successfully supported solar projects across the U.S. and Europe. By combining cost-effective service models with rapid delivery, we enable our partners to scale without operational strain.
+                        </p>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            Every design is developed in strict accordance with AHJ guidelines, NEC, fire and building codes, and utility standards. Our team brings specialized expertise in residential solar systems along with a deep understanding of jurisdiction-specific requirements.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            We specialize in providing precise solar design, proposals, permit plan sets, and engineering stamps for residential and commercial projects across the USA.
+                            Our offerings span solar sales proposals, permit-ready plan sets, interconnection documentation, professional engineering support, and as-built drawings.
                         </p>
                     </div>
                     <div className="lg:w-1/2 relative">
                         <div className="absolute inset-0 bg-rsBlue transform rotate-3 rounded-3xl opacity-10"></div>
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 group">
                             <img
-                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                src={officeBrandingImg}
                                 alt="RS Solar Office"
                                 className="w-full h-full object-cover"
                             />
-                            {/* Logo Overlay */}
-                            <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-                                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
-                                    <img src={logo} alt="RS Solar CAD Group" className="h-16 w-auto" />
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,5 +38,7 @@ const Overview = () => {
         </section>
     );
 };
+
+
 
 export default Overview;
