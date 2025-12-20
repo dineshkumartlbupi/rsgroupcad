@@ -56,6 +56,10 @@ const ContactUs = () => {
                                     <input type="email" id="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="john@example.com" />
                                 </div>
                                 <div>
+                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Mobile Number</label>
+                                    <input type="tel" id="phone" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="+1 (555) 000-0000" />
+                                </div>
+                                <div>
                                     <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                                     <textarea id="message" rows={4} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="How can we help you?"></textarea>
                                 </div>

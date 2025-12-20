@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WelcomePopup from './components/WelcomePopup';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Services from './pages/Services';
 import Blogs from './pages/Blogs';
+import BlogDetails from './pages/BlogDetails';
 import ClientPortal from './pages/ClientPortal';
 import Careers from './pages/Careers';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -31,6 +33,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <WelcomePopup />
       <div className="font-sans antialiased text-gray-900 bg-white flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -50,6 +53,7 @@ function App() {
 
             {/* Other Pages */}
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:id" element={<BlogDetails />} />
             <Route path="/press-release" element={<PlaceholderPage title="Press Release" />} />
             <Route path="/media" element={<PlaceholderPage title="Media" />} />
             <Route path="/client-portal" element={<ClientPortal />} />

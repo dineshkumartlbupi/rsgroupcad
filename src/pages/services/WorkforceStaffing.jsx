@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Users, ShieldCheck, Search, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
+import workforceStaffingHeroImg from '../../assets/hero/workforce_staffing_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -17,7 +18,7 @@ const BenefitCard = ({ icon, title, desc }) => (
 const WorkforceStaffing = () => {
     const title = "Workforce & Technical Staffing";
     const subTitle = "On-demand access to specialized solar and engineering talent.";
-    const image = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800";
+    const image = workforceStaffingHeroImg;
 
     const description = [
         "Scaling a technical team is challenging. RS Solar CAD Group simplifies this with our specialized Staffing Solutions. We provide pre-vetted, industry-trained talent specifically for the solar and AEC (Architecture, Engineering, Construction) sectors. Forget the hassle of recruiting, training, and retaining niche technical staff.",

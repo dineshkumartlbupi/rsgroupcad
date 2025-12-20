@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
+import tradingProcurementHeroImg from '../../assets/hero/trading_procurement_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -17,7 +18,7 @@ const BenefitCard = ({ icon, title, desc }) => (
 const TradingProcurement = () => {
     const title = "Trading & Procurement";
     const subTitle = "End-to-end supply chain solutions for solar components.";
-    const image = "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&q=80&w=800";
+    const image = tradingProcurementHeroImg;
 
     const description = [
         "In the volatile solar market, securing equipment at the right price and time is critical. Our Trading & Procurement division leverages global relationships with Tier-1 manufacturers to source high-quality PV modules, inverters, and BOS components.",

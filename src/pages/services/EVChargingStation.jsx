@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Zap, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
+import evChargingHeroImg from '../../assets/hero/ev_charging_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -17,7 +18,7 @@ const BenefitCard = ({ icon, title, desc }) => (
 const EVCharging = () => {
     const title = "EV Charging Station Plans";
     const subTitle = "Comprehensive design and permitting for residential & commercial EV infrastructure.";
-    const image = "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800";
+    const image = evChargingHeroImg;
 
     const description = [
         "The transition to electric mobility is accelerating, and robust infrastructure is the backbone of this shift. RS Solar CAD Group provides end-to-end design and engineering services for Electric Vehicle Service Equipment (EVSE) installations. We support electrical contractors, developers, and homeowners by delivering permit-ready plan sets that meet all NEC and local utility requirements.",

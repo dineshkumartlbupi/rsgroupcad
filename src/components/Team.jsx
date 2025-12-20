@@ -1,13 +1,10 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
-
-import jitendraImg from '../assets/team/jitendra_kumar_v2.png';
+import jitendraImg from '../assets/team/jitendra_kumar.jpg';
 import sauravImg from '../assets/team/saurav_kumar.jpg';
 import rahulImg from '../assets/team/rahul_kumar.jpg';
 import amreenImg from '../assets/team/amreen_jahan.jpg';
-import kailashImg from '../assets/team/kailash_singh.jpg';
+import kailashImg from '../assets/team/kailash_singh.png';
 import agamImg from '../assets/team/agam_bhardwaj.jpg';
 import shaliniImg from '../assets/team/shalini_shah.jpg';
 import abhishekImg from '../assets/team/abhishek_kashyap.png';
@@ -127,18 +124,7 @@ const Team = () => {
                                         className="w-full h-96 object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
                                     />
 
-                                    {/* Social Icons Overlay */}
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 flex justify-center space-x-4">
-                                        <a href="#" className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-rsRed hover:text-white transition-colors">
-                                            <Linkedin size={20} />
-                                        </a>
-                                        <a href="#" className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-rsRed hover:text-white transition-colors">
-                                            <Twitter size={20} />
-                                        </a>
-                                        <a href="#" className="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-rsRed hover:text-white transition-colors">
-                                            <Mail size={20} />
-                                        </a>
-                                    </div>
+
                                 </div>
 
                                 <div className="p-6 text-center border-b-4 border-rsBlue group-hover:border-rsRed transition-colors duration-300 flex-grow flex flex-col justify-between">

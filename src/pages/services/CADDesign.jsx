@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, PenTool, Layers, Activity, ShieldCheck, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
+import cadDesignHeroImg from '../../assets/hero/cad_design_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -17,7 +18,7 @@ const BenefitCard = ({ icon, title, desc }) => (
 const CADDesign = () => {
     const title = "CAD Design & Drafting";
     const subTitle = "Seamless extension of your engineering team with high-precision drafting.";
-    const image = "https://images.unsplash.com/photo-1581094794329-cd1096a7a750?auto=format&fit=crop&q=80&w=800";
+    const image = cadDesignHeroImg;
 
     const description = [
         "In the fast-paced world of engineering and construction, accuracy is everything. RS Solar CAD Group delivers high-precision CAD Design & Drafting services that serve as a seamless extension of your in-house team. We support architects, engineers, and construction firms by transforming concepts into detailed, workable drawings.",

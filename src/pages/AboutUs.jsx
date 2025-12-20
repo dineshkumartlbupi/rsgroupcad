@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Target, Zap, Globe, XCircle } from 'lucide-react';
 import Team from '../components/Team';
 import officeBrandingImg from '../assets/office_branding_v2.png';
+import engineeringChallengesImg from '../assets/engineering_challenges.png';
+import solarTraining1Img from '../assets/solar_training_1.png';
+import solarTraining2Img from '../assets/solar_training_2.png';
+import installationTrainingHeroImg from '../assets/installation_training_hero.png';
 
 const AboutUs = () => {
     return (
@@ -151,8 +155,8 @@ const AboutUs = () => {
                             <div className="relative group">
                                 <div className="absolute -inset-4 bg-rsRed/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1581094794329-cd1096a7a750?auto=format&fit=crop&q=80&w=800"
-                                    alt="Engineering Challenges"
+                                    src={installationTrainingHeroImg}
+                                    alt="Industry-First On-Site Installation Training"
                                     className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[500px]"
                                 />
                                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg z-20">
@@ -197,12 +201,12 @@ const AboutUs = () => {
                         <div className="md:w-1/2">
                             <div className="grid grid-cols-2 gap-4">
                                 <img
-                                    src="https://plus.unsplash.com/premium_photo-1663076292870-8de8281bd817?q=80&w=1170&auto=format&fit=crop"
+                                    src={solarTraining1Img}
                                     alt="Solar Installation Training"
                                     className="rounded-2xl shadow-lg w-full h-64 object-cover transform translate-y-8"
                                 />
                                 <img
-                                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
+                                    src={solarTraining2Img}
                                     alt="Field Work"
                                     className="rounded-2xl shadow-lg w-full h-64 object-cover"
                                 />

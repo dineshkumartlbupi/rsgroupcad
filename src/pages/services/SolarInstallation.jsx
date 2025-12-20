@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, HardHat, Activity, ShieldCheck, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
+import solarInstallationHeroImg from '../../assets/hero/solar_installation_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -17,7 +18,7 @@ const BenefitCard = ({ icon, title, desc }) => (
 const SolarInstallation = () => {
     const title = "Indian Solar Installation Services";
     const subTitle = "Expert installation crews for residential and commercial solar projects.";
-    const image = "https://plus.unsplash.com/premium_photo-1663076292870-8de8281bd817?q=80&w=1170&auto=format&fit=crop";
+    const image = solarInstallationHeroImg;
 
     const description = [
         "Design is only half the battle. RS Solar CAD Group offers professional Solar Installation Services to bring your projects to life. We partner with EPCs and developers to provide skilled installation crews for rooftop, ground-mount, and carport systems.",
