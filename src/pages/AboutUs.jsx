@@ -215,7 +215,7 @@ const AboutUs = () => {
                                         <p className="text-2xl font-bold">100%</p>
                                         <p className="text-sm opacity-80">Field-Trained Engineers</p>
                                     </div>
-                                    <CheckCircle className="w-10 h-10 text-green-400" />
+                                    <CheckCircle className="w-10 h-10 text-blue-400" />
                                 </div>
                             </div>
                         </div>
@@ -223,14 +223,14 @@ const AboutUs = () => {
                         <div className="md:w-1/2">
                             <div className="mb-8">
                                 <h4 className="text-3xl font-bold text-gray-900 mb-2">We Changed The Model.</h4>
-                                <div className="w-24 h-1.5 bg-green-500 rounded-full mb-6"></div>
+                                <div className="w-24 h-1.5 bg-blue-500 rounded-full mb-6"></div>
                                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                                    In 2025, RS Solar CAD Group launched <span className="font-bold text-green-600">India’s first Solar Design Training Program</span> with Real On-Site Installation Exposure. Our engineers are trained directly on live solar projects.
+                                    In 2025, RS Solar CAD Group launched <span className="font-bold text-blue-600">India’s first Solar Design Training Program</span> with Real On-Site Installation Exposure. Our engineers are trained directly on live solar projects.
                                 </p>
                             </div>
 
-                            <div className="bg-green-50 rounded-2xl p-8 border border-green-100 mb-8">
-                                <h5 className="font-bold text-green-800 mb-4 uppercase text-sm tracking-wide">Hands-on Experience In:</h5>
+                            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 mb-8">
+                                <h5 className="font-bold text-blue-800 mb-4 uppercase text-sm tracking-wide">Hands-on Experience In:</h5>
                                 <ul className="grid grid-cols-1 gap-4">
                                     {[
                                         "Practical PV layout and stringing methods",
@@ -241,7 +241,7 @@ const AboutUs = () => {
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start text-gray-800">
                                             <div className="bg-white p-1 rounded-full mr-3 shadow-sm mt-0.5">
-                                                <CheckCircle className="w-5 h-5 text-green-600" />
+                                                <CheckCircle className="w-5 h-5 text-blue-600" />
                                             </div>
                                             <span className="text-lg font-medium">{item}</span>
                                         </li>
@@ -249,7 +249,7 @@ const AboutUs = () => {
                                 </ul>
                             </div>
 
-                            <p className="text-gray-600 leading-relaxed mb-8 italic border-l-4 border-green-500 pl-4">
+                            <p className="text-gray-600 leading-relaxed mb-8 italic border-l-4 border-blue-500 pl-4">
                                 "This real-world training enables our engineers to deliver designs that are more accurate, more practical, and fully aligned with field realities."
                             </p>
 

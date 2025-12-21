@@ -16,35 +16,35 @@ const BenefitCard = ({ icon, title, desc }) => (
 );
 
 const WorkforceStaffing = () => {
-    const title = "Workforce & Technical Staffing";
-    const subTitle = "On-demand access to specialized solar and engineering talent.";
+    const title = "Workforce & Staffing Solutions";
+    const subTitle = "Agile, domain-focused staffing solutions for global product companies, engineering firms, and solar businesses.";
     const image = workforceStaffingHeroImg;
 
     const description = [
-        "Scaling a technical team is challenging. RS Solar CAD Group simplifies this with our specialized Staffing Solutions. We provide pre-vetted, industry-trained talent specifically for the solar and AEC (Architecture, Engineering, Construction) sectors. Forget the hassle of recruiting, training, and retaining niche technical staff.",
-        "Whether you need a dedicated remote CAD designer, a solar design engineer, or a back-office support team for proposal generation, we can deploy the right talent within days. Our 'staff leasing' model gives you full control over the employee while we handle HR, payroll, and infrastructure."
+        "With over 7+ years of industry experience, RS Group delivers agile, domain-focused staffing solutions for global product companies, engineering firms, solar businesses, and design organizations. We don't just supply manpower—we deploy ready-to-perform professionals who integrate seamlessly into your workflows, tools, and delivery models.",
+        "Whether you require remote technical teams, on-site consultants, or rapid-response specialists, our talent adapts fast, contributes from day one, and scales as your business grows. This makes RS Group a trusted partner for companies that demand speed, flexibility, and operational excellence."
     ];
 
     const features = [
-        "Dedicated Solar Design Engineers",
-        "Remote CAD Drafters",
-        "Proposal & Sales Support Teams",
-        "Project Coordinators",
-        "Short-term & Long-term Placements",
-        "Fully Managed HR & Payroll"
+        "Dedicated Task Teams aligned with your SOPs and KPIs",
+        "Rapid Deployment Staffing (24-72 hour turnaround)",
+        "Flexible short-term and long-term engagement models",
+        "Remote Technical Specialists for global operations",
+        "On-Site Consultants for hands-on collaboration",
+        "Fully Managed HR & Payroll infrastructure"
     ];
 
     const process = [
-        { title: "Needs Assessment", desc: "We define the skill set, experience level, and software proficiency required." },
-        { title: "Candidate Screening", desc: "We source and test candidates specifically on solar/CAD tasks." },
-        { title: "Interview & Selction", desc: "You interview the shortlisted candidates to ensure a culture fit." },
-        { title: "Onboarding", desc: "We set up their hardware/software and integrate them into your workflow." }
+        { title: "Dedicated Task Teams", desc: "Exclusive, client-aligned teams trained on your software, SOPs, KPIs, and quality standards—functioning as a true extension of your in-house workforce." },
+        { title: "Rapid Deployment", desc: "Deploy skilled professionals within 24–72 hours to support urgent workloads, tight deadlines, and mission-critical delivery." },
+        { title: "Flexible Engagement", desc: "Custom-built engagement structures around your project lifecycle—short-term capacity boosts to long-term operational support." },
+        { title: "Remote & On-Site", desc: "Access global technical talent remotely or deploy on-site consultants for real-time coordination and deeper process alignment." }
     ];
 
     const benefits = [
-        { icon: <Users />, title: "Plugin Resources", desc: "Immediate access to trained professionals who hit the ground running." },
-        { icon: <ShieldCheck />, title: "Zero Overhead", desc: "No infrastructure, benefits, or training costs for you." },
-        { icon: <Search />, title: "Niche Expertise", desc: "Talent that already understands NEC codes and AHJ requirements." }
+        { icon: <Users />, title: "Ready-to-Perform Talent", desc: "Pre-vetted professionals who integrate seamlessly and contribute from day one." },
+        { icon: <ShieldCheck />, title: "Speed & Flexibility", desc: "Rapid deployment and scalable teams without the risks of permanent hiring." },
+        { icon: <Search />, title: "Industry Expertise", desc: "7+ years of domain-focused experience in solar, engineering, and design operations." }
     ];
 
     return (
@@ -115,7 +115,7 @@ const WorkforceStaffing = () => {
                     <div className="flex flex-col lg:flex-row gap-16 items-start mb-24">
                         {/* Left Column: Description & Features */}
                         <div className="lg:w-3/5">
-                            <h3 className="text-3xl font-bold text-[#001528] mb-6">Service Overview</h3>
+                            <h3 className="text-3xl font-bold text-[#001528] mb-6">Our Flexible Staffing Models</h3>
                             <div className="text-gray-600 text-lg leading-relaxed mb-10 space-y-4">
                                 {description.map((para, i) => (
                                     <p key={i}>{para}</p>
@@ -123,7 +123,7 @@ const WorkforceStaffing = () => {
                             </div>
 
                             <div className="bg-[#f8f9fa] rounded-2xl p-8 border border-gray-100 shadow-sm">
-                                <h4 className="text-xl font-bold text-[#001528] mb-6">Key Capabilities</h4>
+                                <h4 className="text-xl font-bold text-[#001528] mb-6">Staffing Solutions</h4>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {features && features.map((feature, i) => (
                                         <div key={i} className="flex items-start group">
@@ -161,14 +161,11 @@ const WorkforceStaffing = () => {
                     {benefits && (
                         <div className="mb-24">
                             <div className="text-center mb-12">
-                                <h3 className="text-3xl font-bold text-[#001528] mb-4">Why Choose Us</h3>
+                                <h3 className="text-3xl font-bold text-[#001528] mb-4">Why RS Group</h3>
                                 <div className="w-20 h-1.5 bg-[#E6A93E] rounded-full mx-auto mb-8"></div>
                                 <div className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed space-y-4">
                                     <p>
-                                        Clients trust RS Solar CAD Group for our consistency, technical depth, and execution reliability. Our engineers are not only design experts but also field-trained professionals who understand real-world installation challenges.
-                                    </p>
-                                    <p>
-                                        By offering flexible engagement models, quick turnaround times, and performance-driven SLAs, we allow our partners to focus on growth while we manage design complexity with confidence and accountability.
+                                        We combine industry expertise, speed, and flexibility to deliver staffing solutions that actually work in real-world operations. From one specialist to full-scale teams, RS Group helps you stay competitive, responsive, and always ready to deliver.
                                     </p>
                                 </div>
                             </div>
@@ -183,9 +180,9 @@ const WorkforceStaffing = () => {
                     {/* CTA */}
                     <div className="bg-[#E6A93E] rounded-3xl p-12 text-center relative overflow-hidden">
                         <div className="absolute inset-0 bg-[#001528] opacity-5 pattern-grid-lg"></div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#001528] mb-6 relative z-10">Ready to Optimize Your Project?</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#001528] mb-6 relative z-10">Build Your Dream Team</h2>
                         <p className="text-[#001528]/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">
-                            Partner with RS Solar CAD Group for world-class engineering and design support tailored to your needs.
+                            Partner with RS Group to scale your technical teams with ready-to-perform professionals who deliver from day one.
                         </p>
                         <Link to="/contact-us" className="relative z-10 inline-flex items-center justify-center bg-[#001528] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-white hover:text-[#001528] transition-all duration-300 shadow-xl">
                             Get A Free Quote

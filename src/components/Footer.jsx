@@ -13,7 +13,7 @@ import {
     MapPin,
     ExternalLink
 } from 'lucide-react';
-import logo from '../assets/logo_white.png';
+import logo from '../assets/logo_footer.png';
 
 const Footer = () => {
     const [showScrollTop, setShowScrollTop] = useState(false);
@@ -61,9 +61,9 @@ const Footer = () => {
     return (
         <footer className="bg-[#0d1b42] text-white pt-20 pb-8 relative overflow-hidden font-sans border-t border-gray-800">
             {/* Background Logo */}
-            <div className="absolute -bottom-24 -right-24 w-[600px] h-[600px] opacity-[0.05] pointer-events-none rotate-12">
+            {/* <div className="absolute -bottom-24 -right-24 w-[600px] h-[600px] opacity-[0.05] pointer-events-none rotate-12">
                 <img src={logo} alt="Background Logo" className="w-full h-full object-contain filter brightness-200" />
-            </div>
+            </div> */}
 
             {/* Background Elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-rsRed/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
@@ -75,11 +75,11 @@ const Footer = () => {
                     <div className="max-w-2xl">
                         {/* Brand Logo - Top Left */}
                         <div className="mb-8 bg-white p-3 rounded-lg inline-block backdrop-blur-sm border border-white/10">
-                            <img src={logo} alt="RS Solar CAD Group" className="h-12 w-auto" />
+                            <img src={logo} alt="RS Solar CAD Group" className="h-38 w-40" />
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
-                            We'd Love to <br/>
+                            We'd Love to <br />
                             <span className="text-rsRed">Work Together</span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed max-w-xl mb-6">
@@ -135,9 +135,9 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="tel:+13472188830" className="flex items-center hover:text-white transition-colors group">
-                                        <Phone className="w-4 h-4 mr-3 text-rsRed group-hover:scale-110 transition-transform" />
-                                        +1 347 218 8830
+                                    <a href="https://wa.me/19129804481" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors group">
+                                        <MessageCircle className="w-4 h-4 mr-3 text-rsRed group-hover:scale-110 transition-transform" />
+                                        +1 (912) 980 4481
                                     </a>
                                 </li>
                                 <li>
@@ -203,32 +203,22 @@ const Footer = () => {
                             { label: 'EV Charging Station', to: '/ev-charging-station' },
                             { label: 'Trading & Procurement', to: '/trading-procurement' },
                             { label: 'Roofing & Measurement', to: '/services' },
-                            { label: 'Telecom Drafting', to: '/services' },
                             { label: 'Evacuation Plans', to: '/services' },
-                            { label: 'GIS Mapping', to: '/services' },
                         ]}
                     />
 
-                    {/* What We Do - Column 2 */}
-                    <div className="flex flex-col space-y-4 pt-0 md:pt-8 bg-transparent">
-                        <ul className="space-y-2 mt-auto">
-                            {[
-                                { label: 'Utility Mapping', to: '/services' },
-                                { label: 'FTTx', to: '/services' },
-                                { label: 'Mapping and Navigation', to: '/services' },
-                                { label: 'Business Process', to: '/services' },
-                                { label: 'Staffing Services', to: '/workforce-staffing' },
-                                { label: 'Customer Contact Center', to: '/services' },
-                                { label: 'Workflow Management', to: '/services' }
-                            ].map((item, idx) => (
-                                <li key={idx}>
-                                    <Link to={item.to} className="text-gray-400 hover:text-white text-sm transition-colors duration-200 block py-0.5 hover:underline decoration-rsRed/50 underline-offset-4">
-                                        {item.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <LinkGroup
+                        title="What We Do"
+                        links={[
+                            { label: 'CAD Drafting', to: '/cad-design' },
+                            { label: 'Solar Design Service', to: '/solar-design-services' },
+                            { label: 'EV Charging Station', to: '/ev-charging-station' },
+                            { label: 'Trading & Procurement', to: '/trading-procurement' },
+                            { label: 'Roofing & Measurement', to: '/services' },
+                            { label: 'Evacuation Plans', to: '/services' },
+                        ]}
+                    />
+
 
                     <LinkGroup
                         title="Who We Serve"
@@ -238,10 +228,7 @@ const Footer = () => {
                             { label: 'Solar Installers', to: '/indian-solar-installation' },
                             { label: 'Exterior Contractors', to: '/services' },
                             { label: 'Roofing Companies', to: '/services' },
-                            { label: 'Home Builders', to: '/services' },
                             { label: 'Insurance Carriers', to: '/services' },
-                            { label: 'AEC Companies', to: '/services' },
-                            { label: 'EPC Companies', to: '/services' },
                         ]}
                     />
 
@@ -257,7 +244,6 @@ const Footer = () => {
                             title="Resources"
                             links={[
                                 { label: 'Posts & Updates', to: '/blogs' },
-                                { label: 'Glossary', to: '/blogs' },
                                 { label: 'FAQ', to: '/contact-us' },
                             ]}
                         />
@@ -267,18 +253,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-end md:items-center relative">
 
-                    {/* Left: Certifications */}
-                    <div className="flex items-center gap-4 mb-6 md:mb-0 opacity-80">
-                        <div className="border border-gray-600 rounded-full w-12 h-12 flex items-center justify-center text-[10px] text-center text-gray-400 hover:border-rsRed transition-colors cursor-default">
-                            SEIA<br />Member
-                        </div>
-                        <div className="border border-gray-600 rounded-full w-12 h-12 flex items-center justify-center text-[10px] text-center text-gray-400 hover:border-rsRed transition-colors cursor-default">
-                            ISO<br />9001
-                        </div>
-                        <div className="border border-gray-600 rounded-full w-12 h-12 flex items-center justify-center text-[10px] text-center text-gray-400 hover:border-rsRed transition-colors cursor-default">
-                            ISO<br />27001
-                        </div>
-                    </div>
+
 
                     {/* Center: Copyright */}
                     <div className="text-xs text-gray-500 mb-4 md:mb-0 text-center">

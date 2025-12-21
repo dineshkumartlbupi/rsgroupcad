@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform, useInView, animate } from "framer-motion";
 import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 const stats = [
@@ -18,7 +19,8 @@ const services = [
         desc: "Precise, code-compliant solar designs for residential & commercial projects. We optimize every layout for maximum energy production.",
         details: ["Proposal Drawings", "Permit Plan Sets", "As-Built Drawings", "Commercial Designs"],
         image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800",
-        highlight: true
+        highlight: true,
+        link: '/solar-design-services'
     },
     {
         id: 'ev-permit',
@@ -27,7 +29,8 @@ const services = [
         desc: "Expert EV permit, charging station layout, and approval services. Ensuring regulatory compliance and safety.",
         details: ["EV Charger Designs", "Load Calculations", "Site Layouts", "Safety Compliance"],
         image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800",
-        highlight: true
+        highlight: true,
+        link: '/ev-charging-station'
     },
     {
         id: 'cad-design',
@@ -36,7 +39,8 @@ const services = [
         desc: "High-quality CAD drafting for architectural, structural, and electrical requirements.",
         details: ["Architectural Drawings", "Structural Drafting", "Civil Layouts", "Electrical Schematics"],
         image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
-        highlight: true
+        highlight: true,
+        link: '/cad-design'
     },
     {
         id: 'workforce-staffing',
@@ -44,7 +48,8 @@ const services = [
         icon: <Layers className="w-6 h-6" />,
         desc: "Accurate 3D BIM modeling and dedicated staffing for solar projects. Visualize potential clashes and optimize routing.",
         details: ["Dedicated Engineers", "CAD Designers", "Back-office Teams", "Remote Staffing"],
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
+        link: '/workforce-staffing'
     },
     {
         id: 'structural',
@@ -52,7 +57,8 @@ const services = [
         icon: <Settings className="w-6 h-6" />,
         desc: "Professional structural load analysis and support design. We ensure rooftops and ground mounts meet safety standards.",
         details: ["Installation Services", "Structural Analysis", "Mounting Systems", "Safety Standards"],
-        image: "https://plus.unsplash.com/premium_photo-1663076292870-8de8281bd817?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+        image: "https://plus.unsplash.com/premium_photo-1663076292870-8de8281bd817?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
+        link: '/indian-solar-installation'
     },
     {
         id: 'solar-trading',
@@ -60,7 +66,8 @@ const services = [
         icon: <CheckCircle className="w-6 h-6" />,
         desc: "Complete procurement services for solar PV modules, inverters, and balance of systems.",
         details: ["PV Modules & Inverters", "Mounting Structures", "Battery Storage", "Monitoring Systems"],
-        image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&q=80&w=800",
+        link: '/trading-procurement'
     },
 ];
 
@@ -119,14 +126,7 @@ const cardVariants = {
 const InteractiveServices = () => {
     return (
         <section className="relative w-full bg-white py-24 font-sans overflow-hidden">
-            {/* Right Side Wireframe Decoration */}
-            <div className="absolute top-0 right-0 w-1/2 h-full z-0 opacity-10 pointer-events-none hidden lg:block">
-                <img
-                    src="https://img.freepik.com/premium-vector/city-buildings-wireframe-blue-background-vector-illustration_547674-325.jpg?w=1060"
-                    alt="Wireframe"
-                    className="w-full h-full object-cover object-left grayscale"
-                />
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Stats Bar */}
@@ -200,69 +200,74 @@ const InteractiveServices = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <motion.div
+                        <Link
                             key={service.id}
-                            custom={index}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
-                            variants={cardVariants}
-                            className="group relative flex flex-col bg-[#0a1f35] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#E6A93E]/60 transition-colors duration-300"
+                            to={service.link}
+                            className="block"
                         >
-                            {/* Service Image */}
-                            <div className="h-48 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-[#0a1f35]/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                                <img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                                />
-                                {/* Index Badge */}
-                                <div className="absolute top-4 right-4 z-20 bg-[#001528]/90 backdrop-blur text-[#E6A93E] text-xs font-bold px-3 py-1 rounded border border-[#E6A93E]/20">
-                                    {`0${index + 1}`}
+                            <motion.div
+                                custom={index}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-50px" }}
+                                variants={cardVariants}
+                                className="group relative flex flex-col bg-[#0a1f35] rounded-2xl overflow-hidden border border-gray-800 hover:border-[#E6A93E]/60 transition-colors duration-300 h-full cursor-pointer"
+                            >
+                                {/* Service Image */}
+                                <div className="h-48 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-[#0a1f35]/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                    <img
+                                        src={service.image}
+                                        alt={service.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                                    />
+                                    {/* Index Badge */}
+                                    <div className="absolute top-4 right-4 z-20 bg-[#001528]/90 backdrop-blur text-[#E6A93E] text-xs font-bold px-3 py-1 rounded border border-[#E6A93E]/20">
+                                        {`0${index + 1}`}
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Content */}
-                            <div className="p-6 flex-grow flex flex-col relative">
-                                {/* Icon Halo */}
-                                <div className="absolute -top-10 left-6">
-                                    <div className="w-16 h-16 rounded-xl bg-[#001528] flex items-center justify-center border border-gray-700 group-hover:border-[#E6A93E] transition-colors duration-300 shadow-xl">
-                                        <div className="text-[#E6A93E]">
-                                            {service.icon}
+                                {/* Content */}
+                                <div className="p-6 flex-grow flex flex-col relative">
+                                    {/* Icon Halo */}
+                                    <div className="absolute -top-10 left-6">
+                                        <div className="w-16 h-16 rounded-xl bg-[#001528] flex items-center justify-center border border-gray-700 group-hover:border-[#E6A93E] transition-colors duration-300 shadow-xl">
+                                            <div className="text-[#E6A93E]">
+                                                {service.icon}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-8">
+                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                            {service.title}
+                                        </h3>
+                                        <p className="text-white text-sm leading-relaxed mb-6 line-clamp-3">
+                                            {service.desc}
+                                        </p>
+
+                                        <div className={`space-y-2 mb-6 ${service.highlight ? 'border-l-4 border-[#E6A93E] pl-4' : ''}`}>
+                                            {service.details.map((detail, idx) => (
+                                                <div key={idx} className="flex items-center text-xs text-white">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mr-2 text-white"></div>
+                                                    {detail}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-auto pt-4 border-t border-gray-800 flex items-center justify-between">
+                                        <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider group-hover:text-white transition-colors">Learn More</span>
+                                        <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-[#E6A93E] group-hover:text-black transition-all duration-300">
+                                            <ArrowRight className="w-4 h-4 transform group-hover:-rotate-45 transition-transform duration-300" />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="pt-8">
-                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#E6A93E] transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                                        {service.desc}
-                                    </p>
-
-                                    <div className={`space-y-2 mb-6 ${service.highlight ? 'border-l-4 border-red-500 pl-4' : ''}`}>
-                                        {service.details.map((detail, idx) => (
-                                            <div key={idx} className="flex items-center text-xs text-gray-500">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mr-2"></div>
-                                                {detail}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="mt-auto pt-4 border-t border-gray-800 flex items-center justify-between">
-                                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider group-hover:text-white transition-colors">Learn More</span>
-                                    <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-[#E6A93E] group-hover:text-black transition-all duration-300">
-                                        <ArrowRight className="w-4 h-4 transform group-hover:-rotate-45 transition-transform duration-300" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Hover Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#E6A93E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                        </motion.div>
+                                {/* Hover Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#E6A93E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>

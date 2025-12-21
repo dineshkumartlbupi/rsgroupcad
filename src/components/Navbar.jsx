@@ -114,9 +114,14 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Contact Button */}
-                    <div className="hidden lg:flex">
-                        <Link to="/contact-us" className="bg-rsRed text-white px-6 py-2 rounded-full font-medium hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200">
+                    {/* Indian Solar Installation Button */}
+                    <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
+                        <Link to="/indian-solar-installation" className="bg-[#E6A93E] text-[#001528] px-3 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-[#d49a2e] transition-colors shadow-md transform hover:scale-105 duration-200 flex items-center gap-1.5 xl:gap-2 whitespace-nowrap">
+                            <Sun className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" />
+                            <span className="hidden xl:inline">Indian Solar</span>
+                            <span className="xl:hidden">Indian Solar</span>
+                        </Link>
+                        <Link to="/contact-us" className="bg-rsRed text-white px-4 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200 whitespace-nowrap">
                             Contact Us
                         </Link>
                     </div>
@@ -170,6 +175,10 @@ const Navbar = () => {
                             )}
                         </div>
                     ))}
+                    <Link to="/indian-solar-installation" className="text-center w-full bg-[#E6A93E] text-[#001528] px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+                        <Sun className="w-4 h-4" />
+                        Indian Solar Installation
+                    </Link>
                     <Link to="/contact-us" className="text-center w-full bg-rsRed text-white px-6 py-3 rounded-md font-medium" onClick={() => setMobileMenuOpen(false)}>
                         Contact Us
                     </Link>

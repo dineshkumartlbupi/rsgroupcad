@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Zap, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import StatsSection from '../../components/StatsSection';
-import evChargingHeroImg from '../../assets/hero/ev_charging_hero.png';
+import evChargingHeroImg from '../../assets/hero/ev_charging_hero.jpg';
 
 const BenefitCard = ({ icon, title, desc }) => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -16,36 +16,35 @@ const BenefitCard = ({ icon, title, desc }) => (
 );
 
 const EVCharging = () => {
-    const title = "EV Charging Station Plans";
-    const subTitle = "Comprehensive design and permitting for residential & commercial EV infrastructure.";
+    const title = "EV Charging Infrastructure Design & Permitting";
+    const subTitle = "Intelligent, permit-ready EV charging infrastructure designs built for speed, accuracy, and approvals.";
     const image = evChargingHeroImg;
 
     const description = [
-        "The transition to electric mobility is accelerating, and robust infrastructure is the backbone of this shift. RS Solar CAD Group provides end-to-end design and engineering services for Electric Vehicle Service Equipment (EVSE) installations. We support electrical contractors, developers, and homeowners by delivering permit-ready plan sets that meet all NEC and local utility requirements.",
-        "From single-family home Level 2 chargers to complex commercial fleet depots with DC Fast Charging (DCFC), we handle the technical heavy lifting. Our team ensures your infrastructure is safe, compliant, and optimized for future scalability.",
-        "Our capabilities include site feasibility studies, ADA compliance planning, detailed electrical load calculations, and single-line diagrams (SLDs). We also coordinate directly with utilities to ensure your grid connection is sized correctly for your current and future charging needs."
+        "RS Solar CAD Group delivers intelligent, permit-ready EV charging infrastructure designs built for speed, accuracy, and approvals. We translate site conditions into clear, construction-ready drawings that capture access routes, electrical service points, property limits, existing structures, and optimal charger placement—eliminating ambiguity in the field.",
+        "Our EVCS design process starts with a site address or survey data and evolves into a fully engineered solution. We assess power availability, load capacity, charger quantity, and equipment compatibility to develop layouts that meet current building and electrical codes while maximizing safety and efficiency."
     ];
 
     const features = [
-        "Site Feasibility & Layouts",
-        "Electrical Load Calculations",
-        "Single Line Diagrams (SLD)",
-        "ADA Compliance Design",
-        "Permit Application Management",
-        "Utility Service Planning"
+        "Concept-to-construction EV charging layouts",
+        "Detailed site plans, elevations, and electrical calculations",
+        "Permit-ready drawing packages with high approval success",
+        "Single-line diagrams and utility coordination details",
+        "Manufacturer-aligned equipment specifications",
+        "Post-installation As-Built documentation"
     ];
 
     const process = [
-        { title: "Site Assessment", desc: "Evaluate electrical capacity and physical location for optimal charger placement." },
-        { title: "Load Calculation", desc: "Determine existing load and necessary upgrades to support Level 2 or DC Fast Chargers." },
-        { title: "Plan Generation", desc: "Draft detailed site plans and electrical diagrams adhering to NEC Article 625." },
-        { title: "Permit Support", desc: "Provide all documentation required for AHJ and utility approval." }
+        { title: "Site Analysis", desc: "Assess site conditions, access routes, electrical service points, and existing structures for optimal charger placement." },
+        { title: "Engineering Design", desc: "Develop fully engineered layouts with power availability, load capacity, and equipment compatibility analysis." },
+        { title: "Permit Package", desc: "Create permit-ready drawing packages with site plans, elevations, electrical calculations, and single-line diagrams." },
+        { title: "Approval & Documentation", desc: "Coordinate with utilities and provide post-installation As-Built documentation for compliance." }
     ];
 
     const benefits = [
-        { icon: <Zap />, title: "Scalable Solutions", desc: "Designs that allow for future expansion as EV adoption grows." },
-        { icon: <ShieldCheck />, title: "Regulatory Expertise", desc: "Deep understanding of ADA and local zoning laws for EV stations." },
-        { icon: <Truck />, title: "Fleet Ready", desc: "Specialized experience in high-capacity charging for commercial fleets." }
+        { icon: <Zap />, title: "Fast Approvals", desc: "Permit-ready packages designed for high approval success rates with AHJs and utilities." },
+        { icon: <ShieldCheck />, title: "Code Compliant", desc: "Layouts meeting current building and electrical codes for commercial, residential, fleet, and public charging." },
+        { icon: <Truck />, title: "Future-Ready", desc: "Designed for scalability and regulatory confidence, supporting faster installations and infrastructure growth." }
     ];
 
     return (
@@ -116,7 +115,7 @@ const EVCharging = () => {
                     <div className="flex flex-col lg:flex-row gap-16 items-start mb-24">
                         {/* Left Column: Description & Features */}
                         <div className="lg:w-3/5">
-                            <h3 className="text-3xl font-bold text-[#001528] mb-6">Service Overview</h3>
+                            <h3 className="text-3xl font-bold text-[#001528] mb-6">EV Charging Infrastructure Design & Permitting</h3>
                             <div className="text-gray-600 text-lg leading-relaxed mb-10 space-y-4">
                                 {description.map((para, i) => (
                                     <p key={i}>{para}</p>
@@ -124,7 +123,7 @@ const EVCharging = () => {
                             </div>
 
                             <div className="bg-[#f8f9fa] rounded-2xl p-8 border border-gray-100 shadow-sm">
-                                <h4 className="text-xl font-bold text-[#001528] mb-6">Key Capabilities</h4>
+                                <h4 className="text-xl font-bold text-[#001528] mb-6">What Sets Our EVCS Designs Apart</h4>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {features && features.map((feature, i) => (
                                         <div key={i} className="flex items-start group">
@@ -166,7 +165,7 @@ const EVCharging = () => {
                                 <div className="w-20 h-1.5 bg-[#E6A93E] rounded-full mx-auto mb-8"></div>
                                 <div className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed space-y-4">
                                     <p>
-                                        Clients trust RS Solar CAD Group for our technical proficiency and ability to navigate complex regulatory landscapes. We ensure your EV projects are designed right the first time.
+                                        Designed for scalability and regulatory confidence, our EVCS solutions support commercial, residential, fleet, and public charging projects—ensuring faster approvals, smoother installations, and future-ready infrastructure.
                                     </p>
                                 </div>
                             </div>

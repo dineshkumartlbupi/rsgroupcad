@@ -1,74 +1,274 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe } from 'lucide-react';
 
 const ContactUs = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+    };
+
+    const services = [
+        'Solar Design & Engineering',
+        'EV Charging Station Plans',
+        'CAD Design & Drafting',
+        'Workforce & Staffing',
+        'Solar Installation',
+        'Trading & Procurement',
+        'Other'
+    ];
+
+    const contactInfo = [
+        {
+            icon: <Mail className="w-6 h-6" />,
+            title: 'Email Us',
+            details: ['contact@rscadgroup.com', 'sales@rscadgroup.com'],
+            color: '#0033A0'
+        },
+        {
+            icon: <Phone className="w-6 h-6" />,
+            title: 'Call Us',
+            details: ['+1 (912) 980 4481 (USA)', '+91 9958060424 (India)'],
+            color: '#0033A0'
+        },
+        {
+            icon: <MapPin className="w-6 h-6" />,
+            title: 'Visit Us',
+            details: ['Block A, Loni Industrial Area', 'Ghaziabad, UP 201007, India'],
+            color: '#0033A0'
+        },
+        {
+            icon: <Clock className="w-6 h-6" />,
+            title: 'Business Hours',
+            details: ['24 Hour Working'],
+            color: '#0033A0'
+        }
+    ];
+
     return (
-        <div className="pt-20">
-            <div className="bg-geonBlue py-24 px-4 sm:px-6 lg:px-8 text-center text-white">
-                <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">Contact Us</h1>
-                <p className="mt-4 text-xl text-blue-100">We'd love to hear from you</p>
-            </div>
+        <div className="pt-20 font-sans bg-white">
+            {/* Hero Section */}
+            <section className="relative bg-gradient-to-br from-[#0033A0] to-[#001f5c] py-20 overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                </div>
 
-            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center"
+                    >
+                        <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                            💬 Get In Touch
+                        </div>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                            Let's Work Together
+                        </h1>
+                        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+                            Ready to transform your solar projects? Contact our team for expert consultation and support.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Main Content */}
+            <section className="py-20 bg-gradient-to-br from-[#0033A0] to-[#001f5c] ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-
-                        {/* Contact Info */}
-                        <div>
-                            <h2 className="text-2xl font-bold text-geonBlue mb-6">Get In Touch</h2>
-                            <p className="text-gray-600 mb-8">
-                                Have questions about our products or solutions? Reach out to our team.
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        {/* Left Side - Contact Info */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 className="text-3xl font-bold text-white mb-4">
+                                Connect With RS Solar CAD Group
+                            </h2>
+                            <p className="text-white text-lg mb-8">
+                                Our team is ready to assist you with all your solar design, engineering, and installation needs. Reach out through any of the channels below.
                             </p>
 
-                            <div className="space-y-6">
-                                <div className="flex items-start space-x-4">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-rsRed flex-shrink-0">
-                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900">Email</h3>
-                                        <p className="text-gray-500">contact@rscadgroup.com</p>
-                                        <p className="text-gray-500">sales@rscadgroup.com</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start space-x-4">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-rsRed flex-shrink-0">
-                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900">Phone</h3>
-                                        <p className="text-gray-500 max-w-xs">+1 347 218 8830 (USA)</p>
-                                        <p className="text-gray-500 max-w-xs">+91 9958060424 (India)</p>
-                                    </div>
-                                </div>
+                            <div className="space-y-6 mb-10">
+                                {contactInfo.map((info, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0033A0]/30 transition-all"
+                                    >
+                                        <div className="flex items-start space-x-4">
+                                            <div className="w-12 h-12 bg-[#0033A0]/10 rounded-lg flex items-center justify-center text-[#0033A0] flex-shrink-0">
+                                                {info.icon}
+                                            </div>
+                                            <div>
+                                                <h3 className="font-bold text-[#001528] mb-2">{info.title}</h3>
+                                                {info.details.map((detail, idx) => (
+                                                    <p key={idx} className="text-gray-600 text-sm">{detail}</p>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
                             </div>
-                        </div>
 
-                        {/* Form */}
-                        <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
-                            <form className="space-y-6">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                                    <input type="text" id="name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="John Doe" />
-                                </div>
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-                                    <input type="email" id="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="john@example.com" />
-                                </div>
-                                <div>
-                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Mobile Number</label>
-                                    <input type="tel" id="phone" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="+1 (555) 000-0000" />
-                                </div>
-                                <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                                    <textarea id="message" rows={4} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-rsRed focus:ring-rsRed py-3 px-4 bg-white" placeholder="How can we help you?"></textarea>
-                                </div>
-                                <button type="submit" className="w-full bg-rsRed text-white py-3 px-4 rounded-md font-bold hover:bg-red-800 transition-colors shadow-md">
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
 
+                        </motion.div>
+
+                        {/* Right Side - Contact Form */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="bg-white p-8 rounded-2xl border border-gray-200">
+                                <h3 className="text-2xl font-bold text-[#001528] mb-6">Send Us a Message</h3>
+                                <form onSubmit={handleSubmit} className="space-y-5">
+                                    {/* Full Name */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Full Name <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            required
+                                            value={formData.fullName}
+                                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            placeholder="John Doe"
+                                        />
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            placeholder="john@example.com"
+                                        />
+                                    </div>
+
+                                    {/* Phone */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Phone Number <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            required
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            placeholder="+1 (555) 000-0000"
+                                        />
+                                    </div>
+
+                                    {/* Company */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Company Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={formData.company}
+                                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            placeholder="Your Company"
+                                        />
+                                    </div>
+
+                                    {/* Service Interest */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Service Interest <span className="text-red-500">*</span>
+                                        </label>
+                                        <select
+                                            required
+                                            value={formData.service}
+                                            onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all bg-white"
+                                        >
+                                            <option value="">Select a service</option>
+                                            {services.map((service, index) => (
+                                                <option key={index} value={service}>{service}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    {/* Message */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                            Message <span className="text-red-500">*</span>
+                                        </label>
+                                        <textarea
+                                            required
+                                            rows={4}
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all resize-none"
+                                            placeholder="Tell us about your project..."
+                                        ></textarea>
+                                    </div>
+
+                                    {/* Submit Button */}
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-[#00D9FF] text-[#001528] py-4 px-6 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors flex items-center justify-center space-x-2"
+                                    >
+                                        <span>Send Message</span>
+                                        <Send className="w-5 h-5" />
+                                    </button>
+                                </form>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Map or Additional CTA Section */}
+            <section className="py-16 bg-gradient-to-r from-[#0033A0] to-[#001f5c]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Ready to Get Started?
+                    </h2>
+                    <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                        Join hundreds of satisfied clients who trust RS Solar CAD Group for their solar engineering needs.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="tel:+19129804481"
+                            className="inline-flex items-center justify-center bg-white text-[#0033A0] px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                        >
+                            <Phone className="mr-2 w-5 h-5" />
+                            Call Now
+                        </a>
+                        <a
+                            href="https://wa.me/19129804481"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center bg-[#00D9FF] text-[#001528] px-8 py-4 rounded-full font-bold hover:bg-[#00C4E6] transition-colors"
+                        >
+                            <MessageCircle className="mr-2 w-5 h-5" />
+                            WhatsApp Us
+                        </a>
                     </div>
                 </div>
             </section>

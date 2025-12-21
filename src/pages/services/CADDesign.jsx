@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, PenTool, Layers, Activity, ShieldCheck, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import StatsSection from '../../components/StatsSection';
 import cadDesignHeroImg from '../../assets/hero/cad_design_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (
@@ -16,107 +15,193 @@ const BenefitCard = ({ icon, title, desc }) => (
 );
 
 const CADDesign = () => {
-    const title = "CAD Design & Drafting";
-    const subTitle = "Seamless extension of your engineering team with high-precision drafting.";
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        city: ''
+    });
+
+    const title = "CAD Drafting";
+    const subTitle = "Strategic CAD capability that scales across teams and geographies.";
     const image = cadDesignHeroImg;
 
     const description = [
-        "In the fast-paced world of engineering and construction, accuracy is everything. RS Solar CAD Group delivers high-precision CAD Design & Drafting services that serve as a seamless extension of your in-house team. We support architects, engineers, and construction firms by transforming concepts into detailed, workable drawings.",
-        "Our team is proficient in industry-leading software including AutoCAD, Revit, and SketchUp. We adhere strictly to your company's drafting standards, layering conventions, and title block requirements, ensuring that our output integrates perfectly with your existing workflow.",
-        "Whether you need architectural floor plans, complex structural details, MEP coordination drawings, or 3D BIM models, we deliver pixel-perfect results on time and within budget."
+        "At RS Group, CAD is not a service—it's a strategic capability. We help engineering-driven organizations replace fragmented drawings, outdated files, and manual drafting bottlenecks with clean, intelligent, production-ready CAD systems that scale across teams and geographies.",
+        "Supporting clients in 13+ countries, we operate as a behind-the-scenes design engine for architectural, civil, structural, MEP, electrical, telecom, and solar projects. Our strength lies in turning raw inputs into dependable CAD outputs that teams can build on—confidently and repeatedly."
     ];
 
     const features = [
-        "2D Drafting & 3D Modeling",
-        "Paper/PDF to CAD Conversion",
-        "Architectural & Structural Drafting",
-        "MEP (Mechanical, Electrical, Plumbing) Layouts",
-        "Redline Markups & Revisions",
-        "BIM Modeling (LOD 100-500)"
+        "Paper, blueprint, and scanned drawing digitization",
+        "PDF and raster image (JPG, PNG, TIFF, BMP) conversion",
+        "Hand sketches to precise vector CAD",
+        "Redlines, revisions, and legacy drawing cleanup",
+        "2D & 3D drafting across all major disciplines",
+        "Custom CAD blocks and reusable libraries"
     ];
 
     const process = [
-        { title: "Standard Alignment", desc: "We study your CAD standards, layers, lineweights, and blocks to ensure full compliance." },
-        { title: "Drafting Execution", desc: "Skilled drafters convert your inputs (sketches, point clouds, PDFs) into precise CAD drawings." },
-        { title: "Quality Control", desc: "A rigorous two-step check ensures dimensions, associations, and layers are accurate." },
-        { title: "Final Dispatch", desc: "Delivery of fully editable DWG, PDF, and RVT files ready for immediate use." }
+        { title: "Format Conversion", desc: "Transform legacy drawings, PDFs, images, or hand sketches into accurate, layered, and editable CAD files." },
+        { title: "Quality Validation", desc: "Multi-stage review ensuring dimensional accuracy, scale integrity, and logical layer structuring." },
+        { title: "Standards Preservation", desc: "Centralized knowledge framework preserves your layers, symbols, annotations, and formatting." },
+        { title: "Construction-Ready Output", desc: "Deliver CAD files that engineers trust and contractors can execute without rework." }
     ];
 
     const benefits = [
-        { icon: <PenTool />, title: "Precision Guarantee", desc: "99.9% accuracy in dimensions and scaling." },
-        { icon: <Layers />, title: "Standardized Output", desc: "We adhere strictly to your company's layering and text styles." },
-        { icon: <Activity />, title: "Rapid Turnaround", desc: "Overnight delivery options available for urgent redlines." }
+        { icon: <PenTool />, title: "Global Standards", desc: "CAD output aligned with US, UK, EU & AU standards." },
+        { icon: <Layers />, title: "Scalable Teams", desc: "Fast-moving project pipelines with dedicated specialists—not generalists." },
+        { icon: <Activity />, title: "Zero Compromise", desc: "Strict quality control, secure workflows, and reduced drafting costs." }
     ];
+
+    const stats = [
+        { number: "13+", label: "Countries Served" },
+        { number: "98%", label: "Approval Rate" },
+        { number: "12-24H", label: "Turnaround Time" },
+        { number: "50+", label: "State PE Stamps" }
+    ];
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+    };
 
     return (
         <div className="pt-20 font-sans text-gray-900 bg-white">
-            {/* Hero Section */}
-            <div className="relative">
-                <div className="relative h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0">
-                        <img
-                            src={image}
-                            alt={title}
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#001528]/95 to-[#001528]/70"></div>
-                    </div>
+            {/* Hero Section with Form */}
+            <section className="relative bg-gradient-to-br from-[#0033A0] to-[#001f5c] py-16 md:py-24 overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                </div>
 
-                    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Content */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h2 className="text-[#E6A93E] text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4">
-                                Expertise & Services
-                            </h2>
-                            <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight break-words">
-                                {title}
+                            <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                                🎯 Expertise & Services
+                            </div>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                                Professional CAD Drafting Services
                             </h1>
-                            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 leading-relaxed font-light">
+                            <p className="text-2xl md:text-3xl text-white/90 mb-8 font-light">
                                 {subTitle}
                             </p>
-
-                            {/* Scrolling Ticker */}
-                            <div className="mt-12 w-full overflow-hidden relative border-t border-white/10 pt-8">
-                                <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#001528] to-transparent z-10"></div>
-                                <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#001528] to-transparent z-10"></div>
-                                <motion.div
-                                    className="flex gap-8 md:gap-12 items-center text-[#E6A93E] text-sm md:text-lg font-medium tracking-wider uppercase whitespace-nowrap"
-                                    animate={{ x: ["0%", "-50%"] }}
-                                    transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                                >
-                                    {[...Array(4)].map((_, i) => (
-                                        <React.Fragment key={i}>
-                                            <span className="flex items-center gap-2"><Activity className="w-5 h-5" /> 12-24H Turnaround</span>
-                                            <span className="text-gray-500">•</span>
-                                            <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5" /> 98% Approval Rate</span>
-                                            <span className="text-gray-500">•</span>
-                                            <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5" /> 50-State PE Stamps</span>
-                                            <span className="text-gray-500">•</span>
-                                            <span className="flex items-center gap-2"><FileCheck className="w-5 h-5" /> NEC/AHJ Compliant</span>
-                                            <span className="text-gray-500">•</span>
-                                        </React.Fragment>
-                                    ))}
-                                </motion.div>
+                            <div className="flex flex-wrap gap-4 mb-8">
+                                <div className="flex items-center gap-2 text-white">
+                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <span>12-24H Turnaround</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-white">
+                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <span>98% Approval Rate</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-white">
+                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <span>50-State PE Stamps</span>
+                                </div>
                             </div>
+                        </motion.div>
+
+                        {/* Right Form */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="bg-white rounded-2xl shadow-2xl p-8"
+                        >
+                            <h3 className="text-2xl font-bold text-[#001528] mb-2">Get a FREE Consultation</h3>
+                            <p className="text-gray-600 mb-6">Let's discuss your CAD drafting needs</p>
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Your Name *"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="tel"
+                                        placeholder="Phone Number *"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address *"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Your City *"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        value={formData.city}
+                                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full bg-[#0033A0] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#002080] transition-colors shadow-lg"
+                                >
+                                    Get Free Quote
+                                </button>
+                                <p className="text-xs text-gray-500 text-center">
+                                    By submitting, you agree to our Terms & Privacy Policy
+                                </p>
+                            </form>
                         </motion.div>
                     </div>
                 </div>
-                {/* Stats Bar */}
-                <div className="absolute bottom-0 w-full translate-y-1/2 z-20 px-4">
-                    <StatsSection />
+            </section>
+
+            {/* Stats Section */}
+            <section className="py-16 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {stats.map((stat, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="text-center"
+                            >
+                                <div className="text-4xl md:text-5xl font-bold text-[#0033A0] mb-2">
+                                    {stat.number}
+                                </div>
+                                <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </section>
 
             {/* Main Content Section */}
-            <section className="pb-24 pt-48 md:pt-32">
+            <section className="pb-24 pt-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-16 items-start mb-24">
                         {/* Left Column: Description & Features */}
                         <div className="lg:w-3/5">
-                            <h3 className="text-3xl font-bold text-[#001528] mb-6">Service Overview</h3>
+                            <h3 className="text-3xl font-bold text-[#001528] mb-6">From Any Format to Fully Functional CAD</h3>
                             <div className="text-gray-600 text-lg leading-relaxed mb-10 space-y-4">
                                 {description.map((para, i) => (
                                     <p key={i}>{para}</p>
@@ -124,7 +209,7 @@ const CADDesign = () => {
                             </div>
 
                             <div className="bg-[#f8f9fa] rounded-2xl p-8 border border-gray-100 shadow-sm">
-                                <h4 className="text-xl font-bold text-[#001528] mb-6">Key Capabilities</h4>
+                                <h4 className="text-xl font-bold text-[#001528] mb-6">Conversion, Drafting & Design—Built for Scale</h4>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {features && features.map((feature, i) => (
                                         <div key={i} className="flex items-start group">
@@ -162,12 +247,23 @@ const CADDesign = () => {
                     {benefits && (
                         <div className="mb-24">
                             <div className="text-center mb-12">
-                                <h3 className="text-3xl font-bold text-[#001528] mb-4">Why Choose Us</h3>
+                                <h3 className="text-3xl font-bold text-[#001528] mb-4">Why Engineering Teams Rely on RS Group</h3>
                                 <div className="w-20 h-1.5 bg-[#E6A93E] rounded-full mx-auto mb-8"></div>
                                 <div className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed space-y-4">
                                     <p>
-                                        We allow you to scale your drafting capacity instantly without the overhead of hiring new staff. Maintain quality, meet deadlines, and focus on your core engineering tasks while we handle the drafting.
+                                        Once engaged, your standards don't get lost. Our centralized knowledge framework preserves your layers, symbols, annotations, and formatting—ensuring uniform output regardless of project size or team volume.
                                     </p>
+                                    <p className="font-semibold text-[#001528] mt-6">
+                                        Multi-Discipline CAD Mastery:
+                                    </p>
+                                    <ul className="space-y-2 text-gray-600">
+                                        <li>✔ <strong>Architecture</strong> – Plans, elevations, interiors, site layouts, renovations</li>
+                                        <li>✔ <strong>Structural</strong> – RCC, steel detailing, framing, shop drawings</li>
+                                        <li>✔ <strong>Mechanical & HVAC</strong> – Equipment layouts, fabrication drawings</li>
+                                        <li>✔ <strong>Electrical</strong> – Power plans, lighting, SLDs, schematics</li>
+                                        <li>✔ <strong>Civil</strong> – Site development, grading, utilities, drainage</li>
+                                        <li>✔ <strong>Solar / PV</strong> – Permit plans, layouts, SLDs, mounting details</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

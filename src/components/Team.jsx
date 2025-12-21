@@ -18,49 +18,49 @@ const teamMembers = [
         bio: 'Leading our strategic vision and growth with a focus on innovation and excellence.'
     },
     {
-        name: 'Saurav Kumar',
+        name: 'Mr. Saurav Kumar',
         role: 'Sr. Project Manager - Operations',
         image: sauravImg,
         bio: 'Ensuring operational excellence and seamless project delivery across all sectors.'
     },
     {
         name: 'Mr. Rahul Kumar',
-        role: 'Sr. Manager – Business & Customer Success',
+        role: 'Customer Success Manager ',
         image: rahulImg,
         bio: 'Driving customer success and fostering strong, lasting business relationships.'
     },
     {
-        name: 'Amreen Jahan',
+        name: 'Ms. Amreen Jahan',
         role: 'Manager - Human Resources',
         image: amreenImg,
         bio: 'Fostering a positive workplace culture and managing our most valuable asset—our people.'
     },
     {
-        name: 'Kailash Singh',
+        name: 'Mr. Kailash Singh',
         role: 'Asst. Manager - Operations',
         image: kailashImg,
         bio: 'Supporting operational efficiency and ensuring smooth team coordination.'
     },
     {
-        name: 'Agam Bhardwaj',
+        name: 'Mr. Agam Bhardwaj',
         role: 'Asst. Manager - Operations',
         image: agamImg,
         bio: 'Optimizing operational workflows and driving team performance.'
     },
     {
-        name: 'Shalini Shah',
+        name: 'Ms. Shalini Shah',
         role: 'Asst Team Lead - Operations',
         image: shaliniImg,
         bio: 'Guiding teams towards operational excellence and project success.'
     },
     {
-        name: 'Abhishek Kashyap',
-        role: 'Sales Manager',
+        name: 'Mr. Abhishek Kashyap',
+        role: 'Sales Executive',
         image: abhishekImg,
         bio: 'Driving sales strategies and expanding market reach.'
     },
     {
-        name: 'Mr. Mohit',
+        name: 'Mr. Mohit Kumar',
         role: 'Master Electrician',
         image: mohitImg,
         bio: 'Ensuring electrical safety, compliance, and expert installation best practices.'
