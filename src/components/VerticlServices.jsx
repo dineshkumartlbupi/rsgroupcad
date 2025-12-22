@@ -196,43 +196,6 @@ const VerticleServices = () => {
                                         Learn More
                                     </button>
                                 </div>
-
-                                {/* Decorative Bottom Border with Curved Line */}
-                                <div className="relative h-8 overflow-visible">
-                                    <svg
-                                        className="absolute bottom-0 left-0 w-full h-8"
-                                        viewBox="0 0 200 20"
-                                        preserveAspectRatio="none"
-                                        style={{ overflow: 'visible' }}
-                                    >
-                                        {/* Base colored bar */}
-                                        <rect
-                                            x="0"
-                                            y="0"
-                                            width="200"
-                                            height="8"
-                                            fill={
-                                                service.accentColor === 'bg-rsRed' ? '#DC2626' :
-                                                    service.accentColor === 'bg-yellow-500' ? '#EAB308' :
-                                                        service.accentColor === 'bg-[#1a3a52]' ? '#1a3a52' :
-                                                            '#DC2626'
-                                            }
-                                        />
-                                        {/* Curved swoosh line */}
-                                        <path
-                                            d="M 30 8 Q 70 18, 110 8 Q 140 2, 170 8"
-                                            stroke={
-                                                service.accentColor === 'bg-rsRed' ? '#DC2626' :
-                                                    service.accentColor === 'bg-yellow-500' ? '#EAB308' :
-                                                        service.accentColor === 'bg-[#1a3a52]' ? '#1a3a52' :
-                                                            '#DC2626'
-                                            }
-                                            strokeWidth="3.5"
-                                            fill="none"
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                </div>
                             </motion.div>
                         );
                     })}
