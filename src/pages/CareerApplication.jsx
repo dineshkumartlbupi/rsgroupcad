@@ -3,6 +3,9 @@ import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Upload, CheckCircle, User, Briefcase, FileText, Mail, Phone, MapPin, Clock, Share2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// API URL - automatically uses correct backend based on environment
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 // Job data - centralized for easy sharing
 const jobOpenings = {
     'fresher-cad-designer': {
@@ -118,7 +121,7 @@ const CareerApplication = () => {
             }
 
             // Send to backend API
-            const response = await fetch('http://localhost:5001/api/career/apply', {
+            const response = await fetch(`${API_URL}/api/career/apply`, {
                 method: 'POST',
                 body: formDataToSend
             });

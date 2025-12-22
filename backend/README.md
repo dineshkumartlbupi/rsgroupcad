@@ -56,3 +56,4 @@ See `.env.example` for required configuration.
 ## Documentation
 
 See `../CUSTOM_SMTP_SETUP.md` for detailed setup instructions.
+# rsgroupcad-backend
