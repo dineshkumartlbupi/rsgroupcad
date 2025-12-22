@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, CheckCircle } from 'lucide-react';
+
+// API URL - automatically uses correct backend based on environment
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -12,9 +15,51 @@ const ContactUs = () => {
         message: ''
     });
 
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch(`${API_URL}/api/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setSubmitSuccess(true);
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    service: '',
+                    message: ''
+                });
+
+                // Reset success message after 5 seconds
+                setTimeout(() => setSubmitSuccess(false), 5000);
+            } else {
+                throw new Error(result.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error submitting contact form:', error);
+
+            // Fallback to mailto
+            const mailtoLink = `mailto:Contact@rscadgroup.com?subject=Contact Form - ${formData.service}&body=Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+
+            alert('Unable to send message automatically. Opening your email client...');
+            window.location.href = mailtoLink;
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const services = [
@@ -228,12 +273,25 @@ const ContactUs = () => {
                                         ></textarea>
                                     </div>
 
+                                    {/* Success Message */}
+                                    {submitSuccess && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg flex items-center space-x-2"
+                                        >
+                                            <CheckCircle className="w-5 h-5" />
+                                            <span>Message sent successfully! We'll get back to you soon.</span>
+                                        </motion.div>
+                                    )}
+
                                     {/* Submit Button */}
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#00D9FF] text-[#001528] py-4 px-6 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors flex items-center justify-center space-x-2"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-[#00D9FF] text-[#001528] py-4 px-6 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
-                                        <span>Send Message</span>
+                                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                                         <Send className="w-5 h-5" />
                                     </button>
                                 </form>

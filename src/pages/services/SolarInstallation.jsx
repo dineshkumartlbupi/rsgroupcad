@@ -7,6 +7,9 @@ import professionalInstallationImg from '../../assets/hero/professional_installa
 import premiumComponentsImg from '../../assets/hero/premium_components.png';
 import ongoingSupportImg from '../../assets/hero/ongoing_support_new.png';
 
+// API URL - automatically uses correct backend based on environment
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const FAQItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -129,9 +132,52 @@ const SolarInstallation = () => {
         { number: "5", unit: "Years", label: "Maintenance Included" }
     ];
 
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch(`${API_URL}/api/solar-installation`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setSubmitSuccess(true);
+                setFormData({
+                    fullName: '',
+                    whatsappNumber: '',
+                    monthlyBill: '',
+                    pincode: '',
+                    city: '',
+                    email: '',
+                    agreeToTerms: false
+                });
+
+                // Reset success message after 5 seconds
+                setTimeout(() => setSubmitSuccess(false), 5000);
+            } else {
+                throw new Error(result.message || 'Failed to send inquiry');
+            }
+        } catch (error) {
+            console.error('Error submitting solar installation inquiry:', error);
+
+            // Fallback to mailto
+            const mailtoLink = `mailto:Contact@rscadgroup.com?subject=Solar Installation Inquiry - ${formData.city}&body=Name: ${formData.fullName}%0D%0AWhatsApp: ${formData.whatsappNumber}%0D%0AEmail: ${formData.email}%0D%0ACity: ${formData.city}%0D%0APincode: ${formData.pincode}%0D%0AMonthly Bill: ₹${formData.monthlyBill}`;
+
+            alert('Unable to send inquiry automatically. Opening your email client...');
+            window.location.href = mailtoLink;
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // Scroll to form function
@@ -335,12 +381,25 @@ const SolarInstallation = () => {
                                     </label>
                                 </div>
 
+                                {/* Success Message */}
+                                {submitSuccess && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg flex items-center space-x-2"
+                                    >
+                                        <CheckCircle className="w-5 h-5" />
+                                        <span>Inquiry submitted successfully! We'll contact you soon.</span>
+                                    </motion.div>
+                                )}
+
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#00D9FF] text-[#001528] py-4 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors shadow-lg"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-[#00D9FF] text-[#001528] py-4 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Yes! Reduce my electricity bill
+                                    {isSubmitting ? 'Submitting...' : 'Yes! Reduce my electricity bill'}
                                 </button>
                             </form>
                         </motion.div>
