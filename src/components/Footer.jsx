@@ -129,7 +129,7 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <Link to="/contact-us" className="flex items-center hover:text-white transition-colors group">
+                                    <Link to="https://calendly.com/rssolarcadgroup/intro-and-updates" className="flex items-center hover:text-white transition-colors group">
                                         <Calendar className="w-4 h-4 mr-3 text-rsRed group-hover:scale-110 transition-transform" />
                                         Schedule a Demo
                                     </Link>
@@ -185,9 +185,9 @@ const Footer = () => {
                     <LinkGroup
                         title="Who We Are"
                         links={[
-                            { label: 'About Us', to: '/about-geon' },
-                            { label: 'Our Journey', to: '/about-geon' },
-                            { label: 'Leadership Team', to: '/about-geon' },
+                            { label: 'About Us', to: '/about-us' },
+                            { label: 'Our Journey', to: '/about-us' },
+                            { label: 'Leadership Team', to: '/about-us' },
                             { label: 'Success Stories', to: '/services' },
                             { label: 'Career', to: '/career' },
                             { label: 'Our Locations', to: '/contact-us' },

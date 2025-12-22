@@ -57,7 +57,7 @@ const ClientPortal = () => {
                 </div>
             </div>
             <div className="mt-8 text-center text-gray-400 text-xs">
-                &copy; {new Date().getFullYear()} Geon Energy. Secure Client Access.
+                &copy; {new Date().getFullYear()} 2025 RS Solar CAD Group. Secure Client Access.
             </div>
         </div>
     );

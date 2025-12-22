@@ -11,6 +11,7 @@ import Blogs from './pages/Blogs';
 import BlogDetails from './pages/BlogDetails';
 import ClientPortal from './pages/ClientPortal';
 import Careers from './pages/Careers';
+import CareerApplication from './pages/CareerApplication';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import SolarDesign from './pages/services/SolarDesign';
@@ -39,7 +40,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-geon" element={<AboutUs />} />
+            <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
 
             {/* Services */}
@@ -58,6 +59,7 @@ function App() {
             <Route path="/media" element={<PlaceholderPage title="Media" />} />
             <Route path="/client-portal" element={<ClientPortal />} />
             <Route path="/career" element={<Careers />} />
+            <Route path="/career/apply" element={<CareerApplication />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
 

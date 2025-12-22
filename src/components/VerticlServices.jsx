@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Smartphone, Building2, Zap, FileText, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -16,7 +17,8 @@ const services = [
             "Instant roof measurements",
             "Automated shading analysis"
         ],
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600"
+        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        route: "/solar-design-services"
     },
     {
         title: "Engineering Plan Sets",
@@ -31,8 +33,8 @@ const services = [
             "As-built drawings",
             "Revision management"
         ],
-
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600"
+        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        route: "/solar-design-services"
     },
     {
         title: "Structural Engineering",
@@ -47,8 +49,8 @@ const services = [
             "Roof load certifications",
             "Foundation design"
         ],
-
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600"
+        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        route: "/solar-design-services"
     },
     {
         title: "Electrical Engineering",
@@ -63,10 +65,9 @@ const services = [
             "Load calculations",
             "Interconnection support"
         ],
-
-        buttonColor: "bg-[#1a3a52] hover:bg-[#2a4a62]"
+        buttonColor: "bg-[#1a3a52] hover:bg-[#2a4a62]",
+        route: "/solar-design-services"
     },
-
     {
         title: "Permit Approval",
         subtitle: "Hassle-Free Approvals",
@@ -80,8 +81,8 @@ const services = [
             "Revision handling",
             "Expedited processing"
         ],
-
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600"
+        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        route: "/solar-design-services"
     }
 ];
 
@@ -105,6 +106,8 @@ const itemVariants = {
 };
 
 const VerticleServices = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,13 +189,50 @@ const VerticleServices = () => {
                                 </div>
                                 {/* CTA Button */}
                                 <div className="px-6 pb-8">
-                                    <button className={`w-full ${service.buttonColor} text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg`}>
+                                    <button
+                                        onClick={() => navigate(service.route)}
+                                        className={`w-full ${service.buttonColor} text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg cursor-pointer`}
+                                    >
                                         Learn More
                                     </button>
                                 </div>
 
-                                {/* Decorative Bottom Border */}
-                                <div className={`h-2 ${service.accentColor}`}></div>
+                                {/* Decorative Bottom Border with Curved Line */}
+                                <div className="relative h-8 overflow-visible">
+                                    <svg
+                                        className="absolute bottom-0 left-0 w-full h-8"
+                                        viewBox="0 0 200 20"
+                                        preserveAspectRatio="none"
+                                        style={{ overflow: 'visible' }}
+                                    >
+                                        {/* Base colored bar */}
+                                        <rect
+                                            x="0"
+                                            y="0"
+                                            width="200"
+                                            height="8"
+                                            fill={
+                                                service.accentColor === 'bg-rsRed' ? '#DC2626' :
+                                                    service.accentColor === 'bg-yellow-500' ? '#EAB308' :
+                                                        service.accentColor === 'bg-[#1a3a52]' ? '#1a3a52' :
+                                                            '#DC2626'
+                                            }
+                                        />
+                                        {/* Curved swoosh line */}
+                                        <path
+                                            d="M 30 8 Q 70 18, 110 8 Q 140 2, 170 8"
+                                            stroke={
+                                                service.accentColor === 'bg-rsRed' ? '#DC2626' :
+                                                    service.accentColor === 'bg-yellow-500' ? '#EAB308' :
+                                                        service.accentColor === 'bg-[#1a3a52]' ? '#1a3a52' :
+                                                            '#DC2626'
+                                            }
+                                            strokeWidth="3.5"
+                                            fill="none"
+                                            strokeLinecap="round"
+                                        />
+                                    </svg>
+                                </div>
                             </motion.div>
                         );
                     })}
@@ -213,7 +253,10 @@ const VerticleServices = () => {
                         <p className="text-gray-200 text-lg mb-6 max-w-2xl mx-auto">
                             Join hundreds of solar professionals who trust RS Solar CAD Group for their design and engineering needs.
                         </p>
-                        <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <button
+                            onClick={() => navigate('/contact-us')}
+                            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+                        >
                             Get Started Today
                         </button>
                     </div>

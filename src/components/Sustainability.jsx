@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sustainability = () => {
     return (
@@ -11,9 +12,16 @@ const Sustainability = () => {
                 <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
                     We are committed to reducing carbon footprints and enabling a greener planet through our innovative energy solutions.
                 </p>
-                <button className="bg-white text-geonBlue px-8 py-3 rounded-full font-bold hover:bg-rsRed hover:text-white transition-colors duration-300">
-                    Our Green Commitment
-                </button>
+                <Link
+                    to="/contact-us"
+                >
+
+                    <button
+
+                        className="bg-white text-geonBlue px-8 py-3 rounded-full font-bold hover:bg-rsRed hover:text-white transition-colors duration-300">
+                        Our Commitment
+                    </button>
+                </Link>
             </div>
         </section>
     );

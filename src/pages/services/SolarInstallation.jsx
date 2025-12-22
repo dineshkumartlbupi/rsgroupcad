@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import indianSolarHero from '../../assets/hero/indian_solar_hero_new.png';
 import professionalInstallationImg from '../../assets/hero/professional_installation.png';
 import premiumComponentsImg from '../../assets/hero/premium_components.png';
-import ongoingSupportImg from '../../assets/hero/ongoing_support.png';
+import ongoingSupportImg from '../../assets/hero/ongoing_support_new.png';
 
 const FAQItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -535,7 +535,7 @@ const SolarInstallation = () => {
                             Start Your Solar Journey
                             <ArrowRight className="ml-2 w-6 h-6" />
                         </button>
-                        <a href="tel:+919876543210" className="inline-flex items-center justify-center bg-white text-[#0033A0] px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
+                        <a href="tel:+919958060424" className="inline-flex items-center justify-center bg-white text-[#0033A0] px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
                             <Phone className="mr-2 w-6 h-6" />
                             Call Now
                         </a>

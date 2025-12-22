@@ -246,7 +246,7 @@ const InteractiveServices = () => {
                                             {service.desc}
                                         </p>
 
-                                        <div className={`space-y-2 mb-6 ${service.highlight ? 'border-l-4 border-[#E6A93E] pl-4' : ''}`}>
+                                        <div className={`space-y-2 mb-6 ${service.highlight ? ' ' : ''}`}>
                                             {service.details.map((detail, idx) => (
                                                 <div key={idx} className="flex items-center text-xs text-white">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mr-2 text-white"></div>

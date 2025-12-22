@@ -12,7 +12,7 @@ const Navbar = () => {
 
     // Constants for menu items matching the real site
     const menuItems = [
-        { name: 'About Us', path: '/about-geon' },
+        { name: 'About Us', path: '/about-us' },
         {
             name: 'Services',
             path: '/services',
@@ -50,8 +50,13 @@ const Navbar = () => {
             ]
         },
         { name: 'Blogs', path: '/blogs' },
-        { name: 'Client Portal', path: '/client-portal' },
-        { name: 'Careers', path: '/career' },
+        {
+            name: 'Contact Us', path: '/contact-us'
+        },
+        {
+            name: 'Careers',
+            path: '/career'
+        },
     ];
 
     useEffect(() => {
@@ -121,8 +126,8 @@ const Navbar = () => {
                             <span className="hidden xl:inline">Indian Solar</span>
                             <span className="xl:hidden">Indian Solar</span>
                         </Link>
-                        <Link to="/contact-us" className="bg-rsRed text-white px-4 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200 whitespace-nowrap">
-                            Contact Us
+                        <Link to="/client-portal" className="bg-rsRed text-white px-4 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200 whitespace-nowrap">
+                            Client Portal
                         </Link>
                     </div>
 
@@ -179,8 +184,8 @@ const Navbar = () => {
                         <Sun className="w-4 h-4" />
                         Indian Solar Installation
                     </Link>
-                    <Link to="/contact-us" className="text-center w-full bg-rsRed text-white px-6 py-3 rounded-md font-medium" onClick={() => setMobileMenuOpen(false)}>
-                        Contact Us
+                    <Link to="/client-portal" className="text-center w-full bg-rsRed text-white px-6 py-3 rounded-md font-medium" onClick={() => setMobileMenuOpen(false)}>
+                        Client Portal
                     </Link>
                 </div>
             )}

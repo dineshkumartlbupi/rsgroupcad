@@ -160,10 +160,10 @@ const Services = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { number: "500+", label: "Projects Completed", color: "text-yellow-500" },
+                            { number: "150k+", label: "Projects Completed", color: "text-yellow-500" },
                             { number: "12-24H", label: "Average Turnaround", color: "text-blue-500" },
                             { number: "98%", label: "First-Time Approval", color: "text-green-500" },
-                            { number: "50", label: "States Covered", color: "text-purple-500" }
+                            { number: "50", label: "States Covered", color: "text-red-500" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                                 <div className={`text-5xl font-bold ${stat.color} mb-2`}>{stat.number}</div>
@@ -190,7 +190,7 @@ const Services = () => {
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                         <Link
-                            to="/about-geon"
+                            to="/about-us"
                             className="inline-flex items-center justify-center bg-white text-geonBlue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                         >
                             Learn About Us
