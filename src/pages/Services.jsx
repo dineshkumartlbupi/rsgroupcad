@@ -103,9 +103,8 @@ const Services = () => {
                                         alt={service.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-60 group-hover:opacity-50 transition-opacity`}></div>
-                                    <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg">
-                                        <div className={`bg-gradient-to-br ${service.color} bg-clip-text text-transparent`}>
+                                    <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                                        <div className="text-gray-700">
                                             {service.icon}
                                         </div>
                                     </div>
@@ -162,7 +161,7 @@ const Services = () => {
                         {[
                             { number: "150k+", label: "Projects Completed", color: "text-yellow-500" },
                             { number: "12-24H", label: "Average Turnaround", color: "text-blue-500" },
-                            { number: "98%", label: "First-Time Approval", color: "text-green-500" },
+                            { number: "98%", label: "First-Time Approval", color: "text-blue-500" },
                             { number: "50", label: "States Covered", color: "text-red-500" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">

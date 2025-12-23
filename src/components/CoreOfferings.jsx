@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ClipboardList, Lightbulb, Settings, Target, Users, Globe, BarChart3, Scale, BrainCircuit } from 'lucide-react';
+import { ClipboardList, Lightbulb, Settings, Target } from 'lucide-react';
 
 const processSteps = [
     {
@@ -27,19 +27,19 @@ const processSteps = [
 
 const benefits = [
     {
-        icon: <Users className="w-12 h-12" />,
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800",
         title: "Elite Engineering Talent"
     },
     {
-        icon: <Globe className="w-12 h-12" />,
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
         title: "Uninterrupted Operations"
     },
     {
-        icon: <BarChart3 className="w-12 h-12" />,
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
         title: "Real-Time Intelligence"
     },
     {
-        icon: <BrainCircuit className="w-12 h-12" />,
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
         title: "Strategic Partnership"
     }
 ];
@@ -112,16 +112,24 @@ const CoreOfferings = () => {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-[#FFB800] p-8 rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center justify-center text-center group h-64 border border-yellow-400 relative"
+                                className="bg-[#FFB800] rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col overflow-hidden group h-64 border border-yellow-400 relative"
                             >
-                                <div className="w-20 h-20 rounded-full bg-black/10 flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-all duration-300">
-                                    <div className="text-black group-hover:text-white transition-colors duration-300 transform group-hover:scale-110">
-                                        {benefit.icon}
+                                {/* Image Container */}
+                                <div className="relative h-full overflow-hidden">
+                                    <img
+                                        src={benefit.image}
+                                        alt={benefit.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                    {/* Title Overlay */}
+                                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                                        <h4 className="text-xl font-bold text-white text-center">
+                                            {benefit.title}
+                                        </h4>
                                     </div>
                                 </div>
-                                <h4 className="text-xl font-bold text-[#001528] group-hover:text-black transition-colors duration-300">
-                                    {benefit.title}
-                                </h4>
                             </motion.div>
                         ))}
                     </div>

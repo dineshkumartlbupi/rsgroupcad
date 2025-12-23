@@ -4,7 +4,7 @@ import { CheckCircle, ArrowRight, FileCheck, Activity, ShieldCheck, Zap } from '
 import { Link } from 'react-router-dom';
 import solarDesignHeroImg from '../../assets/hero/solar_design_hero.png';
 import residentialSolarImg from '../../assets/services/residential_solar_design.png';
-import proposalDesignsImg from '../../assets/services/proposal_designs.jpg';
+import proposalDesignsImg from '../../assets/solar_proposal_design.jpg';
 import permitPlansetImg from '../../assets/services/permit_planset_new.png';
 import asBuiltDrawingImg from '../../assets/services/as_built_drawing.png';
 import solarExpansionImg from '../../assets/services/solar_expansion_design.png';
@@ -194,8 +194,8 @@ const SolarDesign = () => {
                         {/* Proposal Designs */}
                         <div className="space-y-6">
                             <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
-                                <div className="md:w-1/2">
-                                    <img src={proposalDesignsImg} alt="Proposal Designs" className="w-full h-auto rounded-2xl shadow-lg" />
+                                <div className="md:w-1/2 h-[500px]">
+                                    <img src={proposalDesignsImg} alt="Proposal Designs" className="w-full h-auto rounded-2xl shadow-lg " />
                                 </div>
                                 <div className="md:w-2/3">
                                     <h3 className="text-3xl font-bold text-[#001528] mb-4">Proposal Designs</h3>

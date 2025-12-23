@@ -5,8 +5,6 @@ import { CheckCircle, Target, Zap, Globe, XCircle } from 'lucide-react';
 import Team from '../components/Team';
 import officeBrandingImg from '../assets/office_branding_v2.png';
 import engineeringChallengesImg from '../assets/engineering_challenges.png';
-import solarTraining1Img from '../assets/solar_training_1.png';
-import solarTraining2Img from '../assets/solar_training_2.png';
 import installationTrainingHeroImg from '../assets/installation_training_hero.png';
 
 const AboutUs = () => {
@@ -201,12 +199,12 @@ const AboutUs = () => {
                         <div className="md:w-1/2">
                             <div className="grid grid-cols-2 gap-4">
                                 <img
-                                    src={solarTraining1Img}
+                                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800"
                                     alt="Solar Installation Training"
                                     className="rounded-2xl shadow-lg w-full h-64 object-cover transform translate-y-8"
                                 />
                                 <img
-                                    src={solarTraining2Img}
+                                    src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=800"
                                     alt="Field Work"
                                     className="rounded-2xl shadow-lg w-full h-64 object-cover"
                                 />

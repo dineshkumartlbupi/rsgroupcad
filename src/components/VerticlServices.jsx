@@ -156,7 +156,7 @@ const VerticleServices = () => {
                                 key={index}
                                 variants={itemVariants}
                                 whileHover={{ y: -10, scale: 1.02 }}
-                                className={`${service.color} rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border-4 border-gray-200 relative`}
+                                className={`${service.color} rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border-4 border-gray-200 relative flex flex-col`}
                             >
                                 {/* Icon Badge */}
                                 <div className="flex justify-center pt-8 pb-4">
@@ -175,7 +175,7 @@ const VerticleServices = () => {
                                 </div>
 
                                 {/* Features List */}
-                                <div className="px-6 pb-6">
+                                <div className="px-6 pb-6 flex-1">
                                     <ul className="space-y-3">
                                         {service.features.map((feature, idx) => (
                                             <li key={idx} className={`flex items-start text-sm ${service.textColor === 'text-white' ? 'text-gray-100' : 'text-gray-700'}`}>
@@ -188,7 +188,7 @@ const VerticleServices = () => {
                                     </ul>
                                 </div>
                                 {/* CTA Button */}
-                                <div className="px-6 pb-8">
+                                <div className="px-6 pb-8 mt-auto">
                                     <button
                                         onClick={() => navigate(service.route)}
                                         className={`w-full ${service.buttonColor} text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg cursor-pointer`}
