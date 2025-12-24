@@ -95,7 +95,7 @@ const Footer = () => {
                         <div className="space-y-4">
                             <h4 className="text-rsRed font-semibold text-sm border-b border-rsRed/30 pb-2 uppercase tracking-wider">Corporate Office</h4>
                             <a
-                                href="https://www.google.com/maps?q=28.682368530591578,77.3781727529899"
+                                href="https://maps.app.goo.gl/CaK9kRqNLrbnpZMF8"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group block"

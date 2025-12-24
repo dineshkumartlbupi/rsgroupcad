@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Sun, Zap, PenTool, Layers, Settings, CheckCircle } from 'lucide-react';
 import logoColored from '../assets/logo_colored_v2.png';
 import logoWhite from '../assets/whitelogo.svg';
-
+import logoColor from '../assets/colorlogo.svg';
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
@@ -71,7 +71,7 @@ const Navbar = () => {
     const textColorClass = (isHome && !isScrolled) ? 'text-white' : 'text-gray-800';
     const navBgClass = (isHome && !isScrolled) ? 'bg-transparent' : 'bg-white shadow-lg';
     // Logic for logo switching
-    const currentLogo = (isHome && !isScrolled) ? logoWhite : logoColored;
+    const currentLogo = (isHome && !isScrolled) ? logoWhite : logoColor;
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${navBgClass} py-4`}>
