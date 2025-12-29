@@ -712,6 +712,194 @@ app.post('/api/solar-installation', async (req, res) => {
     }
 });
 
+// Free Consultation endpoint (Footer Form)
+app.post('/api/consultation', async (req, res) => {
+    try {
+        const {
+            name,
+            phone,
+            email,
+            city,
+            source = 'Footer Form'
+        } = req.body;
+
+        // Create email HTML
+        const emailHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1f3366, #e62e00);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            background: #ffffff;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        .section {
+            margin-bottom: 25px;
+            border-left: 4px solid #1f3366;
+            padding-left: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f3366;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .info-row {
+            margin: 8px 0;
+            padding: 6px 0;
+        }
+        .label {
+            font-weight: 600;
+            color: #555;
+            display: inline-block;
+            width: 140px;
+        }
+        .value {
+            color: #333;
+        }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-radius: 0 0 10px 10px;
+        }
+        .badge {
+            display: inline-block;
+            background: #e62e00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 New Free Consultation Request</h1>
+        <p>RS Solar CAD Group - ${source}</p>
+        <div class="badge">Immediate Action Required</div>
+    </div>
+    
+    <div class="content">
+        <div class="section">
+            <div class="section-title">👤 Potential Client Details</div>
+            <div class="info-row">
+                <span class="label">Name:</span>
+                <span class="value"><strong>${name}</strong></span>
+            </div>
+            <div class="info-row">
+                <span class="label">Phone:</span>
+                <span class="value"><a href="tel:${phone}">${phone}</a></span>
+            </div>
+            <div class="info-row">
+                <span class="label">Email:</span>
+                <span class="value"><a href="mailto:${email}">${email}</a></span>
+            </div>
+            <div class="info-row">
+                <span class="label">City:</span>
+                <span class="value">${city}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Submitted:</span>
+                <span class="value">${new Date().toLocaleString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        })}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Source:</span>
+                <span class="value">${source}</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🎯 Next Steps</div>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Call the client at: <a href="tel:${phone}">${phone}</a></li>
+                <li>Email the client at: <a href="mailto:${email}">${email}</a></li>
+                <li>Prepare for a consultation regarding their CAD/Solar needs in ${city}.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>This request was submitted through: ${source}</strong></p>
+        <p style="margin-top: 15px; font-size: 11px; color: #999;">
+            © ${new Date().getFullYear()} RS Solar CAD Group. All rights reserved.
+        </p>
+    </div>
+</body>
+</html>
+        `;
+
+        // Create transporter
+        const transporter = createTransporter();
+
+        // Email options
+        const mailOptions = {
+            from: `"RS Solar CAD Consultation" <${process.env.SMTP_USER}>`,
+            to: process.env.RECIPIENT_EMAIL || 'Contact@rscadgroup.com',
+            replyTo: email,
+            subject: `New Consultation Request - ${city} - ${name}`,
+            html: emailHTML
+        };
+
+        // Send email
+        const info = await transporter.sendMail(mailOptions);
+
+        console.log('Consultation email sent successfully:', info.messageId);
+
+        res.status(200).json({
+            success: true,
+            message: 'Consultation request submitted successfully',
+            messageId: info.messageId
+        });
+
+    } catch (error) {
+        console.error('Error sending consultation email:', error);
+
+        if (error.code === 'EAUTH') {
+            return res.status(500).json({
+                success: false,
+                message: 'SMTP authentication failed. Please configure your email credentials.',
+                error: 'SMTP_NOT_CONFIGURED'
+            });
+        }
+
+        res.status(500).json({
+            success: false,
+            message: 'Failed to send consultation request',
+            error: error.message
+        });
+    }
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`✅ Server is running on port ${PORT}`);

@@ -61,7 +61,7 @@ const CoreOfferings = () => {
                     >
                         <h3 className="text-3xl md:text-5xl font-extrabold text-[#001528] relative inline-block">
                             Operational Roadmap
-                            <span className="block h-1.5 w-24 bg-[#FFB800] mt-4 rounded-full"></span>
+                            <span className="block h-1.5 w-24 bg-[#1f3366] mt-4 rounded-full"></span>
                         </h3>
                     </motion.div>
 
@@ -77,7 +77,7 @@ const CoreOfferings = () => {
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500"></div>
 
                                 <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-8 mx-auto group-hover:bg-[#001528] transition-colors duration-300 relative z-10">
-                                    <div className="text-[#FFB800] group-hover:text-white transition-colors duration-300">
+                                    <div className="text-[#1f3366] group-hover:text-white transition-colors duration-300">
                                         {step.icon}
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ const CoreOfferings = () => {
                     >
                         <h3 className="text-3xl md:text-5xl font-extrabold text-[#001528] relative inline-block">
                             Strategic Advantages
-                            <span className="block h-1.5 w-24 bg-[#FFB800] mt-4 rounded-full"></span>
+                            <span className="block h-1.5 w-24 bg-[#1f3366] mt-4 rounded-full"></span>
                         </h3>
                     </motion.div>
 
@@ -112,7 +112,7 @@ const CoreOfferings = () => {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-[#FFB800] rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col overflow-hidden group h-64 border border-yellow-400 relative"
+                                className="bg-[#1f3366] rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300 flex flex-col overflow-hidden group h-64 border border-[#1f3366] relative"
                             >
                                 {/* Image Container */}
                                 <div className="relative h-full overflow-hidden">

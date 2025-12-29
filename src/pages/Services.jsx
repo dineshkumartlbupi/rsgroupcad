@@ -15,7 +15,7 @@ const servicesList = [
         icon: <Sun className="w-12 h-12" />,
         link: "/solar-design-services",
         image: solarDesignImg,
-        color: "from-yellow-500 to-orange-500",
+        color: "from-[#1f3366] to-blue-600",
         highlights: ["12-24H Turnaround", "50-State PE Stamps", "NEC Compliant"]
     },
     {
@@ -69,7 +69,7 @@ const Services = () => {
     return (
         <div className="pt-20 bg-gray-50">
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-geonBlue to-blue-700 py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
+            <div className="bg-[#1f3366] py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -78,10 +78,10 @@ const Services = () => {
                 </div>
                 <div className="relative z-10 max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wide mb-6">Our Services</h1>
-                    <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
+                    <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
                         Comprehensive engineering and design solutions for a sustainable future.
                     </p>
-                    <p className="mt-4 text-lg text-blue-200 max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
                         From solar design to workforce staffing, we provide end-to-end services that power your renewable energy projects.
                     </p>
                 </div>
@@ -112,7 +112,7 @@ const Services = () => {
 
                                 {/* Content Section */}
                                 <div className="p-8">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-geonBlue transition-colors">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#e62e00] transition-colors">
                                         {service.title}
                                     </h3>
                                     <p className="text-gray-600 text-base leading-relaxed mb-6">
@@ -124,7 +124,7 @@ const Services = () => {
                                         {service.highlights.map((highlight, i) => (
                                             <span
                                                 key={i}
-                                                className="px-3 py-1 bg-blue-50 text-geonBlue text-sm font-medium rounded-full border border-blue-100"
+                                                className="px-3 py-1 bg-[#1f3366]/5 text-[#1f3366] text-sm font-medium rounded-full border border-[#1f3366]/10"
                                             >
                                                 {highlight}
                                             </span>
@@ -134,7 +134,7 @@ const Services = () => {
                                     {/* CTA Button */}
                                     <Link
                                         to={service.link}
-                                        className="inline-flex items-center text-rsRed font-bold text-lg hover:text-green-800 transition-colors group/link"
+                                        className="inline-flex items-center text-[#e62e00] font-bold text-lg hover:text-[#1f3366] transition-colors group/link"
                                     >
                                         LEARN MORE
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover/link:translate-x-2 transition-transform" />
@@ -151,7 +151,7 @@ const Services = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose RS Solar CAD Group?</h2>
-                        <div className="w-24 h-1.5 bg-rsRed rounded-full mx-auto mb-6"></div>
+                        <div className="w-24 h-1.5 bg-[#e62e00] rounded-full mx-auto mb-6"></div>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             We combine technical expertise with industry-leading turnaround times to deliver exceptional results.
                         </p>
@@ -159,10 +159,10 @@ const Services = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { number: "150k+", label: "Projects Completed", color: "text-yellow-500" },
-                            { number: "12-24H", label: "Average Turnaround", color: "text-blue-500" },
-                            { number: "98%", label: "First-Time Approval", color: "text-blue-500" },
-                            { number: "50", label: "States Covered", color: "text-red-500" }
+                            { number: "150k+", label: "Projects Completed", color: "text-[#1f3366]" },
+                            { number: "12-24H", label: "Average Turnaround", color: "text-[#1f3366]" },
+                            { number: "98%", label: "First-Time Approval", color: "text-[#1f3366]" },
+                            { number: "170+", label: "Active Clients", color: "text-[#e62e00]" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                                 <div className={`text-5xl font-bold ${stat.color} mb-2`}>{stat.number}</div>
@@ -174,23 +174,23 @@ const Services = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-geonBlue to-blue-700 text-white">
+            <section className="py-20 bg-[#1f3366] text-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-                    <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+                    <p className="text-xl text-white/80 mb-8 leading-relaxed">
                         Let's discuss how our services can accelerate your renewable energy projects.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             to="/contact-us"
-                            className="inline-flex items-center justify-center bg-rsRed text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                            className="inline-flex items-center justify-center bg-[#e62e00] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                         >
                             Contact Us
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                         <Link
                             to="/about-us"
-                            className="inline-flex items-center justify-center bg-white text-geonBlue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                            className="inline-flex items-center justify-center bg-white text-[#1f3366] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                         >
                             Learn About Us
                         </Link>

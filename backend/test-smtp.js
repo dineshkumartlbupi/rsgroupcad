@@ -16,7 +16,7 @@ console.log('- SMTP_PASS Length:', process.env.SMTP_PASS ? process.env.SMTP_PASS
 console.log('- SMTP_PASS (full):', process.env.SMTP_PASS); // Show full password for debugging
 console.log('');
 
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURE === 'true',

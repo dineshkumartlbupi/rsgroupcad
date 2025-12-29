@@ -88,9 +88,9 @@ const Careers = () => {
     return (
         <div className="pt-20 font-sans">
             {/* Hero Section */}
-            <div className="bg-gradient-to-br from-[#001528] to-[#0033A0] py-20 md:py-28 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
+            <div className="bg-[#1f3366] py-20 md:py-28 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-rsRed rounded-full opacity-10 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-yellow-500 rounded-full opacity-10 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#1f3366] rounded-full opacity-10 blur-3xl"></div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -101,7 +101,7 @@ const Careers = () => {
                     <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wide mb-6">
                         Join Our Team
                     </h1>
-                    <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
                         Build the future of sustainable energy with us. We are always looking for passionate innovators to join our global team.
                     </p>
                 </motion.div>
@@ -126,7 +126,7 @@ const Careers = () => {
                                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
                             >
                                 {/* Job Header */}
-                                <div className="bg-gradient-to-r from-[#001528] to-[#0033A0] text-white p-6">
+                                <div className="bg-[#1f3366] text-white p-6">
                                     <h3 className="text-2xl font-bold mb-3">{job.title}</h3>
                                     <div className="flex flex-wrap gap-2">
                                         <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
@@ -156,7 +156,7 @@ const Careers = () => {
                                         <ul className="space-y-2">
                                             {job.responsibilities.slice(0, 4).map((resp, idx) => (
                                                 <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                                                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
                                                     <span>{resp}</span>
                                                 </li>
                                             ))}
@@ -168,7 +168,7 @@ const Careers = () => {
                                         <ul className="space-y-2">
                                             {job.requirements.slice(0, 4).map((req, idx) => (
                                                 <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                                                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
                                                     <span>{req}</span>
                                                 </li>
                                             ))}
@@ -177,7 +177,7 @@ const Careers = () => {
 
                                     <button
                                         onClick={() => handleApplyClick(job)}
-                                        className="w-full bg-gradient-to-r from-rsRed to-red-700 text-white font-bold py-4 px-6 rounded-lg hover:shadow-xl transition-all transform hover:scale-105"
+                                        className="w-full bg-[#e62e00] text-white font-bold py-4 px-6 rounded-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all transform hover:scale-105"
                                     >
                                         Apply Now
                                     </button>
@@ -191,19 +191,19 @@ const Careers = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mt-16 text-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-10 border border-blue-100"
+                        className="mt-16 text-center bg-gray-50 rounded-2xl p-10 border border-gray-200"
                     >
                         <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Don't See a Perfect Fit?</h3>
                         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                             We are growing fast and always looking for talented individuals. Send your resume to{' '}
-                            <a href="mailto:Hr@rscadgroup.com" className="text-[#0033A0] font-bold hover:underline">
+                            <a href="mailto:Hr@rscadgroup.com" className="text-[#e62e00] font-bold hover:underline">
                                 Hr@rscadgroup.com
                             </a>
                             {' '}and we'll keep you on file for future opportunities.
                         </p>
                         <a
                             href="mailto:Hr@rscadgroup.com"
-                            className="inline-flex items-center gap-2 bg-[#0033A0] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#002080] transition-colors shadow-lg"
+                            className="inline-flex items-center gap-2 bg-[#1f3366] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#152347] transition-colors shadow-lg"
                         >
                             <Mail className="w-5 h-5" />
                             Send Your Resume

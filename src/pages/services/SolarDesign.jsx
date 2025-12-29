@@ -77,7 +77,7 @@ const SolarDesign = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h2 className="text-[#E6A93E] text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4">
+                            <h2 className="text-[#e62e00] text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4">
                                 Expertise & Services
                             </h2>
                             <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight break-words">
@@ -92,7 +92,7 @@ const SolarDesign = () => {
                                 <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#001528] to-transparent z-10"></div>
                                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#001528] to-transparent z-10"></div>
                                 <motion.div
-                                    className="flex gap-8 md:gap-12 items-center text-[#E6A93E] text-sm md:text-lg font-medium tracking-wider uppercase whitespace-nowrap"
+                                    className="flex gap-8 md:gap-12 items-center text-[#e62e00] text-sm md:text-lg font-medium tracking-wider uppercase whitespace-nowrap"
                                     animate={{ x: ["0%", "-50%"] }}
                                     transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                                 >
@@ -122,7 +122,7 @@ const SolarDesign = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0 }}
-                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#E6A93E] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
+                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#1f3366] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
                             >
                                 <div className="text-[#001528] mb-2 md:mb-3 p-2 md:p-3 bg-gray-50 rounded-full">
                                     <Zap className="w-6 h-6 md:w-8 md:h-8" />
@@ -138,7 +138,7 @@ const SolarDesign = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#E6A93E] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
+                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#1f3366] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
                             >
                                 <div className="text-[#001528] mb-2 md:mb-3 p-2 md:p-3 bg-gray-50 rounded-full">
                                     <FileCheck className="w-6 h-6 md:w-8 md:h-8" />
@@ -154,7 +154,7 @@ const SolarDesign = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#E6A93E] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
+                                className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl border-2 border-[#1f3366] flex flex-col items-center justify-center text-center transform hover:-translate-y-2 transition-transform duration-300"
                             >
                                 <div className="text-[#001528] mb-2 md:mb-3 p-2 md:p-3 bg-gray-50 rounded-full">
                                     <ShieldCheck className="w-6 h-6 md:w-8 md:h-8" />
@@ -243,7 +243,7 @@ const SolarDesign = () => {
                                         "Carports and custom mounting structures"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start">
-                                            <CheckCircle className="w-5 h-5 text-[#E6A93E] mt-1 mr-3 flex-shrink-0" />
+                                            <CheckCircle className="w-5 h-5 text-[#e62e00] mt-1 mr-3 flex-shrink-0" />
                                             <span className="text-gray-700">{item}</span>
                                         </li>
                                     ))}
@@ -252,7 +252,7 @@ const SolarDesign = () => {
 
                             {/* Deliverables */}
                             <div className="bg-[#001528] text-white rounded-2xl p-8 shadow-xl">
-                                <h4 className="text-2xl font-bold mb-6 text-[#E6A93E]">Deliverables Included in Our Permit Sets</h4>
+                                <h4 className="text-2xl font-bold mb-6 text-[#e62e00]">Deliverables Included in Our Permit Sets</h4>
                                 <p className="text-gray-300 text-lg mb-6">Each permit package is tailored to project and jurisdiction needs and may include:</p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                                     {[
@@ -268,7 +268,7 @@ const SolarDesign = () => {
                                         "Material takeoffs, BOM, and BOS documentation"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mt-2.5 mr-3 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#e62e00] mt-2.5 mr-3 flex-shrink-0"></div>
                                             <span className="text-gray-200">{item}</span>
                                         </li>
                                     ))}
@@ -346,7 +346,7 @@ const SolarDesign = () => {
                                         { title: "Regulatory Compliance:", desc: "Adheres to NEC, AHJ, and utility standards for hassle-free approvals." }
                                     ].map((benefit, i) => (
                                         <li key={i} className="flex items-start">
-                                            <CheckCircle className="w-5 h-5 text-[#E6A93E] mt-1 mr-3 flex-shrink-0" />
+                                            <CheckCircle className="w-5 h-5 text-[#e62e00] mt-1 mr-3 flex-shrink-0" />
                                             <span className="text-gray-700">
                                                 <span className="font-bold">{benefit.title}</span> {benefit.desc}
                                             </span>
@@ -441,7 +441,7 @@ const SolarDesign = () => {
                             </div>
 
                             <div className="bg-[#001528] text-white rounded-2xl p-8 shadow-xl">
-                                <h4 className="text-2xl font-bold mb-6 text-[#E6A93E]">Our licensed PE partners provide:</h4>
+                                <h4 className="text-2xl font-bold mb-6 text-[#e62e00]">Our licensed PE partners provide:</h4>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {[
                                         "Structural and electrical reviews",
@@ -451,7 +451,7 @@ const SolarDesign = () => {
                                         "Wet or digital PE stamps for all designs"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#E6A93E] mt-2.5 mr-3 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#e62e00] mt-2.5 mr-3 flex-shrink-0"></div>
                                             <span className="text-gray-200">{item}</span>
                                         </li>
                                     ))}
@@ -468,13 +468,13 @@ const SolarDesign = () => {
 
 
                     {/* CTA */}
-                    <div className="bg-[#E6A93E] rounded-3xl p-12 text-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[#001528] opacity-5 pattern-grid-lg"></div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#001528] mb-6 relative z-10">Ready to Optimize Your Project?</h2>
-                        <p className="text-[#001528]/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">
+                    <div className="bg-[#1f3366] rounded-3xl p-12 text-center relative overflow-hidden">
+                        <div className="absolute inset-0 bg-white opacity-5 pattern-grid-lg"></div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">Ready to Optimize Your Project?</h2>
+                        <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">
                             Partner with RS Solar CAD Group for world-class engineering and design support tailored to your needs.
                         </p>
-                        <Link to="/contact-us" className="relative z-10 inline-flex items-center justify-center bg-[#001528] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-white hover:text-[#001528] transition-all duration-300 shadow-xl">
+                        <Link to="/contact-us" className="relative z-10 inline-flex items-center justify-center bg-[#e62e00] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-white hover:text-[#e62e00] transition-all duration-300 shadow-xl">
                             Get A Free Quote
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>

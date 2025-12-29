@@ -17,7 +17,7 @@ const services = [
             "Instant roof measurements",
             "Automated shading analysis"
         ],
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        buttonColor: "bg-[#1f3366] hover:bg-[#152347]",
         route: "/solar-design-services"
     },
     {
@@ -26,14 +26,14 @@ const services = [
         icon: FileText,
         color: "bg-[#2d5016]",
         textColor: "text-white",
-        accentColor: "bg-yellow-500",
+        accentColor: "bg-[#1f3366]",
         features: [
             "Permit-ready plan sets",
             "AHJ-specific customization",
             "As-built drawings",
             "Revision management"
         ],
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        buttonColor: "bg-[#1f3366] hover:bg-[#152347]",
         route: "/solar-design-services"
     },
     {
@@ -42,21 +42,21 @@ const services = [
         icon: Building2,
         color: "bg-[#1a3a52]",
         textColor: "text-white",
-        accentColor: "bg-yellow-500",
+        accentColor: "bg-[#1f3366]",
         features: [
             "PE-stamped structural calculations",
             "Wind & snow load analysis",
             "Roof load certifications",
             "Foundation design"
         ],
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        buttonColor: "bg-[#1f3366] hover:bg-[#152347]",
         route: "/solar-design-services"
     },
     {
         title: "Electrical Engineering",
         subtitle: "Power Your Vision",
         icon: Zap,
-        color: "bg-[#f59e0b]",
+        color: "bg-[#1f3366]",
         textColor: "text-white",
         accentColor: "bg-[#1a3a52]",
         features: [
@@ -81,7 +81,7 @@ const services = [
             "Revision handling",
             "Expedited processing"
         ],
-        buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+        buttonColor: "bg-[#1f3366] hover:bg-[#152347]",
         route: "/solar-design-services"
     }
 ];
@@ -218,7 +218,7 @@ const VerticleServices = () => {
                         </p>
                         <button
                             onClick={() => navigate('/contact-us')}
-                            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+                            className="bg-[#1f3366] hover:bg-[#152347] text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
                         >
                             Get Started Today
                         </button>

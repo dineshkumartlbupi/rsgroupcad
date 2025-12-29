@@ -77,32 +77,32 @@ const ContactUs = () => {
             icon: <Mail className="w-6 h-6" />,
             title: 'Email Us',
             details: ['contact@rscadgroup.com', 'sales@rscadgroup.com'],
-            color: '#0033A0'
+            color: '#1f3366'
         },
         {
             icon: <Phone className="w-6 h-6" />,
             title: 'Call Us',
             details: ['+1 (912) 980 4481 (USA)', '+91 9958060424 (India)'],
-            color: '#0033A0'
+            color: '#1f3366'
         },
         {
             icon: <MapPin className="w-6 h-6" />,
             title: 'Visit Us',
             details: ['Block A, Loni Industrial Area', 'Ghaziabad, UP 201007, India'],
-            color: '#0033A0'
+            color: '#1f3366'
         },
         {
             icon: <Clock className="w-6 h-6" />,
             title: 'Business Hours',
             details: ['24 Hour Working'],
-            color: '#0033A0'
+            color: '#1f3366'
         }
     ];
     // test
     return (
         <div className="pt-20 font-sans bg-white">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-[#0033A0] to-[#001f5c] py-20 overflow-hidden">
+            <section className="relative bg-gradient-to-br from-[#1f3366] to-[#0d1b42] py-20 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -129,7 +129,7 @@ const ContactUs = () => {
             </section>
 
             {/* Main Content */}
-            <section className="py-20 bg-gradient-to-br from-[#0033A0] to-[#001f5c] ">
+            <section className="py-20 bg-gradient-to-br from-[#1f3366] to-[#0d1b42] ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Left Side - Contact Info */}
@@ -152,10 +152,10 @@ const ContactUs = () => {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0033A0]/30 transition-all"
+                                        className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#1f3366]/30 transition-all"
                                     >
                                         <div className="flex items-start space-x-4">
-                                            <div className="w-12 h-12 bg-[#0033A0]/10 rounded-lg flex items-center justify-center text-[#0033A0] flex-shrink-0">
+                                            <div className="w-12 h-12 bg-[#1f3366]/10 rounded-lg flex items-center justify-center text-[#1f3366] flex-shrink-0">
                                                 {info.icon}
                                             </div>
                                             <div>
@@ -191,7 +191,7 @@ const ContactUs = () => {
                                             required
                                             value={formData.fullName}
                                             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all"
                                             placeholder="John Doe"
                                         />
                                     </div>
@@ -206,7 +206,7 @@ const ContactUs = () => {
                                             required
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all"
                                             placeholder="john@example.com"
                                         />
                                     </div>
@@ -221,7 +221,7 @@ const ContactUs = () => {
                                             required
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all"
                                             placeholder="+1 (555) 000-0000"
                                         />
                                     </div>
@@ -235,7 +235,7 @@ const ContactUs = () => {
                                             type="text"
                                             value={formData.company}
                                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all"
                                             placeholder="Your Company"
                                         />
                                     </div>
@@ -249,7 +249,7 @@ const ContactUs = () => {
                                             required
                                             value={formData.service}
                                             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all bg-white"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all bg-white"
                                         >
                                             <option value="">Select a service</option>
                                             {services.map((service, index) => (
@@ -268,7 +268,7 @@ const ContactUs = () => {
                                             rows={4}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0033A0] focus:border-transparent outline-none transition-all resize-none"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all resize-none"
                                             placeholder="Tell us about your project..."
                                         ></textarea>
                                     </div>
@@ -289,7 +289,7 @@ const ContactUs = () => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full bg-[#00D9FF] text-[#001528] py-4 px-6 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="w-full bg-[#e62e00] text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                                         <Send className="w-5 h-5" />
@@ -302,7 +302,7 @@ const ContactUs = () => {
             </section>
 
             {/* Map or Additional CTA Section */}
-            <section className="py-16 bg-gradient-to-r from-[#0033A0] to-[#001f5c]">
+            <section className="py-16 bg-gradient-to-r from-[#1f3366] to-[#0d1b42]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Ready to Get Started?
@@ -313,7 +313,7 @@ const ContactUs = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
                             href="tel:+19129804481"
-                            className="inline-flex items-center justify-center bg-white text-[#0033A0] px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                            className="inline-flex items-center justify-center bg-white text-[#1f3366] px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
                         >
                             <Phone className="mr-2 w-5 h-5" />
                             Call Now
@@ -322,7 +322,7 @@ const ContactUs = () => {
                             href="https://wa.me/19129804481"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center bg-[#00D9FF] text-[#001528] px-8 py-4 rounded-full font-bold hover:bg-[#00C4E6] transition-colors"
+                            className="inline-flex items-center justify-center bg-[#e62e00] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all"
                         >
                             <MessageCircle className="mr-2 w-5 h-5" />
                             WhatsApp Us

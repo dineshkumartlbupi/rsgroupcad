@@ -1,6 +1,8 @@
 import React from 'react';
 import { CheckCircle, Clock, Leaf, Settings, FileCheck, Layers } from 'lucide-react';
 import { motion } from 'framer-motion';
+import solarProposalImg from '../assets/solar_proposal_design.jpg';
+import installationTrainingImg from '../assets/installation_training_hero.png';
 
 const features = [
     {
@@ -12,7 +14,7 @@ const features = [
     {
         title: "Strong & Professional",
         description: "Revision-free plans thoroughly vetted for NEC, Fire, and local utility codes to ensure smooth approvals.",
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
+        image: solarProposalImg,
         icon: <CheckCircle className="w-6 h-6 text-white" />
     },
     {
@@ -24,7 +26,7 @@ const features = [
     {
         title: "Outsourcing Value Focus",
         description: "Our engineers are trained on real installation sites, ensuring 10x more accurate and practical designs.",
-        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        image: installationTrainingImg,
         icon: <Settings className="w-6 h-6 text-white" />
     },
     {
@@ -34,7 +36,7 @@ const features = [
         icon: <FileCheck className="w-6 h-6 text-white" />
     },
     {
-        title: "Short & High-Impact (Banner / CTA)",
+        title: "Short & High-Impact",
         description: "We don't just design; we install. Our own teams have installed over 5MW, bringing field reality to every drawing.",
         image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         icon: <Leaf className="w-6 h-6 text-white" />

@@ -11,13 +11,13 @@ const AboutUs = () => {
     return (
         <div className="pt-20">
             {/* Hero Banner */}
-            <div className="bg-rsBlue py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-rsRed rounded-full opacity-10 blur-3xl"></div>
+            <div className="bg-[#1f3366] py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#e62e00] rounded-full opacity-10 blur-3xl"></div>
                 <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide relative z-10">About RS Solar CAD Group</h1>
                 <p className="mt-6 text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed relative z-10 font-light">
                     "Powering the Global Solar Revolution with Precision, Innovation & Real-World Expertise"
                 </p>
-                <div className="w-24 h-1 bg-rsRed mx-auto mt-8 rounded-full relative z-10"></div>
+                <div className="w-24 h-1 bg-[#e62e00] mx-auto mt-8 rounded-full relative z-10"></div>
             </div>
 
             {/* Who We Are Section */}
@@ -32,13 +32,13 @@ const AboutUs = () => {
                             className="md:w-1/2"
                         >
                             <div className="relative">
-                                <div className="absolute -top-4 -left-4 w-24 h-24 bg-rsRed opacity-10 rounded-full"></div>
+                                <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#e62e00] opacity-10 rounded-full"></div>
                                 <img
                                     src={officeBrandingImg}
                                     alt="RS Solar Office Branding"
                                     className="rounded-2xl shadow-2xl relative z-10 w-full object-cover"
                                 />
-                                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-rsBlue opacity-10 rounded-full -z-0"></div>
+                                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#1f3366] opacity-10 rounded-full -z-0"></div>
                             </div>
                         </motion.div>
                         <motion.div
@@ -48,9 +48,9 @@ const AboutUs = () => {
                             transition={{ duration: 0.8 }}
                             className="md:w-1/2"
                         >
-                            <h2 className="text-3xl font-bold text-rsBlue mb-4 leading-tight">Not Just an Outsourcing Firm — <br /><span className="text-rsRed">A True Strategic Partner</span></h2>
-                            <div className="bg-blue-50 border-l-4 border-rsBlue p-6 my-6 rounded-r-xl">
-                                <p className="text-xl text-rsBlue font-medium italic">
+                            <h2 className="text-3xl font-bold text-[#1f3366] mb-4 leading-tight">Not Just an Outsourcing Firm — <br /><span className="text-[#e62e00]">A True Strategic Partner</span></h2>
+                            <div className="bg-blue-50 border-l-4 border-[#1f3366] p-6 my-6 rounded-r-xl">
+                                <p className="text-xl text-[#1f3366] font-medium italic">
                                     "Most outsourcing providers work for their clients. RS Solar CAD Group works with them."
                                 </p>
                             </div>
@@ -67,8 +67,8 @@ const AboutUs = () => {
                                         "A dedicated back-office for solar design and sales proposals"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start text-gray-700 group">
-                                            <div className="bg-blue-100 p-1 rounded-full mr-3 mt-0.5 group-hover:bg-rsBlue transition-colors duration-300">
-                                                <CheckCircle className="w-4 h-4 text-rsBlue group-hover:text-white transition-colors duration-300" />
+                                            <div className="bg-blue-100 p-1 rounded-full mr-3 mt-0.5 group-hover:bg-[#1f3366] transition-colors duration-300">
+                                                <CheckCircle className="w-4 h-4 text-[#1f3366] group-hover:text-white transition-colors duration-300" />
                                             </div>
                                             <span className="font-medium">{item}</span>
                                         </li>
@@ -87,8 +87,8 @@ const AboutUs = () => {
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-rsBlue">Our Core Strengths</h2>
-                        <div className="w-20 h-1 bg-rsRed mx-auto mt-4 rounded-full"></div>
+                        <h2 className="text-3xl font-bold text-[#1f3366]">Our Core Strengths</h2>
+                        <div className="w-20 h-1 bg-[#e62e00] mx-auto mt-4 rounded-full"></div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -97,11 +97,11 @@ const AboutUs = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
-                            className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-rsBlue group relative overflow-hidden"
+                            className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-[#1f3366] group relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-10 -translate-y-10 group-hover:bg-blue-100 transition-colors"></div>
                             <div className="relative z-10">
-                                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-rsBlue group-hover:bg-rsBlue group-hover:text-white transition-colors duration-300">
+                                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-[#1f3366] group-hover:bg-[#1f3366] group-hover:text-white transition-colors duration-300">
                                     <Globe className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Partnership & Reverse Integration</h3>
@@ -119,11 +119,11 @@ const AboutUs = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-rsRed group relative overflow-hidden"
+                            className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-[#e62e00] group relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full translate-x-10 -translate-y-10 group-hover:bg-red-100 transition-colors"></div>
                             <div className="relative z-10">
-                                <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-rsRed group-hover:bg-rsRed group-hover:text-white transition-colors duration-300">
+                                <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 text-[#e62e00] group-hover:bg-[#e62e00] group-hover:text-white transition-colors duration-300">
                                     <Target className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">What We Deliver</h3>
@@ -151,28 +151,28 @@ const AboutUs = () => {
                     <div className="flex flex-col md:flex-row gap-16 items-center mb-24">
                         <div className="md:w-1/2">
                             <div className="relative group">
-                                <div className="absolute -inset-4 bg-rsRed/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                                <div className="absolute -inset-4 bg-[#e62e00]/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
                                 <img
                                     src={installationTrainingHeroImg}
                                     alt="Industry-First On-Site Installation Training"
                                     className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[500px]"
                                 />
                                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg z-20">
-                                    <p className="font-bold text-rsBlue text-sm">THE INDUSTRY GAP</p>
+                                    <p className="font-bold text-[#1f3366] text-sm">THE INDUSTRY GAP</p>
                                     <p className="text-gray-600 text-xs">Designers often lack field exposure, leading to installation conflicts.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="md:w-1/2">
-                            <h2 className="text-3xl font-bold text-rsBlue mb-2">Industry-First On-Site Installation Training</h2>
-                            <h3 className="text-lg font-bold text-rsRed mb-6 uppercase tracking-wide">(Why Our Designers Are Truly Different)</h3>
+                            <h2 className="text-3xl font-bold text-[#1f3366] mb-2">Industry-First On-Site Installation Training</h2>
+                            <h3 className="text-lg font-bold text-[#e62e00] mb-6 uppercase tracking-wide">(Why Our Designers Are Truly Different)</h3>
 
                             <p className="text-gray-600 leading-relaxed mb-6 text-lg">
                                 One of the biggest challenges in solar outsourcing is that designers are trained only in office environments—never on real installation sites. This gap often results in design assumptions that don’t translate well in the field.
                             </p>
 
                             <div className="bg-red-50 p-8 rounded-2xl border border-red-100 relative overflow-hidden">
-                                <h4 className="font-bold text-rsRed mb-4 text-lg flex items-center">
+                                <h4 className="font-bold text-[#e62e00] mb-4 text-lg flex items-center">
                                     <XCircle className="w-6 h-6 mr-2" />
                                     Common Industry Challenges
                                 </h4>
@@ -185,7 +185,7 @@ const AboutUs = () => {
                                         "Frequent revisions during execution"
                                     ].map((issue, i) => (
                                         <li key={i} className="flex items-center text-gray-800 font-medium">
-                                            <span className="w-1.5 h-1.5 bg-rsRed rounded-full mr-3"></span>
+                                            <span className="w-1.5 h-1.5 bg-[#e62e00] rounded-full mr-3"></span>
                                             {issue}
                                         </li>
                                     ))}
@@ -208,12 +208,12 @@ const AboutUs = () => {
                                     alt="Field Work"
                                     className="rounded-2xl shadow-lg w-full h-64 object-cover"
                                 />
-                                <div className="col-span-2 bg-rsBlue text-white p-6 rounded-2xl shadow-xl flex items-center justify-between">
+                                <div className="col-span-2 bg-[#1f3366] text-white p-6 rounded-2xl shadow-xl flex items-center justify-between">
                                     <div>
                                         <p className="text-2xl font-bold">100%</p>
                                         <p className="text-sm opacity-80">Field-Trained Engineers</p>
                                     </div>
-                                    <CheckCircle className="w-10 h-10 text-blue-400" />
+                                    <CheckCircle className="w-10 h-10 text-white" />
                                 </div>
                             </div>
                         </div>
@@ -221,14 +221,14 @@ const AboutUs = () => {
                         <div className="md:w-1/2">
                             <div className="mb-8">
                                 <h4 className="text-3xl font-bold text-gray-900 mb-2">We Changed The Model.</h4>
-                                <div className="w-24 h-1.5 bg-blue-500 rounded-full mb-6"></div>
+                                <div className="w-24 h-1.5 bg-[#e62e00] rounded-full mb-6"></div>
                                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                                    In 2025, RS Solar CAD Group launched <span className="font-bold text-blue-600">India’s first Solar Design Training Program</span> with Real On-Site Installation Exposure. Our engineers are trained directly on live solar projects.
+                                    In 2025, RS Solar CAD Group launched <span className="font-bold text-[#e62e00]">India’s first Solar Design Training Program</span> with Real On-Site Installation Exposure. Our engineers are trained directly on live solar projects.
                                 </p>
                             </div>
 
-                            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 mb-8">
-                                <h5 className="font-bold text-blue-800 mb-4 uppercase text-sm tracking-wide">Hands-on Experience In:</h5>
+                            <div className="bg-blue-50 rounded-2xl p-8 border border-[#1f3366] mb-8">
+                                <h5 className="font-bold text-[#1f3366] mb-4 uppercase text-sm tracking-wide">Hands-on Experience In:</h5>
                                 <ul className="grid grid-cols-1 gap-4">
                                     {[
                                         "Practical PV layout and stringing methods",
@@ -239,7 +239,7 @@ const AboutUs = () => {
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start text-gray-800">
                                             <div className="bg-white p-1 rounded-full mr-3 shadow-sm mt-0.5">
-                                                <CheckCircle className="w-5 h-5 text-blue-600" />
+                                                <CheckCircle className="w-5 h-5 text-[#e62e00]" />
                                             </div>
                                             <span className="text-lg font-medium">{item}</span>
                                         </li>
@@ -247,11 +247,11 @@ const AboutUs = () => {
                                 </ul>
                             </div>
 
-                            <p className="text-gray-600 leading-relaxed mb-8 italic border-l-4 border-blue-500 pl-4">
+                            <p className="text-gray-600 leading-relaxed mb-8 italic border-l-4 border-[#1f3366] pl-4">
                                 "This real-world training enables our engineers to deliver designs that are more accurate, more practical, and fully aligned with field realities."
                             </p>
 
-                            <a href="/contact-us" className="inline-block px-8 py-3 bg-rsBlue text-white font-bold rounded-full hover:bg-blue-900 transition-colors shadow-lg">
+                            <a href="/contact-us" className="inline-block px-8 py-3 bg-[#e62e00] text-white font-bold rounded-full hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all shadow-lg">
                                 Experience the Difference
                             </a>
                         </div>

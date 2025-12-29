@@ -17,7 +17,7 @@ const FAQItem = ({ question, answer }) => {
         <div className="border-b border-gray-200">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-6 flex justify-between items-center text-left hover:text-[#0033A0] transition-colors"
+                className="w-full py-6 flex justify-between items-center text-left hover:text-[#e62e00] transition-colors"
             >
                 <span className="font-semibold text-lg text-[#001528]">{question}</span>
                 <ChevronDown className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -47,25 +47,25 @@ const SolarInstallation = () => {
             icon: <CreditCard className="w-12 h-12" />,
             title: "0% EMI Financing",
             desc: "Easy and affordable EMI options for everyone",
-            color: "#0033A0"
+            color: "#1f3366"
         },
         {
             icon: <Wind className="w-12 h-12" />,
             title: "Cyclone-Proof",
             desc: "Withstands winds up to 200 km/h",
-            color: "#0033A0"
+            color: "#1f3366"
         },
         {
             icon: <Droplet className="w-12 h-12" />,
             title: "₹1L Guarantee",
             desc: "Water leakage protection guarantee",
-            color: "#0033A0"
+            color: "#1f3366"
         },
         {
             icon: <Wrench className="w-12 h-12" />,
             title: "5-Year Maintenance",
             desc: "Quarterly cleaning & health checks",
-            color: "#0033A0"
+            color: "#1f3366"
         }
     ];
 
@@ -220,7 +220,7 @@ const SolarInstallation = () => {
             </section>
 
             {/* Form Section with Blue Background */}
-            <section className="relative bg-gradient-to-br from-[#0033A0] to-[#001f5c] py-16 md:py-24 overflow-hidden">
+            <section className="relative bg-gradient-to-br from-[#1f3366] to-[#0d1b42] py-16 md:py-24 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -245,15 +245,15 @@ const SolarInstallation = () => {
                             </p>
                             <div className="flex flex-wrap gap-4 mb-8">
                                 <div className="flex items-center gap-2 text-white">
-                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <CheckCircle className="w-5 h-5 text-[#e62e00]" />
                                     <span>0% EMI Available</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-white">
-                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <CheckCircle className="w-5 h-5 text-[#e62e00]" />
                                     <span>Cyclone-Proof Systems</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-white">
-                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
+                                    <CheckCircle className="w-5 h-5 text-[#e62e00]" />
                                     <span>5-Year Maintenance</span>
                                 </div>
                             </div>
@@ -277,7 +277,7 @@ const SolarInstallation = () => {
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1f3366] focus:border-transparent"
                                         value={formData.fullName}
                                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                                         required
@@ -292,7 +292,7 @@ const SolarInstallation = () => {
                                     <input
                                         type="tel"
                                         placeholder=""
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1f3366] focus:border-transparent"
                                         value={formData.whatsappNumber}
                                         onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
                                         required
@@ -311,8 +311,8 @@ const SolarInstallation = () => {
                                                 type="button"
                                                 onClick={() => setFormData({ ...formData, monthlyBill: option })}
                                                 className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition-all ${formData.monthlyBill === option
-                                                    ? 'border-[#0033A0] bg-[#0033A0] text-white'
-                                                    : 'border-gray-300 bg-white text-gray-700 hover:border-[#0033A0]'
+                                                    ? 'border-[#1f3366] bg-[#1f3366] text-white'
+                                                    : 'border-gray-300 bg-white text-gray-700 hover:border-[#1f3366]'
                                                     }`}
                                             >
                                                 {option}
@@ -330,7 +330,7 @@ const SolarInstallation = () => {
                                         <input
                                             type="text"
                                             placeholder=""
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1f3366] focus:border-transparent"
                                             value={formData.pincode}
                                             onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
                                             required
@@ -343,7 +343,7 @@ const SolarInstallation = () => {
                                         <input
                                             type="text"
                                             placeholder=""
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1f3366] focus:border-transparent"
                                             value={formData.city}
                                             onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                                         />
@@ -358,7 +358,7 @@ const SolarInstallation = () => {
                                     <input
                                         type="email"
                                         placeholder=""
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1f3366] focus:border-transparent"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     />
@@ -369,15 +369,15 @@ const SolarInstallation = () => {
                                     <input
                                         type="checkbox"
                                         id="agreeToTerms"
-                                        className="mt-1 w-4 h-4 text-[#0033A0] border-gray-300 rounded focus:ring-[#0033A0]"
+                                        className="mt-1 w-4 h-4 text-[#1f3366] border-gray-300 rounded focus:ring-[#1f3366]"
                                         checked={formData.agreeToTerms}
                                         onChange={(e) => setFormData({ ...formData, agreeToTerms: e.target.checked })}
                                     />
                                     <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
                                         I agree to RS Solar CAD Group's{' '}
-                                        <a href="/terms" className="text-[#00D9FF] hover:underline">terms of service</a>
+                                        <a href="/terms" className="text-[#e62e00] hover:underline">terms of service</a>
                                         {' '}&{' '}
-                                        <a href="/privacy" className="text-[#00D9FF] hover:underline">privacy policy</a>
+                                        <a href="/privacy" className="text-[#e62e00] hover:underline">privacy policy</a>
                                     </label>
                                 </div>
 
@@ -397,7 +397,7 @@ const SolarInstallation = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#00D9FF] text-[#001528] py-4 rounded-lg font-bold text-lg hover:bg-[#00C4E6] transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-[#e62e00] text-white py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? 'Submitting...' : 'Yes! Reduce my electricity bill'}
                                 </button>
@@ -420,7 +420,7 @@ const SolarInstallation = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="text-center"
                             >
-                                <div className="text-4xl md:text-5xl font-bold text-[#0033A0] mb-2">
+                                <div className="text-4xl md:text-5xl font-bold text-[#1f3366] mb-2">
                                     {stat.number}{stat.unit}
                                 </div>
                                 <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
@@ -484,7 +484,7 @@ const SolarInstallation = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="text-center p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 bg-white border border-gray-100"
                             >
-                                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#0033A0]/10 flex items-center justify-center text-[#0033A0]">
+                                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#1f3366]/10 flex items-center justify-center text-[#1f3366]">
                                     {benefit.icon}
                                 </div>
                                 <h4 className="text-xl font-bold text-[#001528] mb-3">{benefit.title}</h4>
@@ -496,7 +496,7 @@ const SolarInstallation = () => {
             </section>
 
             {/* Process Timeline Section */}
-            <section className="py-20 bg-gradient-to-br from-[#0033A0] to-[#001f5c] relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-[#1f3366] to-[#0d1b42] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -545,7 +545,7 @@ const SolarInstallation = () => {
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                                 Since starting operations, we have successfully completed <strong>4.89 MW of commercial solar projects</strong> and <strong>980 kW of installations</strong> across Government schemes and the private sector, demonstrating our capability to deliver reliable, large-scale, and compliant solar solutions.
                             </p>
-                            <button onClick={scrollToForm} className="inline-flex items-center bg-[#0033A0] text-white px-8 py-4 rounded-full font-bold hover:bg-[#002080] transition-colors shadow-lg">
+                            <button onClick={scrollToForm} className="inline-flex items-center bg-[#e62e00] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all shadow-lg">
                                 Get Started Today
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </button>
@@ -575,26 +575,26 @@ const SolarInstallation = () => {
             </section>
 
             {/* Final CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-[#00D9FF] to-[#0099CC] relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-[#1f3366] to-[#0d1b42] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#001528] mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Solar, Designed for Life
                     </h2>
-                    <p className="text-xl md:text-2xl text-[#001528]/80 mb-8 leading-relaxed">
+                    <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
                         With RS Solar CAD Group, solar isn't just installed.<br />
                         It's <strong>designed, engineered, installed, activated, and maintained</strong>—professionally, responsibly, and future-ready.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button onClick={scrollToForm} className="inline-flex items-center justify-center bg-[#0033A0] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#002080] transition-colors shadow-2xl">
+                        <button onClick={scrollToForm} className="inline-flex items-center justify-center bg-[#e62e00] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all shadow-2xl">
                             Start Your Solar Journey
                             <ArrowRight className="ml-2 w-6 h-6" />
                         </button>
-                        <a href="tel:+919958060424" className="inline-flex items-center justify-center bg-white text-[#0033A0] px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
+                        <a href="tel:+919958060424" className="inline-flex items-center justify-center bg-white text-[#1f3366] px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl">
                             <Phone className="mr-2 w-6 h-6" />
                             Call Now
                         </a>
