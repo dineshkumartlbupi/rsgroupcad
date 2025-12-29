@@ -13,16 +13,10 @@ console.log('-----------------------');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
-
-// Middleware
-// app.use(cors({
-//     origin: '*', // Allow all origins for testing
-//     methods: ['GET', 'POST'],
-//     allowedHeaders: ['Content-Type']
-// }));
+// test
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 // Configure multer for file uploads (in memory)
 const storage = multer.memoryStorage();
 const upload = multer({
