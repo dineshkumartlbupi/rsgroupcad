@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, CheckCircle } from 'lucide-react';
-
 // API URL - automatically uses correct backend based on environment
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
-// test
-// test
 const ContactUs = () => {
     const [formData, setFormData] = useState({
         fullName: '',
