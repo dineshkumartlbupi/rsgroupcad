@@ -8,10 +8,9 @@ const WelcomePopup = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        // Show popup after a short delay on every page load
         const timer = setTimeout(() => {
             setIsOpen(true);
-        }, 1000); // 1 second delay
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);
