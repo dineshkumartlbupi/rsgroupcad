@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import solarDesignHeroImg from '../../assets/hero/solar_design_hero.png';
 import residentialSolarImg from '../../assets/services/residential_solar_design.png';
 import proposalDesignsImg from '../../assets/solar_proposal_design.jpg';
-import permitPlansetImg from '../../assets/services/permit_planset_new.png';
-import asBuiltDrawingImg from '../../assets/services/as_built_drawing.png';
-import solarExpansionImg from '../../assets/services/solar_expansion_design.png';
-import solarCarportImg from '../../assets/services/solar_carport_design.png';
+import permitPlansetImg from '../../assets/services/permit_planset_updated.jpg';
+import asBuiltDrawingImg from '../../assets/services/as_built_drawing_new.jpg';
+import solarExpansionImg from '../../assets/services/solar_expansion_design_new.jpg';
+import solarCarportImg from '../../assets/services/solar_carport_design_new.jpg';
 import interconnectionAppImg from '../../assets/services/interconnection_application.png';
 import commercialSolarImg from '../../assets/services/commercial_solar_new.png';
 import engineeringStampsImg from '../../assets/services/engineering_stamps_review.png';
@@ -180,10 +180,10 @@ const SolarDesign = () => {
                         <div className="space-y-6">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={residentialSolarImg} alt="Residential Solar Design" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={residentialSolarImg} alt="Residential Solar Design" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-4">Residential Solar Design Services</h3>
+                                    <h2 className="text-4xl font-bold text-[#001528] mb-4">Residential Solar Design Services</h2>
                                     <p className="text-gray-600 text-lg leading-relaxed">
                                         RS Solar CAD Group delivers end-to-end residential solar design services, supporting projects from sales proposals to permit plan sets, engineering reviews, and as-built documentation. Our teams bring strong expertise in NEC, AHJ, utility, and HOA requirements to ensure smooth approvals and compliance. We design a wide range of systems, including roof and ground mounts, grid-tied, off-grid, hybrid, battery storage, EV charging, and PTO support. Using client-specific drafting templates, we provide consistent, high-quality deliverables such as PV layouts, electrical diagrams, wire sizing, and interconnection drawings—with fast turnaround times of 12–16 hours.
                                     </p>
@@ -198,7 +198,7 @@ const SolarDesign = () => {
                                     <img src={proposalDesignsImg} alt="Proposal Designs" className="w-full h-auto rounded-2xl shadow-lg " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-4">Proposal Designs</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Proposal Designs</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group delivers high-quality solar proposal design services that help installers, EPCs, and sales teams close deals faster. We create accurate, visually clear, and performance-driven proposals that effectively communicate system design, energy production, and financial benefits to end customers.
                                     </p>
@@ -216,10 +216,10 @@ const SolarDesign = () => {
                         <div className="space-y-8">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={permitPlansetImg} alt="Permit Planset" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={permitPlansetImg} alt="Permit Planset" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-6">Permit Planset:</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-6">Permit Planset</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                                         A well-prepared permit plan set plays a critical role in securing fast approvals and ensuring seamless on-site execution. At RS Solar CAD Group, we produce approval-ready solar construction drawings that are technically accurate, visually clear, and installer-friendly.
                                     </p>
@@ -288,10 +288,10 @@ const SolarDesign = () => {
                         <div className="space-y-6">
                             <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={asBuiltDrawingImg} alt="As-Built Drawing" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={asBuiltDrawingImg} alt="As-Built Drawing" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-4">As-Built Drawing</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">As-Built Drawing</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group delivers precise As-Built drawings that accurately reflect the final installed solar system. During installation, field conditions may require changes to layouts, mounting, conduit routing, or interconnection details. Our As-Built plans capture these updates to ensure full alignment with the actual installation.
                                     </p>
@@ -306,10 +306,10 @@ const SolarDesign = () => {
                         <div className="space-y-6">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={solarExpansionImg} alt="Solar System Expansion" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={solarExpansionImg} alt="Solar System Expansion" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-4">Add-On & Solar System Expansion Design</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Add-On & Solar System Expansion Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group designs add-on and system expansion projects for residential, commercial, and utility-scale solar systems. We help clients increase capacity, integrate new components, and upgrade existing systems while maintaining full compatibility with current infrastructure.
                                     </p>
@@ -324,10 +324,10 @@ const SolarDesign = () => {
                         <div className="space-y-8">
                             <div className="flex flex-col md:flex-row-reverse gap-8 items-center mb-8">
                                 <div className="md:w-1/3">
-                                    <img src={solarCarportImg} alt="Solar Carport Design" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={solarCarportImg} alt="Solar Carport Design" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3 space-y-6">
-                                    <h3 className="text-3xl font-bold text-[#001528]">Solar Carport Design Services</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528]">Solar Carport Design Services</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed">
                                         RS Solar CAD Group offers specialized solar carport design solutions that seamlessly integrate renewable energy generation with functional parking spaces. Our designs optimize solar production while providing durable and safe coverage for vehicles.
                                     </p>
@@ -364,10 +364,10 @@ const SolarDesign = () => {
                         <div className="space-y-6">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={interconnectionAppImg} alt="Interconnection Application" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={interconnectionAppImg} alt="Interconnection Application" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-4">Interconnection Application Services</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Interconnection Application Services</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group provides expert support for preparing and submitting solar incentive and interconnection applications, including Solar Interconnection, SGIP, RRF, and more. Our team ensures all documentation is complete, accurate, and ready for review, streamlining the entire approval process.
                                     </p>
@@ -382,44 +382,71 @@ const SolarDesign = () => {
                         </div>
 
                         {/* Commercial Solar Design Services (C&I) */}
-                        <div className="space-y-8">
+                        <div className="space-y-12">
                             <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={commercialSolarImg} alt="Commercial Solar Design" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={commercialSolarImg} alt="Commercial Solar Design" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
                                     <h3 className="text-3xl font-bold text-[#001528] mb-6">Commercial Solar Design Services (C&I)</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                                        RS Solar CAD Group specializes in commercial solar system design for projects ranging from 20 kW to 700 MW. We deliver comprehensive, code-compliant solutions tailored to maximize energy production, ROI, and long-term reliability.
+                                        RS Solar CAD Group specializes in high-performance commercial and industrial (C&I) solar system design for projects ranging from 20 kW to 700 MW. We understand that commercial projects require a higher level of engineering precision, from managing complex interconnections to optimizing large-scale arrays for maximum ROI.
+                                    </p>
+                                    <p className="text-gray-600 text-lg leading-relaxed">
+                                        Our team delivers comprehensive, code-compliant permit and construction packages tailored to the unique constraints of commercial properties. We support EPCs, developers, and installers by navigating NEC codes, fire setback rules, structural loading limits, and utility voltage requirements (208V/480V/MV).
                                     </p>
                                 </div>
                             </div>
 
+                            {/* Service Categories Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                    <h4 className="text-xl font-bold text-[#001528] mb-4">Freestanding & Tracking Systems</h4>
-                                    <p className="text-gray-600">
-                                        Our team has extensive experience designing PV systems on freestanding structures, including carports, single-axis, and dual-axis trackers, as well as ground-mount racking. We provide detailed layout drawings, mounting plans, BOS elevations, and shading analysis for efficient and safe installations.
+                                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="text-xl font-bold text-[#e62e00] mb-4">Rooftop Commercial Systems</h4>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        We design for flat (membrane/ballasted) and pitched commercial roofs, optimizing for obstacle avoidance (HVAC, vents) and structural capacity. Our plans include detailed ballasting maps, attachment details, and fire pathways compliant with local codes.
                                     </p>
                                 </div>
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                    <h4 className="text-xl font-bold text-[#001528] mb-4">Rooftop Systems</h4>
-                                    <p className="text-gray-600">
-                                        We design rooftop commercial solar systems across all scales—from small kW to MW projects—working with multiple racking and module manufacturers. Our services include conceptual layouts, permit-ready construction documents, and full installation details to satisfy local authority requirements.
+                                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="text-xl font-bold text-[#e62e00] mb-4">Carports & Canopies</h4>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        Turn parking lots into energy assets. We provide architectural and electrical designs for single and double cantilever carports, ensuring proper clearance, lighting integration, and EV charger readiness.
                                     </p>
                                 </div>
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                    <h4 className="text-xl font-bold text-[#001528] mb-4">Ground-Mount Systems</h4>
-                                    <p className="text-gray-600">
-                                        We create ground-mounted systems for flat and sloping sites, providing complete arrangement drawings, structural details, electrical diagrams, and 360° overviews.
+                                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="text-xl font-bold text-[#e62e00] mb-4">Ground-Mount & Trackers</h4>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        From fixed-tilt to single-axis trackers, we handle grading analysis, trenching schedules, and stringing layouts for large-scale fields. We support complex terrain and varying soil conditions with appropriate foundation designs.
                                     </p>
                                 </div>
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                    <h4 className="text-xl font-bold text-[#001528] mb-4">Comprehensive Engineering Support</h4>
-                                    <p className="text-gray-600">
-                                        RS Solar CAD Group assists in equipment selection, system layout, interconnection planning, and compliance with site-specific conditions like wind, snow, and climate. Our precision-engineered designs, including electrical and structural drawings, ensure efficient, sustainable, and fully compliant commercial solar installations.
+                                <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="text-xl font-bold text-[#e62e00] mb-4">Electrical & Interconnection</h4>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        We tackle complex electrical challenges including supply-side connections, transformer sizing, voltage drop calculations (&lt;2%), fault current analysis, and coordination with utility requirements for PTO.
                                     </p>
                                 </div>
+                            </div>
+
+                            {/* Commercial Deliverables List */}
+                            <div className="bg-[#1f3366] text-white rounded-2xl p-8 shadow-xl">
+                                <h4 className="text-2xl font-bold mb-6 text-white">Commercial Design Deliverables</h4>
+                                <p className="text-gray-300 text-lg mb-8">Our C&I packages are engineered to reduce RFI delays and speed up installation:</p>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                                    {[
+                                        "Detailed Site Plans & Roof Layouts",
+                                        "Three-Line & Single-Line Electrical Diagrams",
+                                        "Conduit & Conductor Sizing Schedules",
+                                        "Voltage Drop & Fault Current Calculations",
+                                        "Structural Rack & Attachment Details",
+                                        "Ballast Maps & Wind Load support",
+                                        "Equipment Elevations & Clearance Drawings",
+                                        "Signage & Placard Mapping"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start">
+                                            <CheckCircle className="w-5 h-5 text-[#e62e00] mt-1 mr-3 flex-shrink-0" />
+                                            <span className="text-gray-200">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
 
@@ -427,7 +454,7 @@ const SolarDesign = () => {
                         <div className="space-y-8">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 <div className="md:w-1/3">
-                                    <img src={engineeringStampsImg} alt="Engineering Reviews & Stamps" className="w-full h-auto rounded-2xl shadow-lg" />
+                                    <img src={engineeringStampsImg} alt="Engineering Reviews & Stamps" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
                                     <h3 className="text-3xl font-bold text-[#001528] mb-6">Engineering Reviews & Professional Stamps</h3>

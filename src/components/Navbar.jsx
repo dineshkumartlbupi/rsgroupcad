@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Zap, PenTool, Layers, Settings, CheckCircle } from 'lucide-react';
-import logoColored from '../assets/logo_colored_v2.png';
 import logoWhite from '../assets/whitelogo.svg';
 import logoColor from '../assets/colorlogo.svg';
 const Navbar = () => {

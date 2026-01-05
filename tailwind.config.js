@@ -10,7 +10,7 @@ module.exports = {
                 accent: '#e62e00', // RS Solar Red
                 geonBlue: '#0d1b42', // Keep for compatibility but map to new blue
                 rsBlue: '#0d1b42',
-                rsRed: '#e62e00',
+                rsRed: '#9c0404ff',
             },
             fontFamily: {
                 sans: ['Poppins', 'sans-serif'],

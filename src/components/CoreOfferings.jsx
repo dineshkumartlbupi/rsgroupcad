@@ -77,11 +77,10 @@ const CoreOfferings = () => {
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500"></div>
 
                                 <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-8 mx-auto group-hover:bg-[#001528] transition-colors duration-300 relative z-10">
-                                    <div className="text-[#1f3366] group-hover:text-white transition-colors duration-300">
+                                    <div className="text-red-500 group-hover:text-white transition-colors duration-300">
                                         {step.icon}
                                     </div>
                                 </div>
-
                                 <h4 className="text-xl font-bold text-white text-center mb-4">{step.title}</h4>
                                 <p className="text-gray-400 text-center text-sm leading-relaxed">
                                     {step.desc}
