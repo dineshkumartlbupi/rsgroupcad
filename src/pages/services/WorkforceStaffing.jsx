@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Users, ShieldCheck, Search, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import StatsSection from '../../components/StatsSection';
+
 import workforceStaffingHeroImg from '../../assets/hero/workforce_staffing_hero.png';
 
 const BenefitCard = ({ icon, title, desc }) => (

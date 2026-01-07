@@ -8,8 +8,6 @@ import {
     Phone,
     MessageCircle,
     Calendar,
-    ArrowUp,
-    MessageSquare,
     MapPin,
     ExternalLink,
     Loader2,
@@ -344,10 +342,10 @@ const Footer = () => {
                     <LinkGroup
                         title="Who We Are"
                         links={[
-                            { label: 'About Us', to: '/about-us' },
-                            { label: 'Our Journey', to: '/about-us' },
-                            { label: 'Leadership Team', to: '/about-us' },
-                            { label: 'Success Stories', to: '/services' },
+                            { label: 'About Us', to: '/about-us#about-us' },
+                            { label: 'Our Journey', to: '/about-us#our-journey' },
+                            { label: 'Leadership Team', to: '/about-us#leadership' },
+                            { label: 'Success Stories', to: '/success-stories' },
                             { label: 'Career', to: '/career' },
                             { label: 'Our Locations', to: '/contact-us' },
                         ]}
@@ -389,7 +387,9 @@ const Footer = () => {
                             title="Resources"
                             links={[
                                 { label: 'Posts & Updates', to: '/blogs' },
-                                { label: 'FAQ', to: '/contact-us' },
+                                { label: 'Press Release', to: '/press-release' },
+                                { label: 'Media Center', to: '/media' },
+                                { label: 'FAQ', to: '/faq' },
                             ]}
                         />
                     </div>
@@ -408,7 +408,9 @@ const Footer = () => {
                         <span className="text-gray-700">|</span>
                         <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span className="text-gray-700">|</span>
-                        <Link to="/" className="hover:text-white transition-colors">Sitemap</Link>
+                        <Link to="/sla" className="hover:text-white transition-colors">SLA</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
                     </div>
                 </div>
             </div>

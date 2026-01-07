@@ -21,7 +21,7 @@ const AboutUs = () => {
             </div>
 
             {/* Who We Are Section */}
-            <section className="py-20 bg-white">
+            <section id="about-us" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row gap-16 items-center">
                         <motion.div
@@ -144,7 +144,7 @@ const AboutUs = () => {
 
             {/* Industry-First Training Section */}
             {/* Industry-First Training Section - Split into two rows */}
-            <section className="py-20 bg-white">
+            <section id="our-journey" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     {/* Row 1: The Challenge */}

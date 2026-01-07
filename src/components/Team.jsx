@@ -69,7 +69,7 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="leadership" className="py-24 bg-white relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-10 left-10 w-64 h-64 bg-rsBlue opacity-5 rounded-full blur-3xl"></div>

@@ -12,8 +12,14 @@ import BlogDetails from './pages/BlogDetails';
 import ClientPortal from './pages/ClientPortal';
 import Careers from './pages/Careers';
 import CareerApplication from './pages/CareerApplication';
+import PressRelease from './pages/PressRelease';
+import Media from './pages/Media';
+import SuccessStories from './pages/SuccessStories';
+import FAQ from './pages/FAQ';
+import Sitemap from './pages/Sitemap';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import SLAPage from './pages/SLAPage';
 import SolarDesign from './pages/services/SolarDesign';
 import EVCharging from './pages/services/EVChargingStation';
 import CADDesign from './pages/services/CADDesign';
@@ -55,13 +61,17 @@ function App() {
             {/* Other Pages */}
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
-            <Route path="/press-release" element={<PlaceholderPage title="Press Release" />} />
-            <Route path="/media" element={<PlaceholderPage title="Media" />} />
+            <Route path="/press-release" element={<PressRelease />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/success-stories" element={<SuccessStories />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/client-portal" element={<ClientPortal />} />
             <Route path="/career" element={<Careers />} />
             <Route path="/career/apply" element={<CareerApplication />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/sla" element={<SLAPage />} />
 
             {/* Fallback */}
             <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />

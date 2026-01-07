@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Zap, PenTool, Layers, Settings, CheckCircle } from 'lucide-react';
+import { Sun, Zap, PenTool, Layers, Settings, CheckCircle, ClipboardList, RefreshCw, FileText, Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import logoWhite from '../assets/whitelogo.svg';
 import logoColor from '../assets/colorlogo.svg';
 const Navbar = () => {
@@ -11,7 +12,17 @@ const Navbar = () => {
 
     // Constants for menu items matching the real site
     const menuItems = [
-        { name: 'About Us', path: '/about-us' },
+        {
+            name: 'Who We Are',
+            path: '/about-us',
+            dropdown: [
+                { name: 'About Us', path: '/about-us#about-us' },
+                { name: 'Our Journey', path: '/about-us#our-journey' },
+                { name: 'Leadership Team', path: '/about-us#leadership' },
+                { name: 'Press Release', path: '/press-release' },
+                { name: 'Media Center', path: '/media' },
+            ]
+        },
         {
             name: 'Services',
             path: '/services',
@@ -53,6 +64,27 @@ const Navbar = () => {
             name: 'Contact Us', path: '/contact-us'
         },
         {
+            name: 'How We Work',
+            path: '#',
+            dropdown: [
+                {
+                    name: 'Our Process',
+                    path: '/services',
+                    icon: <ClipboardList className="w-5 h-5" />
+                },
+                {
+                    name: 'Design Platform',
+                    path: '/services',
+                    icon: <RefreshCw className="w-5 h-5" />
+                },
+                {
+                    name: 'Service Level Agreement (SLA)',
+                    path: '/sla',
+                    icon: <FileText className="w-5 h-5" />
+                },
+            ]
+        },
+        {
             name: 'Careers',
             path: '/career'
         },
@@ -78,16 +110,16 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0 flex items-center">
-                        <img src={currentLogo} alt="RS Solar CAD Group" className="h-12 w-auto " />
+                        <img src={currentLogo} alt="RS Solar CAD Group" className="h-10 md:h-11 w-auto" />
                     </Link>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden lg:flex space-x-8 items-center">
+                    {/* Desktop Menu - Centered */}
+                    <div className="hidden xl:flex flex-1 justify-center space-x-4 2xl:space-x-8 items-center px-4">
                         {menuItems.map((item) => (
                             <div key={item.name} className="relative group">
                                 <Link
                                     to={item.path}
-                                    className={`text-sm font-medium uppercase tracking-wider hover:text-rsRed transition-colors ${textColorClass} flex items-center`}
+                                    className={`text-xs 2xl:text-sm font-bold uppercase tracking-tight 2xl:tracking-wider hover:text-rsRed transition-colors ${textColorClass} flex items-center whitespace-nowrap`}
                                 >
                                     {item.name}
                                     {item.dropdown && (
@@ -118,76 +150,108 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Indian Solar Installation Button */}
-                    <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
-                        <Link to="/indian-solar-installation" className="bg-[#1f3366] text-white px-3 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-[#152347] transition-colors shadow-md transform hover:scale-105 duration-200 flex items-center gap-1.5 xl:gap-2 whitespace-nowrap">
-                            <Sun className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" />
-                            <span className="hidden xl:inline">Indian Solar</span>
-                            <span className="xl:hidden">Indian Solar</span>
+                    {/* CTA Buttons - Right Aligned */}
+                    <div className="hidden xl:flex items-center space-x-3">
+                        <Link to="/indian-solar-installation" className="bg-[#001528] text-white px-5 py-3 rounded-full font-bold text-[13px] hover:bg-rsRed transition-all shadow-lg hover:scale-105 flex items-center gap-2 whitespace-nowrap group">
+                            <Sun className="w-4 h-4 text-rsRed group-hover:text-white transition-colors" />
+                            <span>Indian Solar</span>
                         </Link>
-                        <Link to="/client-portal" className="bg-rsRed text-white px-4 xl:px-6 py-2 rounded-full font-medium text-xs xl:text-sm hover:bg-red-800 transition-colors shadow-md transform hover:scale-105 duration-200 whitespace-nowrap">
-                            Client Portal
+                        <Link to="/client-portal" className="bg-rsRed text-white px-5 py-3 rounded-full font-bold text-[13px] hover:bg-[#001528] transition-all shadow-lg hover:scale-105 flex items-center gap-2 whitespace-nowrap group">
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <span>Client Portal</span>
                         </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="lg:hidden flex items-center">
-                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`p-2 rounded-md ${textColorClass}`}>
-                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                            </svg>
+                    <div className="xl:hidden flex items-center">
+                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`p-2 rounded-xl transition-colors ${mobileMenuOpen ? 'bg-rsRed/10 text-rsRed' : textColorClass}`}>
+                            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="lg:hidden bg-white shadow-xl absolute top-full left-0 w-full px-4 pt-2 pb-6 flex flex-col space-y-4">
-                    {menuItems.map((item) => (
-                        <div key={item.name}>
-                            <div className="flex justify-between items-center">
-                                <Link
-                                    to={item.path}
-                                    className="text-base font-medium text-gray-800 uppercase"
-                                    onClick={() => !item.dropdown && setMobileMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
-                                {item.dropdown && (
-                                    <button onClick={() => setDropdownOpen(dropdownOpen === item.name ? null : item.name)} className="p-2">
-                                        <svg className={`w-4 h-4 transform ${dropdownOpen === item.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                                    </button>
-                                )}
-                            </div>
-                            {item.dropdown && dropdownOpen === item.name && (
-                                <div className="pl-4 mt-2 space-y-2 border-l-2 border-green-100 ml-1">
-                                    {item.dropdown.map(subItem => (
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="xl:hidden bg-white shadow-2xl absolute top-full left-0 w-full overflow-hidden border-t border-gray-100"
+                    >
+                        <div className="px-4 py-8 flex flex-col space-y-6 max-h-[80vh] overflow-y-auto">
+                            {menuItems.map((item) => (
+                                <div key={item.name} className="border-b border-gray-50 pb-4 last:border-0">
+                                    <div className="flex justify-between items-center">
                                         <Link
-                                            key={subItem.name}
-                                            to={subItem.path}
-                                            className="flex items-center text-sm text-gray-600 py-2"
-                                            onClick={() => setMobileMenuOpen(false)}
+                                            to={item.path}
+                                            className="text-lg font-bold text-[#0d1b42] uppercase tracking-tight"
+                                            onClick={() => !item.dropdown && setMobileMenuOpen(false)}
                                         >
-                                            <span className="mr-3 text-gray-400">
-                                                {subItem.icon}
-                                            </span>
-                                            {subItem.name}
+                                            {item.name}
                                         </Link>
-                                    ))}
+                                        {item.dropdown && (
+                                            <button
+                                                onClick={() => setDropdownOpen(dropdownOpen === item.name ? null : item.name)}
+                                                className={`p-2 rounded-xl transition-all ${dropdownOpen === item.name ? 'bg-rsRed/10 text-rsRed' : 'bg-gray-50 text-gray-400'}`}
+                                            >
+                                                <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${dropdownOpen === item.name ? 'rotate-180' : ''}`} />
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    <AnimatePresence>
+                                        {item.dropdown && dropdownOpen === item.name && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="pl-4 mt-4 space-y-4 border-l-2 border-rsRed/20 ml-1"
+                                            >
+                                                {item.dropdown.map(subItem => (
+                                                    <Link
+                                                        key={subItem.name}
+                                                        to={subItem.path}
+                                                        className="flex items-center text-sm font-medium text-gray-600 py-1 hover:text-rsRed transition-colors"
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                    >
+                                                        {subItem.icon && (
+                                                            <span className="mr-3 text-gray-400">
+                                                                {subItem.icon}
+                                                            </span>
+                                                        )}
+                                                        {subItem.name}
+                                                    </Link>
+                                                ))}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
-                            )}
+                            ))}
+
+                            <div className="pt-4 flex flex-col gap-4">
+                                <Link
+                                    to="/indian-solar-installation"
+                                    className="w-full bg-[#0d1b42] text-white px-6 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    <Sun className="w-5 h-5 text-rsRed" />
+                                    Indian Solar Installation
+                                </Link>
+                                <Link
+                                    to="/client-portal"
+                                    className="w-full bg-rsRed text-white px-6 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-rsRed/20"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    Client Portal
+                                    <ArrowRight className="w-5 h-5" />
+                                </Link>
+                            </div>
                         </div>
-                    ))}
-                    <Link to="/indian-solar-installation" className="text-center w-full bg-[#1f3366] text-white px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                        <Sun className="w-4 h-4" />
-                        Indian Solar Installation
-                    </Link>
-                    <Link to="/client-portal" className="text-center w-full bg-rsRed text-white px-6 py-3 rounded-md font-medium" onClick={() => setMobileMenuOpen(false)}>
-                        Client Portal
-                    </Link>
-                </div>
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
