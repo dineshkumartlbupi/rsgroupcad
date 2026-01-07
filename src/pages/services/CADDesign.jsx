@@ -253,7 +253,7 @@ const CADDesign = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-white">
+            {/* <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat, i) => (
@@ -273,7 +273,7 @@ const CADDesign = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Main Content Section */}
             <section className="pb-24 pt-16">

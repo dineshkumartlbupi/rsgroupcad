@@ -198,7 +198,7 @@ const SolarDesign = () => {
                                     <img src={proposalDesignsImg} alt="Proposal Designs" className="w-full h-auto rounded-2xl shadow-lg " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Proposal Designs</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Proposal Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group delivers high-quality solar proposal design services that help installers, EPCs, and sales teams close deals faster. We create accurate, visually clear, and performance-driven proposals that effectively communicate system design, energy production, and financial benefits to end customers.
                                     </p>
@@ -219,7 +219,7 @@ const SolarDesign = () => {
                                     <img src={permitPlansetImg} alt="Permit Planset" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-[#001528] mb-6">Permit Planset</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-6">Permit Planset Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                                         A well-prepared permit plan set plays a critical role in securing fast approvals and ensuring seamless on-site execution. At RS Solar CAD Group, we produce approval-ready solar construction drawings that are technically accurate, visually clear, and installer-friendly.
                                     </p>
@@ -291,7 +291,7 @@ const SolarDesign = () => {
                                     <img src={asBuiltDrawingImg} alt="As-Built Drawing" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">As-Built Drawing</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">As-Built Drawing Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group delivers precise As-Built drawings that accurately reflect the final installed solar system. During installation, field conditions may require changes to layouts, mounting, conduit routing, or interconnection details. Our As-Built plans capture these updates to ensure full alignment with the actual installation.
                                     </p>
@@ -309,7 +309,7 @@ const SolarDesign = () => {
                                     <img src={solarExpansionImg} alt="Solar System Expansion" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Add-On & Solar System Expansion Design</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Add-On & Solar Design </h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group designs add-on and system expansion projects for residential, commercial, and utility-scale solar systems. We help clients increase capacity, integrate new components, and upgrade existing systems while maintaining full compatibility with current infrastructure.
                                     </p>
@@ -327,7 +327,7 @@ const SolarDesign = () => {
                                     <img src={solarCarportImg} alt="Solar Carport Design" className="w-full h-auto" />
                                 </div>
                                 <div className="md:w-2/3 space-y-6">
-                                    <h3 className="text-2xl font-bold text-[#001528]">Solar Carport Design Services</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528]">Solar Carport Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed">
                                         RS Solar CAD Group offers specialized solar carport design solutions that seamlessly integrate renewable energy generation with functional parking spaces. Our designs optimize solar production while providing durable and safe coverage for vehicles.
                                     </p>
@@ -367,7 +367,7 @@ const SolarDesign = () => {
                                     <img src={interconnectionAppImg} alt="Interconnection Application" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Interconnection Application Services</h3>
+                                    <h3 className="text-2xl font-bold text-[#001528] mb-4">Interconnection Application Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-4">
                                         RS Solar CAD Group provides expert support for preparing and submitting solar incentive and interconnection applications, including Solar Interconnection, SGIP, RRF, and more. Our team ensures all documentation is complete, accurate, and ready for review, streamlining the entire approval process.
                                     </p>
@@ -388,7 +388,7 @@ const SolarDesign = () => {
                                     <img src={commercialSolarImg} alt="Commercial Solar Design" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-6">Commercial Solar Design Services (C&I)</h3>
+                                    <h3 className="text-3xl font-bold text-[#001528] mb-6">Commercial Solar Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                                         RS Solar CAD Group specializes in high-performance commercial and industrial (C&I) solar system design for projects ranging from 20 kW to 700 MW. We understand that commercial projects require a higher level of engineering precision, from managing complex interconnections to optimizing large-scale arrays for maximum ROI.
                                     </p>
@@ -457,7 +457,7 @@ const SolarDesign = () => {
                                     <img src={engineeringStampsImg} alt="Engineering Reviews & Stamps" className="w-full h-auto " />
                                 </div>
                                 <div className="md:w-2/3">
-                                    <h3 className="text-3xl font-bold text-[#001528] mb-6">Engineering Reviews & Professional Stamps</h3>
+                                    <h3 className="text-3xl font-bold text-[#001528] mb-6">Engineering Reviews & Stamps Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                                         RS Solar CAD Group provides Electrical and Structural Professional Engineering (PE) stamps across all 50 states, ensuring your solar and storage projects meet local codes and jurisdictional standards. Whether required by law or added as an extra assurance of quality, PE-stamped plans demonstrate that your designs are safe, compliant, and professionally engineered.
                                     </p>

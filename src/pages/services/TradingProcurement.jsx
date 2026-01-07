@@ -104,9 +104,9 @@ const TradingProcurement = () => {
                     </div>
                 </div>
                 {/* Stats Bar */}
-                <div className="absolute bottom-0 w-full translate-y-1/2 z-20 px-4">
+                {/* <div className="absolute bottom-0 w-full translate-y-1/2 z-20 px-4">
                     <StatsSection />
-                </div>
+                </div> */}
             </div>
 
             {/* Main Content Section */}
