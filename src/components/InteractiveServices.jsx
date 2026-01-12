@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform, useInView, animate } from "framer-motion";
-import { Sun, Zap, Layers, Ruler, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Users, Clock, Globe, Heart } from 'lucide-react';
+import { Sun, Zap, Layers, CheckCircle, ArrowRight, Settings, PenTool, Handshake, FileCog, Globe, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 

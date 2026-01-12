@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Upload, CheckCircle, User, Briefcase, FileText, Mail, Phone, MapPin, Clock, Share2 } from 'lucide-react';
+import { ArrowLeft, Upload, CheckCircle, User, Briefcase, FileText, MapPin, Clock, Share2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // API URL - automatically uses correct backend based on environment

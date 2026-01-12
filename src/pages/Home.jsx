@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import InteractiveServices from '../components/InteractiveServices';
 import WhyChooseUs from '../components/WhyChooseUs';
 import CoreOfferings from '../components/CoreOfferings';
-import OurProcess from '../components/OurProcess';
 import Sustainability from '../components/Sustainability';
 import Overview from '../components/Overview';
 import GreenEra from '../components/GreenEra';

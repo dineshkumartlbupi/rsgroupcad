@@ -2,10 +2,9 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
-import { CheckCircle, Target, Zap, Globe, XCircle } from 'lucide-react';
+import { CheckCircle, Target, Globe, XCircle } from 'lucide-react';
 import Team from '../components/Team';
 import officeBrandingImg from '../assets/office_branding_v2.png';
-import engineeringChallengesImg from '../assets/engineering_challenges.png';
 import installationTrainingHeroImg from '../assets/installation_training_hero.png';
 
 const AboutUs = () => {

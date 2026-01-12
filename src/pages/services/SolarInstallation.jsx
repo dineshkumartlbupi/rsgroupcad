@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Sun, CreditCard, Wind, Droplet, Wrench, Phone, Mail, MapPin, Zap, Shield, Clock, ChevronDown, Star, Users, Award, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { CheckCircle, ArrowRight, CreditCard, Wind, Droplet, Wrench, Phone, ChevronDown } from 'lucide-react';
 import indianSolarHero from '../../assets/hero/indian_solar_hero_new.png';
 import professionalInstallationImg from '../../assets/hero/professional_installation.png';
 import premiumComponentsImg from '../../assets/hero/premium_components.png';
