@@ -115,39 +115,49 @@ const Navbar = () => {
 
                     {/* Desktop Menu - Centered */}
                     <div className="hidden xl:flex flex-1 justify-center space-x-4 2xl:space-x-8 items-center px-4">
-                        {menuItems.map((item) => (
-                            <div key={item.name} className="relative group">
-                                <Link
-                                    to={item.path}
-                                    className={`text-xs 2xl:text-sm font-bold uppercase tracking-tight 2xl:tracking-wider hover:text-rsRed transition-colors ${textColorClass} flex items-center whitespace-nowrap`}
-                                >
-                                    {item.name}
-                                    {item.dropdown && (
-                                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                                    )}
-                                </Link>
+                        {menuItems.map((item) => {
+                            // Check if the current main path or any of its dropdown items match the current location
+                            const isMainActive = location.pathname === item.path;
+                            const isDropdownActive = item.dropdown && item.dropdown.some(sub => location.pathname === sub.path.split('#')[0]);
+                            const isActive = isMainActive || isDropdownActive;
 
-                                {/* Dropdown */}
-                                {item.dropdown && (
-                                    <div className="absolute left-0 top-full pt-4 w-80 hidden group-hover:block">
-                                        <div className="bg-white shadow-xl rounded-md py-2 border-t-4 border-rsRed">
-                                            {item.dropdown.map(subItem => (
-                                                <Link
-                                                    key={subItem.name}
-                                                    to={subItem.path}
-                                                    className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-rsRed border-b border-gray-100 last:border-0 group/item transition-colors"
-                                                >
-                                                    <span className="mr-3 text-gray-400 group-hover/item:text-rsRed transition-colors">
-                                                        {subItem.icon}
-                                                    </span>
-                                                    {subItem.name}
-                                                </Link>
-                                            ))}
+                            return (
+                                <div key={item.name} className="relative group">
+                                    <Link
+                                        to={item.path}
+                                        className={`text-xs 2xl:text-sm font-bold uppercase tracking-tight 2xl:tracking-wider hover:text-rsRed transition-colors ${isActive ? 'text-rsRed' : textColorClass} flex items-center whitespace-nowrap`}
+                                    >
+                                        {item.name}
+                                        {item.dropdown && (
+                                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                                        )}
+                                    </Link>
+
+                                    {/* Dropdown */}
+                                    {item.dropdown && (
+                                        <div className="absolute left-0 top-full pt-4 w-80 hidden group-hover:block">
+                                            <div className="bg-white shadow-xl rounded-md py-2 border-t-4 border-rsRed">
+                                                {item.dropdown.map(subItem => {
+                                                    const isSubActive = location.pathname === subItem.path.split('#')[0] && location.hash === (subItem.path.split('#')[1] ? `#${subItem.path.split('#')[1]}` : '');
+                                                    return (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            to={subItem.path}
+                                                            className={`flex items-center px-4 py-3 text-sm hover:bg-gray-50 hover:text-rsRed border-b border-gray-100 last:border-0 group/item transition-colors ${isSubActive ? 'text-rsRed bg-gray-50' : 'text-gray-700'}`}
+                                                        >
+                                                            <span className={`mr-3 transition-colors ${isSubActive ? 'text-rsRed' : 'text-gray-400 group-hover/item:text-rsRed'}`}>
+                                                                {subItem.icon}
+                                                            </span>
+                                                            {subItem.name}
+                                                        </Link>
+                                                    );
+                                                })}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
 
                     {/* CTA Buttons - Right Aligned */}

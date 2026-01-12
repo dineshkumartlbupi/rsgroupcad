@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import SEO from '../../components/SEO';
 import { motion, useMotionValue, useTransform, useInView, animate } from 'framer-motion';
-import { CheckCircle, ArrowRight, FileCheck, Activity, ShieldCheck, Zap } from 'lucide-react';
+import { CheckCircle, ArrowRight, FileCheck, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import solarDesignHeroImg from '../../assets/hero/solar_design_hero.png';
 import residentialSolarImg from '../../assets/services/residential_solar_design.png';
@@ -62,7 +62,7 @@ const SolarDesign = () => {
         <div className="pt-20 font-sans text-gray-900 bg-white">
             <SEO
                 title="Solar Design & Engineering Services"
-                description="Professional Solar Design & Engineering. 12-24H turnaround, 50-state PE stamps, and NEC compliant permit packages."
+                description="Professional Solar Design & Engineering."
                 canonical="https://rscadgroup.com/solar-design-services"
             />
             {/* Hero Section */}
@@ -104,11 +104,11 @@ const SolarDesign = () => {
                                 >
                                     {[...Array(4)].map((_, i) => (
                                         <React.Fragment key={i}>
-                                            <span className="flex items-center gap-2"><Activity className="w-5 h-5" /> 12-24H Turnaround</span>
+
                                             <span className="text-gray-500">•</span>
                                             <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5" /> 98% Approval Rate</span>
                                             <span className="text-gray-500">•</span>
-                                            <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5" /> 50-State PE Stamps</span>
+                                            <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5" /> Professional Engineering</span>
                                             <span className="text-gray-500">•</span>
                                             <span className="flex items-center gap-2"><FileCheck className="w-5 h-5" /> NEC/AHJ Compliant</span>
                                             <span className="text-gray-500">•</span>
@@ -465,7 +465,7 @@ const SolarDesign = () => {
                                 <div className="md:w-2/3">
                                     <h3 className="text-3xl font-bold text-[#001528] mb-6">Engineering Reviews & Stamps Design</h3>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                                        RS Solar CAD Group provides Electrical and Structural Professional Engineering (PE) stamps across all 50 states, ensuring your solar and storage projects meet local codes and jurisdictional standards. Whether required by law or added as an extra assurance of quality, PE-stamped plans demonstrate that your designs are safe, compliant, and professionally engineered.
+                                        RS Solar CAD Group provides Electrical and Structural Professional Engineering, ensuring your solar and storage projects meet local codes and jurisdictional standards. Whether required by law or added as an extra assurance of quality, PE-stamped plans demonstrate that your designs are safe, compliant, and professionally engineered.
                                     </p>
                                     <p className="text-gray-600 text-lg leading-relaxed">
                                         As a national leader in solar design, we have delivered hundreds of structural certifications and stamped designs for residential and commercial projects, helping installers secure quick permit approvals.

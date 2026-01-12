@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Users, ShieldCheck, Search, Activity, FileCheck } from 'lucide-react';
+import { CheckCircle, ArrowRight, Users, ShieldCheck, Search, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import workforceStaffingHeroImg from '../../assets/hero/workforce_staffing_hero.png';
@@ -94,11 +94,10 @@ const WorkforceStaffing = () => {
                                 >
                                     {[...Array(4)].map((_, i) => (
                                         <React.Fragment key={i}>
-                                            <span className="flex items-center gap-2"><Activity className="w-5 h-5" /> 12-24H Turnaround</span>
+
                                             <span className="text-gray-500">•</span>
                                             <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5" /> 98% Approval Rate</span>
-                                            <span className="text-gray-500">•</span>
-                                            <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5" /> 50-State PE Stamps</span>
+                                            <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5" /> Professional Engineering</span>
                                             <span className="text-gray-500">•</span>
                                             <span className="flex items-center gap-2"><FileCheck className="w-5 h-5" /> NEC/AHJ Compliant</span>
                                             <span className="text-gray-500">•</span>

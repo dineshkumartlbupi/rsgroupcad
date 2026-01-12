@@ -205,6 +205,7 @@ const Footer = () => {
                                         href="https://www.facebook.com/people/RS-Solar-CAD-Group/100093924699182/"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label="Facebook"
                                         className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#e62e00] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#e62e00]"
                                     >
                                         <Facebook className="w-4 h-4" />
@@ -213,6 +214,7 @@ const Footer = () => {
                                         href="https://in.linkedin.com/company/rs-solar-cad-group"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label="LinkedIn"
                                         className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0077b5] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#0077b5]"
                                     >
                                         <Linkedin className="w-4 h-4" />
@@ -221,6 +223,7 @@ const Footer = () => {
                                         href="https://www.youtube.com/channel/UCj9YDXvQPPZ0yukcwbloqpw/videos"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label="YouTube"
                                         className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF0000] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#FF0000]"
                                     >
                                         <Youtube className="w-4 h-4" />

@@ -130,17 +130,14 @@ const CADDesign = () => {
                                 {subTitle}
                             </p>
                             <div className="flex flex-wrap gap-4 mb-8">
-                                <div className="flex items-center gap-2 text-white">
-                                    <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
-                                    <span>12-24H Turnaround</span>
-                                </div>
+
                                 <div className="flex items-center gap-2 text-white">
                                     <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
                                     <span>98% Approval Rate</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-white">
                                     <CheckCircle className="w-5 h-5 text-[#00D9FF]" />
-                                    <span>50-State PE Stamps</span>
+                                    <span>Professional Engineering</span>
                                 </div>
                             </div>
                         </motion.div>

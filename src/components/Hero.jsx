@@ -42,12 +42,12 @@ const sliderContent = [
     },
     {
         id: "engineering",
-        tabTitle: "Engineering & PE",
+        tabTitle: "Engineering Services",
         title: "Comprehensive Engineering",
         subtitle: "One-Stop Solution",
-        description: "From structural analysis to PE stamping and BIM modeling, we handle every complex engineering challenge.",
+        description: "From structural analysis to professional engineering and BIM modeling, we handle every complex engineering challenge.",
         features: [
-            "Structural & Electrical PE Stamps",
+            "Structural & Electrical Engineering",
             "BIM & 3D Modeling",
             "EV Charging Infrastructure"
         ]
@@ -70,12 +70,13 @@ const Hero = () => {
     const [current, setCurrent] = useState(0);
 
     // Auto-play logic
+    // Auto-play logic
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % sliderContent.length);
         }, 8000);
         return () => clearInterval(timer);
-    }, []);
+    }, [current]); // Reset timer whenever slide changes (including manual clicks)
 
     return (
         <div className="relative h-screen w-full overflow-hidden font-sans">

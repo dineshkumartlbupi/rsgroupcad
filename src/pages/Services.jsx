@@ -11,13 +11,13 @@ import tradingImg from '../assets/hero/trading_procurement_hero.png';
 
 const servicesList = [
     {
-        title: "Solar Design & Engineering Stamps",
-        description: "Comprehensive solar design services from residential to commercial installations, including permit plans, as-built drawings, and professional engineering stamps for all 50 states.",
+        title: "Solar Design & Engineering",
+        description: "Comprehensive solar design services from residential to commercial installations, including permit plans, as-built drawings, and professional engineering.",
         icon: <Sun className="w-12 h-12" />,
         link: "/solar-design-services",
         image: solarDesignImg,
         color: "from-[#1f3366] to-blue-600",
-        highlights: ["12-24H Turnaround", "50-State PE Stamps", "NEC Compliant"]
+        highlights: ["Professional Engineering", "NEC Compliant"]
     },
     {
         title: "EV Charging Station Plans",
@@ -163,10 +163,9 @@ const Services = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             { number: "150k+", label: "Projects Completed", color: "text-[#1f3366]" },
-                            { number: "12-24H", label: "Average Turnaround", color: "text-[#1f3366]" },
                             { number: "98%", label: "First-Time Approval", color: "text-[#1f3366]" },
                             { number: "170+", label: "Active Clients", color: "text-[#e62e00]" }
                         ].map((stat, index) => (
