@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, PenTool, Layers, Activity, ShieldCheck, FileCheck, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -107,6 +108,11 @@ const CADDesign = () => {
 
     return (
         <div className="pt-20 font-sans text-gray-900 bg-white">
+            <SEO
+                title="CAD Design & Drafting Services"
+                description="Expert CAD design and drafting services for architectural, structural, and MEP projects. Seamless integration with your engineering team."
+                canonical="https://rscadgroup.com/cad-design"
+            />
             {/* Hero Section with Form */}
             <section className="relative bg-gradient-to-br from-[#0033A0] to-[#001f5c] py-16 md:py-24 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">

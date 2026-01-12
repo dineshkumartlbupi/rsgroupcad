@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Image, Video, Download, Play, FileText, Layout, Camera, ChevronRight, X } from 'lucide-react';
 
 const Media = () => {
-    useEffect(() => {
-        document.title = "Media Center | RS Solar CAD Group";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Media Center | RS Solar CAD Group";
+    // }, []);
 
     const categories = [
         { name: "Project Gallery", icon: <Camera className="w-5 h-5" />, count: 120 },
@@ -34,6 +35,11 @@ const Media = () => {
 
     return (
         <div className="pt-20 bg-white min-h-screen font-sans">
+            <SEO
+                title="Media Center"
+                description="Brand assets, high-resolution imagery, and video insights for media partners."
+                canonical="https://rscadgroup.com/media"
+            />
             {/* Hero Section */}
             <div className="relative h-[60vh] flex items-center bg-[#001528] overflow-hidden">
                 <div className="absolute inset-0 z-0">

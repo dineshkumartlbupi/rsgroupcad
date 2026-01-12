@@ -1,10 +1,16 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { blogsData } from '../data/blogsData';
 
 const Blogs = () => {
     return (
         <div className="pt-20">
+            <SEO
+                title="Blogs - Insights & News"
+                description="Latest updates from the world of sustainable energy design, solar technology, and engineering standards."
+                canonical="https://rscadgroup.com/blogs"
+            />
             <div className="bg-geonBlue py-24 px-4 sm:px-6 lg:px-8 text-center text-white">
                 <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">Insights & News</h1>
                 <p className="mt-4 text-xl text-blue-100">Latest updates from the world of sustainable energy design.</p>

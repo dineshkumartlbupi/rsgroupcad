@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../../components/SEO';
 import { motion, useMotionValue, useTransform, useInView, animate } from 'framer-motion';
 import { CheckCircle, ArrowRight, FileCheck, Activity, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -59,6 +60,11 @@ const SolarDesign = () => {
 
     return (
         <div className="pt-20 font-sans text-gray-900 bg-white">
+            <SEO
+                title="Solar Design & Engineering Services"
+                description="Professional Solar Design & Engineering. 12-24H turnaround, 50-state PE stamps, and NEC compliant permit packages."
+                canonical="https://rscadgroup.com/solar-design-services"
+            />
             {/* Hero Section */}
             <div className="relative">
                 <div className="relative h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">

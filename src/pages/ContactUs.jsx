@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, CheckCircle } from 'lucide-react';
 // API URL - automatically uses correct backend based on environment
@@ -99,6 +100,11 @@ const ContactUs = () => {
     // test
     return (
         <div className="pt-20 font-sans bg-white">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with RS Solar CAD Group for solar design, engineering, and staffing solutions. Call or email us today."
+                canonical="https://rscadgroup.com/contact-us"
+            />
             {/* Hero Section */}
             <section className="relative bg-gradient-to-br from-[#1f3366] to-[#0d1b42] py-20 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">

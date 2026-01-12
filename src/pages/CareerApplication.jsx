@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Upload, CheckCircle, User, Briefcase, FileText, Mail, Phone, MapPin, Clock, Share2 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -227,6 +228,11 @@ Application submitted via RS Solar CAD Group Career Portal
 
     return (
         <div className="min-h-screen bg-gray-50 pt-20">
+            <SEO
+                title={`Apply for ${job.title}`}
+                description={`Apply for the position of ${job.title} at RS Solar CAD Group.`}
+                canonical={`https://rscadgroup.com/career/apply?position=${jobSlug}`}
+            />
             {/* Header */}
             <div className="bg-gradient-to-r from-[#001528] to-[#0033A0] text-white py-12">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

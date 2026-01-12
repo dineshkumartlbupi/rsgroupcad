@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Clock, ShieldCheck, MessageSquare, RefreshCw, Lock, FileText, CheckCircle2 } from 'lucide-react';
 
 const SLAPage = () => {
-    useEffect(() => {
-        document.title = "Service Level Agreement | RS Solar CAD Group";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Service Level Agreement | RS Solar CAD Group";
+    // }, []);
 
     const slaFeatures = [
         {
@@ -74,6 +75,11 @@ const SLAPage = () => {
 
     return (
         <div className="pt-20 min-h-screen bg-gray-50">
+            <SEO
+                title="Service Level Agreement (SLA)"
+                description="Our commitment to speed, accuracy, and reliability. Read our Service Level Agreement."
+                canonical="https://rscadgroup.com/sla"
+            />
             {/* Hero Section */}
             <div className="relative bg-[#001528] py-24 px-4 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Users, ShieldCheck, Search, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -48,8 +49,13 @@ const WorkforceStaffing = () => {
     ];
 
     return (
-        <div className="pt-20 font-sans text-gray-900 bg-white">
-            {/* Hero Section */}
+        <div className="pt-20 font-sans">
+            <SEO
+                title="Workforce & Technical Staffing"
+                description="Scalable workforce staffing solutions for solar and CAD projects. Access pre-vetted designers and engineers on demand."
+                canonical="https://rscadgroup.com/workforce-staffing"
+            />
+            {/* Hero Section - Teal/Green Theme */}
             <div className="relative">
                 <div className="relative h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0">

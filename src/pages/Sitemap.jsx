@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Map, ChevronRight, Globe, Zap, Newspaper, MessageCircle, FileText } from 'lucide-react';
@@ -52,12 +53,17 @@ const sitemapData = [
 ];
 
 const Sitemap = () => {
-    useEffect(() => {
-        document.title = "Sitemap | RS Solar CAD Group";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Sitemap | RS Solar CAD Group";
+    // }, []);
 
     return (
         <div className="pt-20 bg-gray-50 min-h-screen font-sans">
+            <SEO
+                title="Sitemap"
+                description="Overview of all pages and resources on the RS Solar CAD Group website."
+                canonical="https://rscadgroup.com/sitemap"
+            />
             <div className="bg-[#001528] py-20 px-4 text-center text-white relative overflow-hidden">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
                     <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">

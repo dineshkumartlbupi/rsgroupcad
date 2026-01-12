@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sun, Zap, PenTool, Users, Wrench, ShoppingCart } from 'lucide-react';
 import solarDesignImg from '../assets/hero/solar_design_hero.png';
@@ -68,6 +69,11 @@ const servicesList = [
 const Services = () => {
     return (
         <div className="pt-20 bg-gray-50">
+            <SEO
+                title="Our Services"
+                description="Comprehensive engineering and design solutions for solar, EV charging, CAD drafting, and workforce staffing."
+                canonical="https://rscadgroup.com/services"
+            />
             {/* Hero Section */}
             <div className="bg-[#1f3366] py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">

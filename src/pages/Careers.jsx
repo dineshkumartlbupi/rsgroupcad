@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Briefcase, Clock, CheckCircle, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -87,6 +88,11 @@ const Careers = () => {
 
     return (
         <div className="pt-20 font-sans">
+            <SEO
+                title="Careers - Join Our Team"
+                description="Explore career opportunities at RS Solar CAD Group. We are hiring CAD designers, solar engineers, and permit specialists."
+                canonical="https://rscadgroup.com/career"
+            />
             {/* Hero Section */}
             <div className="bg-[#1f3366] py-20 md:py-28 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-rsRed rounded-full opacity-10 blur-3xl"></div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { useParams, Link } from 'react-router-dom';
 import { blogsData } from '../data/blogsData';
 
@@ -19,6 +20,13 @@ const BlogDetails = () => {
 
     return (
         <div className="pt-20">
+            <SEO
+                title={blog.title}
+                description={blog.excerpt}
+                canonical={`https://rscadgroup.com/blogs/${blog.id}`}
+                ogImage={blog.image}
+                ogType="article"
+            />
             {/* Hero Section */}
             <div className="relative h-96 bg-gradient-to-r from-geonBlue to-blue-600">
                 <div className="absolute inset-0 bg-black opacity-40"></div>

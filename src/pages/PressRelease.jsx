@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Share2, Printer, ExternalLink, Newspaper } from 'lucide-react';
 
@@ -30,12 +31,17 @@ const releases = [
 ];
 
 const PressRelease = () => {
-    useEffect(() => {
-        document.title = "Press Releases | RS Solar CAD Group";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Press Releases | RS Solar CAD Group";
+    // }, []);
 
     return (
         <div className="pt-20 bg-gray-50 min-h-screen font-sans">
+            <SEO
+                title="Press Releases"
+                description="Latest news, announcements, and press releases from RS Solar CAD Group."
+                canonical="https://rscadgroup.com/press-release"
+            />
             {/* Hero Section */}
             <div className="bg-[#001528] py-24 px-4 overflow-hidden relative">
                 <div className="absolute inset-0 opacity-10">

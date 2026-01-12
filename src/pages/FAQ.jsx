@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Search, HelpCircle, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -47,10 +48,6 @@ const FAQ = () => {
     const [activeCategory, setActiveCategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
 
-    useEffect(() => {
-        document.title = "FAQ | RS Solar CAD Group";
-    }, []);
-
     const filteredFaqs = faqs.filter(faq => {
         const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
         const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -62,6 +59,11 @@ const FAQ = () => {
 
     return (
         <div className="pt-20 bg-gray-50 min-h-screen font-sans">
+            <SEO
+                title="Frequently Asked Questions"
+                description="Find answers to common questions about RS Solar CAD Group, our services, and solar design processes."
+                canonical="https://rscadgroup.com/faq"
+            />
             {/* Hero Section */}
             <div className="bg-[#001528] py-20 px-4 text-center text-white relative">
                 <div className="max-w-4xl mx-auto relative z-10">

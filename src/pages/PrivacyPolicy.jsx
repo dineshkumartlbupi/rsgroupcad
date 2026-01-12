@@ -1,9 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 const PrivacyPolicy = () => {
     return (
         <div className="pt-20">
+            <SEO
+                title="Privacy Policy"
+                description="Our commitment to your privacy. Read the RS Solar CAD Group Privacy Policy."
+                canonical="https://rscadgroup.com/privacy-policy"
+            />
             {/* Header */}
             <div className="bg-rsBlue py-16 px-4 animate-fade-in-up md:px-8 text-center text-white">
                 <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-wide">Privacy Policy</h1>

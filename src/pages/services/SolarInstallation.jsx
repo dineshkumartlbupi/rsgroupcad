@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Sun, CreditCard, Wind, Droplet, Wrench, Phone, Mail, MapPin, Zap, Shield, Clock, ChevronDown, Star, Users, Award, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -190,6 +191,11 @@ const SolarInstallation = () => {
 
     return (
         <div className="pt-20 font-sans text-gray-900 bg-white">
+            <SEO
+                title="Solar Installation Services (India)"
+                description="Complete solar installation services in India. Residential, commercial, and utility-scale projects with post-install support."
+                canonical="https://rscadgroup.com/indian-solar-installation"
+            />
             {/* Hero Image Section */}
             <section className="relative h-[60vh] min-h-[400px] md:min-h-[500px] overflow-hidden">
                 <div className="absolute inset-0">

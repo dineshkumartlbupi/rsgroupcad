@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import InteractiveServices from '../components/InteractiveServices';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -27,6 +28,11 @@ const SectionWrapper = ({ children, className = "" }) => (
 const Home = () => {
     return (
         <>
+            <SEO
+                title="Home"
+                description="RS Solar CAD Group - Quality Design, On Time. Premier source for Solar Design, EV Permitting, and Architectural solutions."
+                canonical="https://rscadgroup.com/"
+            />
             {/* Hero Section - Introduction */}
             <Hero />
 

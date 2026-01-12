@@ -1,5 +1,6 @@
 
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, Target, Zap, Globe, XCircle } from 'lucide-react';
 import Team from '../components/Team';
@@ -10,6 +11,11 @@ import installationTrainingHeroImg from '../assets/installation_training_hero.pn
 const AboutUs = () => {
     return (
         <div className="pt-20">
+            <SEO
+                title="About Us"
+                description="Powering the Global Solar Revolution with Precision, Innovation & Real-World Expertise. Learn about our partnership model and resident engineering teams."
+                canonical="https://rscadgroup.com/about-us"
+            />
             {/* Hero Banner */}
             <div className="bg-[#1f3366] py-24 px-4 sm:px-6 lg:px-8 text-center text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#e62e00] rounded-full opacity-10 blur-3xl"></div>

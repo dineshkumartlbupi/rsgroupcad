@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -48,8 +49,13 @@ const TradingProcurement = () => {
     ];
 
     return (
-        <div className="pt-20 font-sans text-gray-900 bg-white">
-            {/* Hero Section */}
+        <div className="pt-20 font-sans">
+            <SEO
+                title="Trading & Procurement Services"
+                description="Global procurement and trading for solar components. Competitive pricing and reliable supply chain for modules and inverters."
+                canonical="https://rscadgroup.com/trading-procurement"
+            />
+            {/* Hero Section - Indigo/Blue Theme */}
             <div className="relative">
                 <div className="relative h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0">

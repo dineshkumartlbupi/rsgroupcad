@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Target, Zap, TrendingUp, ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,6 +41,11 @@ const SuccessStories = () => {
 
     return (
         <div className="pt-20 bg-gray-50 min-h-screen font-sans">
+            <SEO
+                title="Success Stories"
+                description="See how RS Solar CAD Group has helped clients achieve their solar energy goals through successful projects and partnerships."
+                canonical="https://rscadgroup.com/success-stories"
+            />
             {/* Hero Section */}
             <div className="bg-[#1f3366] text-white py-24 px-4 overflow-hidden relative">
                 <div className="max-w-7xl mx-auto text-center relative z-10">

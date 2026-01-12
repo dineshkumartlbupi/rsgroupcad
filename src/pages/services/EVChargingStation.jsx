@@ -1,4 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Zap, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -48,8 +50,13 @@ const EVCharging = () => {
     ];
 
     return (
-        <div className="pt-20 font-sans text-gray-900 bg-white">
-            {/* Hero Section */}
+        <div className="pt-20 font-sans">
+            <SEO
+                title="EV Charging Station Design & Permitting"
+                description="End-to-end EV charging station design and permitting services. ADA compliant, utility coordination, and fast approvals."
+                canonical="https://rscadgroup.com/ev-charging-station"
+            />
+            {/* Hero Section - Electric Blue Theme */}
             <div className="relative">
                 <div className="relative h-[80vh] min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0">

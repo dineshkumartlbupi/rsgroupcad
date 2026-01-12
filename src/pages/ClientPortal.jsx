@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lock, Mail, ArrowRight, ShieldCheck, Layout } from 'lucide-react';
@@ -7,9 +8,9 @@ const ClientPortal = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        document.title = "Client Portal | RS Solar CAD Group";
-    }, []);
+    // useEffect(() => {
+    //     document.title = "Client Portal | RS Solar CAD Group";
+    // }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +19,11 @@ const ClientPortal = () => {
 
     return (
         <div className="pt-20 min-h-screen bg-gray-50 flex items-center justify-center px-4 overflow-hidden relative">
+            <SEO
+                title="Client Portal"
+                description="Secure gateway for RS Solar CAD Group partners. Access project dashboards and real-time updates."
+                canonical="https://rscadgroup.com/client-portal"
+            />
             {/* Decorative backgrounds */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rsRed/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0d1b42]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
