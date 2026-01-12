@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 const TermsOfService = () => {
     return (
         <div className="pt-20">
+            <SEO
+                title="Terms of Service"
+                description="Terms and conditions for using RS Solar CAD Group services and website."
+                canonical="https://rscadgroup.com/terms-of-service"
+            />
             {/* Header */}
             <div className="bg-rsBlue py-16 px-4 animate-fade-in-up md:px-8 text-center text-white">
                 <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-wide">Terms of Service</h1>

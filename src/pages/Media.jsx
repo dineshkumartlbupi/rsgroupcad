@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Image, Video, Download, Play, FileText, Layout, Camera, ChevronRight, X } from 'lucide-react';

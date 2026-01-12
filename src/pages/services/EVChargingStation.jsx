@@ -1,10 +1,10 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Zap, Truck, ShieldCheck, Activity, FileCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import StatsSection from '../../components/StatsSection';
+
 import evChargingHeroImg from '../../assets/hero/ev_charging_hero.jpg';
 
 const BenefitCard = ({ icon, title, desc }) => (

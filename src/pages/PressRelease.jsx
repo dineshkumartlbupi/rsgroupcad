@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Share2, Printer, ExternalLink, Newspaper } from 'lucide-react';

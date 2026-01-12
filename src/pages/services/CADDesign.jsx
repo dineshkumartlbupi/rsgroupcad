@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, PenTool, Layers, Activity, ShieldCheck, FileCheck, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, PenTool, Layers, Activity, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import cadDesignHeroImg from '../../assets/hero/cad_design_hero.png';
 // API URL - automatically uses correct backend based on environment
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 const BenefitCard = ({ icon, title, desc }) => (
@@ -28,9 +27,7 @@ const CADDesign = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
 
-    const title = "CAD Drafting";
     const subTitle = "Strategic CAD capability that scales across teams and geographies.";
-    const image = cadDesignHeroImg;
 
     const description = [
         "At RS Group, CAD is not a service—it's a strategic capability. We help engineering-driven organizations replace fragmented drawings, outdated files, and manual drafting bottlenecks with clean, intelligent, production-ready CAD systems that scale across teams and geographies.",
@@ -59,12 +56,7 @@ const CADDesign = () => {
         { icon: <Activity />, title: "Zero Compromise", desc: "Strict quality control, secure workflows, and reduced drafting costs." }
     ];
 
-    const stats = [
-        { number: "13+", label: "Countries Served" },
-        { number: "98%", label: "Approval Rate" },
-        { number: "12-24H", label: "Turnaround Time" },
-        { number: "50+", label: "State PE Stamps" }
-    ];
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
