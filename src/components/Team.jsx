@@ -7,7 +7,6 @@ import amreenImg from '../assets/team/amreen_jahan.jpg';
 import kailashImg from '../assets/team/kailash_singh.png';
 import agamImg from '../assets/team/agam_bhardwaj.jpg';
 import shaliniImg from '../assets/team/shalini_shah.jpg';
-import abhishekImg from '../assets/team/abhishek_kashyap.png';
 import mohitImg from '../assets/team/mohit.jpg';
 
 const teamMembers = [
