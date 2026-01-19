@@ -53,12 +53,7 @@ const teamMembers = [
         image: shaliniImg,
         bio: 'Guiding teams towards operational excellence and project success.'
     },
-    {
-        name: 'Mr. Abhishek Kashyap',
-        role: 'Sales Executive',
-        image: abhishekImg,
-        bio: 'Driving sales strategies and expanding market reach.'
-    },
+   
     {
         name: 'Mr. Mohit Kumar',
         role: 'Master Electrician',
