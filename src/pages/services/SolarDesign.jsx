@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import SEO from '../../components/SEO';
 import { motion, useMotionValue, useTransform, useInView, animate, useScroll } from 'framer-motion';
-import { CheckCircle, ArrowRight, FileCheck, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, FileCheck, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import solarDesignHeroImg from '../../assets/hero/solar_design_hero.png';
 import residentialSolarImg from '../../assets/services/residential_solar_design.png';
@@ -11,7 +11,7 @@ import asBuiltDrawingImg from '../../assets/services/as_built_drawing_new.jpg';
 import solarExpansionImg from '../../assets/services/solar_expansion_design_new.jpg';
 import solarCarportImg from '../../assets/services/solar_carport_design_new.jpg';
 import interconnectionAppImg from '../../assets/services/interconnection_application.png';
-import commercialSolarImg from '../../assets/services/commercial_solar_new.png';
+
 import engineeringStampsImg from '../../assets/services/engineering_stamps_review.png';
 
 // Counter component for animated numbers
