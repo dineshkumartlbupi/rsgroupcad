@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Zap, PenTool, Layers, Settings, CheckCircle, ClipboardList, RefreshCw, FileText, Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Sun, Zap, PenTool, Layers, Settings, CheckCircle, ClipboardList, FileText, Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoWhite from '../assets/whitelogo.svg';
 import logoColor from '../assets/colorlogo.svg';
