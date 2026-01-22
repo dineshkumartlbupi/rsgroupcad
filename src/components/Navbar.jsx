@@ -19,8 +19,6 @@ const Navbar = () => {
                 { name: 'About Us', path: '/about-us#about-us' },
                 { name: 'Our Journey', path: '/about-us#our-journey' },
                 { name: 'Leadership Team', path: '/about-us#leadership' },
-                { name: 'Press Release', path: '/press-release' },
-                { name: 'Media Center', path: '/media' },
             ]
         },
         {
@@ -72,11 +70,7 @@ const Navbar = () => {
                     path: '/services',
                     icon: <ClipboardList className="w-5 h-5" />
                 },
-                {
-                    name: 'Design Platform',
-                    path: '/services',
-                    icon: <RefreshCw className="w-5 h-5" />
-                },
+
                 {
                     name: 'Service Level Agreement (SLA)',
                     path: '/sla',

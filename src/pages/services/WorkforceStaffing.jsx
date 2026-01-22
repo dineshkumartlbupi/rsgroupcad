@@ -185,7 +185,7 @@ const WorkforceStaffing = () => {
                     {/* CTA */}
                     <div className="bg-[#1f3366] rounded-3xl p-12 text-center relative overflow-hidden">
                         <div className="absolute inset-0 bg-white opacity-5 pattern-grid-lg"></div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">Build Your Dream Team</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">Ready to Optimize Your Project?</h2>
                         <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">
                             Partner with RS Group to scale your technical teams with ready-to-perform professionals who deliver from day one.
                         </p>
