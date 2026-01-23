@@ -11,7 +11,7 @@ import asBuiltDrawingImg from '../../assets/services/as_built_drawing_new.jpg';
 import solarExpansionImg from '../../assets/services/solar_expansion_design_new.jpg';
 import solarCarportImg from '../../assets/services/solar_carport_design_new.jpg';
 import interconnectionAppImg from '../../assets/services/interconnection_application.png';
-
+import commercialSolarImg from '../../assets/services/commercial_solar_new.png';
 import engineeringStampsImg from '../../assets/services/engineering_stamps_review.png';
 
 // Counter component for animated numbers
@@ -109,18 +109,18 @@ const SolarDesign = () => {
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 + i * 0.1 }}
-                                    className="bg-white/95 align-center justify-center backdrop-blur-xl p-2 lg:p-6 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 group hover:border-[#e62e00] transition-all duration-500"
+                                    className="bg-white/95 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 group hover:border-[#e62e00] transition-all duration-500 relative"
                                 >
-                                    <div className="flex items-center justify-between mb-6">
-                                        <div className="p-3 bg-gray-50 rounded-2xl group-hover:bg-[#e62e00]/10 transition-colors">
+                                    <div className="absolute top-6 right-6 text-sm font-black text-gray-300">0{i + 1}</div>
+                                    <div className="flex flex-col items-center justify-center text-center">
+                                        <div className="p-3 bg-gray-50 rounded-2xl group-hover:bg-[#e62e00]/10 transition-colors mb-6">
                                             <stat.icon className="w-6 h-6 text-[#001528] group-hover:text-[#e62e00] transition-colors" />
                                         </div>
-                                        <div className="text-sm font-black text-gray-300">0{i + 1}</div>
+                                        <h3 className="text-4xl font-black text-[#001528] mb-2 tracking-tighter">
+                                            <Counter value={stat.value} />
+                                        </h3>
+                                        <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">{stat.label}</p>
                                     </div>
-                                    <h3 className="text-4xl font-black text-[#001528] mb-2 tracking-tighter">
-                                        <Counter value={stat.value} />
-                                    </h3>
-                                    <p className="text-gray-500 font-bold uppercase tracking-widest text-xs">{stat.label}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -144,7 +144,7 @@ const SolarDesign = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="text-[#e62e00] text-sm font-black uppercase tracking-[0.4em] mb-4">Engineering Workflow</h2>
-                            <h3 className="text-5xl md:text-7xl font-black text-[#001528] tracking-tighter">The Journey To <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e62e00] to-[#1f3366]">PTO.</span></h3>
+                            <h3 className="text-5xl md:text-7xl font-black text-[#001528] tracking-tighter">The Journey To<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e62e00] to-[#1f3366]"> Solar Design & Engineering Stamps</span></h3>
                         </motion.div>
                     </div>
 
@@ -291,7 +291,10 @@ const SolarDesign = () => {
                             </div>
                         </motion.div>
 
-                        {/* STEP 03: AS-BUILT (Right Aligned on Desk, Linear on Mobile) */}
+
+
+
+                        {/* STEP 03: AS-BUILT */}
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -299,19 +302,25 @@ const SolarDesign = () => {
                             className="bg-[#001528] rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-20 text-white relative overflow-hidden group shadow-3xl mx-4 lg:mx-0"
                         >
                             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-                            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
-                                <div className="w-full lg:w-1/2">
-                                    <img src={asBuiltDrawingImg} alt="As Built" className="w-full h-auto rounded-[1.5rem] lg:rounded-[2rem] shadow-2xl group-hover:scale-105 transition-transform duration-700 border-4 border-white/10" />
+                            <div className="relative z-10">
+                                {/* Number Badge - Centered at Top */}
+                                <div className="flex justify-center mb-8">
+                                    <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white text-[#001528] flex items-center justify-center font-black text-2xl lg:text-3xl rounded-2xl shadow-2xl">03</div>
                                 </div>
-                                <div className="w-full lg:w-1/2">
-                                    <div className="w-12 h-12 lg:w-20 lg:h-20 bg-white text-[#001528] flex items-center justify-center font-black text-2xl lg:text-4xl rounded-xl lg:rounded-3xl shadow-2xl mb-6 lg:mb-8">03</div>
-                                    <h4 className="text-3xl lg:text-6xl font-black mb-4 lg:mb-6 tracking-tight">As-Built <br /><span className="text-[#e62e00]"> Drawing Design</span></h4>
-                                    <p className="text-gray-400 text-lg lg:text-xl leading-relaxed font-light mb-8 lg:mb-10">
-                                        RS Solar CAD Group provides accurate As-Built drawings that reflect the final installed solar system, capturing all field changes made during installation. Required for AHJ and utility PTO approvals, our fast, compliant As-Built plans support residential and commercial systems and are typically delivered within 12–16 hours.
-                                    </p>
-                                    <Link to="/contact-us" className="w-full lg:w-auto inline-flex items-center justify-center gap-4 bg-white text-[#001528] px-8 lg:px-10 py-4 lg:py-5 rounded-full font-black text-base lg:text-lg hover:bg-[#e62e00] hover:text-white transition-all duration-500 group">
-                                        Secure Your PTO <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                                    </Link>
+
+                                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                                    <div className="w-full lg:w-1/2">
+                                        <img src={asBuiltDrawingImg} alt="As Built" className="w-full h-auto rounded-[1.5rem] lg:rounded-[2rem] shadow-2xl group-hover:scale-105 transition-transform duration-700 border-4 border-white/10" />
+                                    </div>
+                                    <div className="w-full lg:w-1/2 text-center lg:text-left">
+                                        <h4 className="text-3xl lg:text-5xl font-black mb-4 lg:mb-6 tracking-tight">As-Built <span className="text-[#e62e00]">Drawing Design</span></h4>
+                                        <p className="text-gray-400 text-lg lg:text-xl leading-relaxed font-light mb-8 lg:mb-10">
+                                            RS Solar CAD Group provides accurate As-Built drawings that reflect the final installed solar system, capturing all field changes made during installation. Required for AHJ and utility PTO approvals, our fast, compliant As-Built plans support residential and commercial systems and are typically delivered within 12–16 hours.
+                                        </p>
+                                        <Link to="/contact-us" className="inline-flex items-center justify-center gap-4 bg-white text-[#001528] px-8 lg:px-10 py-4 lg:py-5 rounded-full font-black text-base lg:text-lg hover:bg-[#e62e00] hover:text-white transition-all duration-500 group">
+                                            Secure Your PTO <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -404,63 +413,40 @@ const SolarDesign = () => {
 
                         {/* Commercial Solar Design */}
                         <motion.div
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="bg-[#001528] rounded-[3rem] p-8 lg:p-20 text-white relative overflow-hidden"
+                            className="flex flex-col lg:flex-row-reverse gap-16 items-center"
                         >
-                            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-                            <div className="relative z-10 space-y-16">
-                                <div className="text-center max-w-4xl mx-auto space-y-6">
-                                    <h4 className="text-4xl lg:text-5xl font-black tracking-tight">Commercial Solar Design</h4>
-                                    <p className="text-gray-400 text-xl font-light">
-                                        Specializing in high-performance C&I solar systems from 20 kW to 700 MW. We navigate complex NEC codes, fire setback rules, and utility requirements (208V/480V/MV) for maximum ROI.
-                                    </p>
+                            <div className="lg:w-1/2">
+                                <img src={commercialSolarImg} alt="Commercial Solar Design" className="w-full h-auto rounded-[2.5rem] shadow-2xl border-8 border-white" />
+                            </div>
+                            <div className="lg:w-1/2 space-y-8">
+                                <h4 className="text-4xl font-black text-[#001528]">Commercial Solar Design</h4>
+                                <p className="text-gray-500 text-xl font-light">
+                                    Specializing in high-performance C&I solar systems from 20 kW to 700 MW. We navigate complex NEC codes, fire setback rules, and utility requirements (208V/480V/MV) for maximum ROI.
+                                </p>
+
+                                <div className="space-y-2">
+                                    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 className="text-lg font-bold mb-2 text-[#e62e00]">Rooftop Systems</h5>
+                                        <p className="text-gray-600 text-sm font-light">Optimized designs for flat and pitched commercial roofs, including ballasting maps and fire pathways.</p>
+                                    </div>
+
+                                    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 className="text-lg font-bold mb-2 text-[#e62e00]">Carports & Canopies</h5>
+                                        <p className="text-gray-600 text-sm font-light">Architectural and electrical designs for cantilever structures with lighting and EV readiness.</p>
+                                    </div>
+
+                                    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 className="text-lg font-bold mb-2 text-[#e62e00]">Ground-Mount & Trackers</h5>
+                                        <p className="text-gray-600 text-sm font-light">Fixed-tilt and single-axis tracker layouts with grading analysis and trenching schedules.</p>
+                                    </div>
+
+
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    <div className="space-y-6">
-                                        <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-[#e62e00]/50 transition-colors">
-                                            <h5 className="text-xl font-bold mb-4 text-[#e62e00]">Rooftop Systems</h5>
-                                            <p className="text-gray-300 font-light">Optimized designs for flat and pitched commercial roofs, including ballasting maps and fire pathways.</p>
-                                        </div>
-                                        <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-[#e62e00]/50 transition-colors">
-                                            <h5 className="text-xl font-bold mb-4 text-[#e62e00]">Carports & Canopies</h5>
-                                            <p className="text-gray-300 font-light">Architectural and electrical designs for cantilever structures with lighting and EV readiness.</p>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-6">
-                                        <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-[#e62e00]/50 transition-colors">
-                                            <h5 className="text-xl font-bold mb-4 text-[#e62e00]">Ground-Mount & Trackers</h5>
-                                            <p className="text-gray-300 font-light">Fixed-tilt and single-axis tracker layouts with grading analysis and trenching schedules.</p>
-                                        </div>
-                                        <div className="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-[#e62e00]/50 transition-colors">
-                                            <h5 className="text-xl font-bold mb-4 text-[#e62e00]">Electrical & Interconnection</h5>
-                                            <p className="text-gray-300 font-light">Supply-side connections, transformer sizing, voltage drop ({"<2%"}), and fault current analysis.</p>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="pt-12 border-t border-white/10">
-                                    <h5 className="text-[#e62e00] font-black text-xs uppercase tracking-[0.3em] mb-8 text-center">Commercial Design Deliverables</h5>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                                        {[
-                                            "Site Plans & Layouts",
-                                            "1LD & 3LD Diagrams",
-                                            "Conductor Sizing",
-                                            "Voltage Drop Calcs",
-                                            "Structural Details",
-                                            "Ballast Wind Loads",
-                                            "Equipment Elevations",
-                                            "Signage Mapping"
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex items-center gap-3 text-white/70 font-bold uppercase text-[10px] tracking-widest">
-                                                <div className="w-2 h-2 rounded-full bg-[#e62e00]"></div>
-                                                {item}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
                             </div>
                         </motion.div>
 
