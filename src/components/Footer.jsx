@@ -154,6 +154,27 @@ const Footer = () => {
                                     <address className="not-italic text-sm text-gray-300 space-y-1 leading-relaxed group-hover:text-white transition-colors cursor-pointer">
                                         <p className="flex items-start">
                                             <MapPin className="w-4 h-4 mr-2 text-[#e62e00] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                                            <span>P8V7+X8F, Chirodi Rd,<br />Loni Dehat, Uttar Pradesh 201102<br />INDIA</span>
+                                        </p>
+                                    </address>
+                                    <span className="inline-flex items-center text-xs text-[#e62e00] group-hover:text-white transition-colors mt-2 gap-1 ml-6">
+                                        View on Map <ExternalLink className="w-3 h-3" />
+                                    </span>
+                                </a>
+                            </div>
+
+                            {/* Branch Office */}
+                            <div className="space-y-4">
+                                <h4 className="text-[#e62e00] font-semibold text-sm border-b border-[#e62e00]/30 pb-2 uppercase tracking-wider">Branch Office</h4>
+                                <a
+                                    href="https://maps.app.goo.gl/CaK9kRqNLrbnpZMF8"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group block"
+                                >
+                                    <address className="not-italic text-sm text-gray-300 space-y-1 leading-relaxed group-hover:text-white transition-colors cursor-pointer">
+                                        <p className="flex items-start">
+                                            <MapPin className="w-4 h-4 mr-2 text-[#e62e00] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                                             <span>Block A, Loni Industrial Area,<br />Ghaziabad, Uttar Pradesh 201007<br />INDIA</span>
                                         </p>
                                     </address>
@@ -163,73 +184,6 @@ const Footer = () => {
                                 </a>
                             </div>
 
-                            {/* Connects */}
-                            <div className="space-y-4">
-                                <h4 className="text-[#e62e00] font-semibold text-sm border-b border-[#e62e00]/30 pb-2 uppercase tracking-wider">Connects</h4>
-                                <ul className="space-y-3 text-sm text-gray-300">
-                                    <li>
-                                        <a href="mailto:sales@rscadgroup.com" className="flex items-center hover:text-white transition-colors group">
-                                            <Mail className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
-                                            sales@rscadgroup.com
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:contact@rscadgroup.com" className="flex items-center hover:text-white transition-colors group">
-                                            <Mail className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
-                                            contact@rscadgroup.com
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <Link to="https://calendly.com/rssolarcadgroup/intro-and-updates" className="flex items-center hover:text-white transition-colors group">
-                                            <Calendar className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
-                                            Schedule a Demo
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <a href="https://wa.me/19129804481" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors group">
-                                            <MessageCircle className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
-                                            +1 (912) 980 4481
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+919958060424" className="flex items-center hover:text-white transition-colors group">
-                                            <Phone className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
-                                            +91 9958060424
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                {/* Social Links */}
-                                <div className="flex space-x-3 pt-2">
-                                    <a
-                                        href="https://www.facebook.com/people/RS-Solar-CAD-Group/100093924699182/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label="Facebook"
-                                        className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#e62e00] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#e62e00]"
-                                    >
-                                        <Facebook className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href="https://in.linkedin.com/company/rs-solar-cad-group"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label="LinkedIn"
-                                        className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0077b5] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#0077b5]"
-                                    >
-                                        <Linkedin className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href="https://www.youtube.com/channel/UCj9YDXvQPPZ0yukcwbloqpw/videos"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label="YouTube"
-                                        className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF0000] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#FF0000]"
-                                    >
-                                        <Youtube className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Column 2: Form */}
@@ -395,6 +349,75 @@ const Footer = () => {
                                 { label: 'FAQ', to: '/faq' },
                             ]}
                         />
+                    </div>
+
+
+                    {/* Connects */}
+                    <div className="space-y-4">
+                        <h4 className="text-[#e62e00] font-semibold text-sm border-b border-[#e62e00]/30 pb-2 uppercase tracking-wider">Connects</h4>
+                        <ul className="space-y-3 text-sm text-gray-300">
+                            <li>
+                                <a href="mailto:sales@rscadgroup.com" className="flex items-center hover:text-white transition-colors group">
+                                    <Mail className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
+                                    sales@rscadgroup.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@rscadgroup.com" className="flex items-center hover:text-white transition-colors group">
+                                    <Mail className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
+                                    contact@rscadgroup.com
+                                </a>
+                            </li>
+                            <li>
+                                <Link to="https://calendly.com/rssolarcadgroup/intro-and-updates" className="flex items-center hover:text-white transition-colors group">
+                                    <Calendar className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
+                                    Schedule a Demo
+                                </Link>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/19129804481" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors group">
+                                    <MessageCircle className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
+                                    +1 (912) 980 4481
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+919958060424" className="flex items-center hover:text-white transition-colors group">
+                                    <Phone className="w-4 h-4 mr-3 text-[#e62e00] group-hover:scale-110 transition-transform" />
+                                    +91 9958060424
+                                </a>
+                            </li>
+                        </ul>
+
+                        {/* Social Links */}
+                        <div className="flex space-x-3 pt-2">
+                            <a
+                                href="https://www.facebook.com/people/RS-Solar-CAD-Group/100093924699182/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#e62e00] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#e62e00]"
+                            >
+                                <Facebook className="w-4 h-4" />
+                            </a>
+                            <a
+                                href="https://in.linkedin.com/company/rs-solar-cad-group"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0077b5] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#0077b5]"
+                            >
+                                <Linkedin className="w-4 h-4" />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/channel/UCj9YDXvQPPZ0yukcwbloqpw/videos"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="YouTube"
+                                className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF0000] hover:text-white text-gray-400 transition-all duration-300 border border-gray-700 hover:border-[#FF0000]"
+                            >
+                                <Youtube className="w-4 h-4" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 

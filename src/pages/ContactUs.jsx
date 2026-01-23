@@ -86,7 +86,13 @@ const ContactUs = () => {
         },
         {
             icon: <MapPin className="w-6 h-6" />,
-            title: 'Visit Us',
+            title: 'Corporate Office',
+            details: ['P8V7+X8F, Chirodi Rd', 'Loni Dehat, UP 201102, India'],
+            color: '#1f3366'
+        },
+        {
+            icon: <MapPin className="w-6 h-6" />,
+            title: 'Branch Office',
             details: ['Block A, Loni Industrial Area', 'Ghaziabad, UP 201007, India'],
             color: '#1f3366'
         },

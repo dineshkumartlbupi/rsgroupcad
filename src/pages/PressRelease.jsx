@@ -127,8 +127,8 @@ const PressRelease = () => {
                             </p>
                         </div>
                         <div className="relative z-10 flex flex-col gap-4 w-full md:w-auto">
-                            <a href="mailto:media@rscadgroup.com" className="bg-white text-[#1f3366] px-8 py-4 rounded-full font-bold text-center hover:bg-rsRed hover:text-white transition-all shadow-lg">
-                                media@rscadgroup.com
+                            <a href="mailto:[EMAIL_ADDRESS]" className="bg-white text-[#1f3366] px-8 py-4 rounded-full font-bold text-center hover:bg-rsRed hover:text-white transition-all shadow-lg">
+                                [EMAIL_ADDRESS]
                             </a>
                             <button className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-medium">
                                 <ExternalLink className="w-4 h-4" />
