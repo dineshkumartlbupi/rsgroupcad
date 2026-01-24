@@ -67,7 +67,7 @@ const Navbar = () => {
             dropdown: [
                 {
                     name: 'Our Process',
-                    path: '/services',
+                    path: '/our-processes',
                     icon: <ClipboardList className="w-5 h-5" />
                 },
 

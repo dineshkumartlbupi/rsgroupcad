@@ -29,6 +29,7 @@ const CADDesign = lazy(() => import('./pages/services/CADDesign'));
 const WorkforceStaffing = lazy(() => import('./pages/services/WorkforceStaffing'));
 const SolarInstallation = lazy(() => import('./pages/services/SolarInstallation'));
 const TradingProcurement = lazy(() => import('./pages/services/TradingProcurement'));
+const OurProcesses = lazy(() => import('./pages/OurProcesses'));
 
 // Placeholder pages for others if not yet fully implemented
 const PlaceholderPage = ({ title }) => (
@@ -82,6 +83,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/sla" element={<SLAPage />} />
+              <Route path="/our-processes" element={<OurProcesses />} />
 
               {/* Fallback */}
               <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />

@@ -336,7 +336,8 @@ const Footer = () => {
                         <LinkGroup
                             title="How We Work"
                             links={[
-                                { label: 'Processes', to: '/services' },
+                                { label: 'Processes', to: '/our-processes' },
+                                { label: 'SLA & Quality', to: '/sla' },
                                 { label: 'Design Platform', to: '/services' },
                             ]}
                         />

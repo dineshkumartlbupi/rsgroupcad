@@ -251,7 +251,7 @@ const SolarDesign = () => {
                                     RS Solar CAD Group delivers high-quality solar proposal designs that help installers, EPCs, and sales teams close deals faster. We create accurate, visually clear proposals using leading platforms to showcase optimized layouts, energy production, and financial benefits. With fast turnaround times as low as 12 hours and scalable support for high-volume teams, we enable confident selling and growth across the U.S., Canada, and Europe.
                                 </p>
                                 <ul className="space-y-4">
-                                    {["Shadow mapping", "production reports", "financial ROI analysis"].map((item, i) => (
+                                    {["System Overview", "Site & Roof Layout", "Shade Analysis Repor"].map((item, i) => (
                                         <li key={i} className="flex items-center gap-4 text-gray-700 font-bold uppercase text-xs tracking-widest">
                                             <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-[#e62e00]">✓</div>
                                             {item}
@@ -282,7 +282,7 @@ const SolarDesign = () => {
                                     A well-prepared permit plan set is key to fast approvals and smooth installations. RS Solar CAD Group delivers approval-ready, installer-friendly solar permit drawings that comply with NEC, AHJ, utility, fire, and HOA requirements—ensuring accurate, up-to-date, and code-compliant plans for every project.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4">
-                                    {["NEC 2023 Compliant", "Structural Calc Specs", "3LD Diagrams", "Wet PE Stamps"].map((item, i) => (
+                                    {["Energy Production Report", "Utility Bill Offset Analysis", "Financial Analysis", "Incentives & Tax Credits"].map((item, i) => (
                                         <div key={i} className="p-4 bg-white rounded-2xl border border-gray-100 font-bold text-xs uppercase tracking-tighter text-[#001528] shadow-sm">
                                             {item}
                                         </div>

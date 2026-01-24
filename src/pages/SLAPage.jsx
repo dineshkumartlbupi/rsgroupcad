@@ -1,138 +1,224 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+    ShieldCheck,
+    Zap,
+    Activity,
+    Target,
+    BarChart3,
+    Cpu,
+    Lock,
+    CheckCircle,
+    ArrowRight,
+    FileText,
+    TrendingUp,
+    Binary,
+    Info,
+    Layout,
+    Users,
+    Clock,
+    UserCheck
+} from 'lucide-react';
 import SEO from '../components/SEO';
-import { motion } from 'framer-motion';
-import { Clock, ShieldCheck, MessageSquare, RefreshCw, Lock, FileText, CheckCircle2 } from 'lucide-react';
+
+import SLA_HERO from '../assets/sla_hero.png';
+import SLA_PILLARS from '../assets/sla_pillars.png';
+import SLA_INTERVENTIONS from '../assets/sla_interventions.png';
 
 const SLAPage = () => {
-    // useEffect(() => {
-    //     document.title = "Service Level Agreement | RS Solar CAD Group";
-    // }, []);
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
 
-    const slaFeatures = [
+    const scaleLine = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+    const processSteps = [
         {
-            icon: <Clock className="w-8 h-8 text-rsRed" />,
-            title: "Swift Turnaround Time (TAT)",
-            description: "We understand that time-to-permit is critical for your project success.",
+            title: "Optimization",
+            description: "At each project's outset, our operations team reviews the project requirements and analyze existing procedures to develop an optimized strategy.",
             items: [
-                "Residential Solar Designs: Within 24 Hours",
-                "Commercial (C&I) Designs: 48 - 72 Hours",
-                "Engineering Stamps (PE): 2 - 3 Business Days",
-                "As-Built Drawings: Within 24 Hours"
-            ]
+                "Comprehensive Scope Analysis",
+                "Define Customized Strategies to meet clients’ requirement",
+                "Stakeholder Collaboration for finalizing the strategy",
+                "Optimized processes leading to enhanced productivity",
+                "Continuous Improvement and ongoing refinements to the process"
+            ],
+            icon: <Zap className="w-8 h-8" />,
+            color: "from-blue-500 to-blue-700"
         },
         {
-            icon: <ShieldCheck className="w-8 h-8 text-rsRed" />,
-            title: "Uncompromising Quality",
-            description: "Our multi-tier review process ensures your plans are approval-ready.",
+            title: "Standardization",
+            description: "Following the consensus, the workflow and Level 2 processes are systematically documented, resulting in documentation of a standardized process.",
             items: [
-                "99% Accuracy Rate Guarantee",
-                "Full Compliance with NEC & Local AHJ Codes",
-                "Triple-Check Quality Assurance Protocol",
-                "Standardized Documentation Formats"
-            ]
+                "Documentation: Systematic recording into a process manual",
+                "Team Training: Comprehensive training on formalized processes",
+                "Regular Audits: Ensuring adherence to documented workflows",
+                "CAPA Formulation: Addressing deviations with immediate measures",
+                "Audit Completion: Formal conclusion to maintain standards"
+            ],
+            icon: <FileText className="w-8 h-8" />,
+            color: "from-orange-500 to-orange-700"
         },
         {
-            icon: <MessageSquare className="w-8 h-8 text-rsRed" />,
-            title: "Proactive Communication",
-            description: "Stay informed at every stage of the design lifecycle.",
+            title: "Continuous Improvement",
+            description: "Directed by the Business Excellence team, our continuous enhancement initiatives involve collaboration with Service Delivery and Solutions.",
             items: [
-                "24/7 Dedicated Account Support",
-                "First Response Guarantee within 4 Hours",
-                "Real-time Project Tracking Updates",
-                "Direct Access to Lead Designers"
-            ]
-        },
-        {
-            icon: <RefreshCw className="w-8 h-8 text-rsRed" />,
-            title: "Efficient Revision Policy",
-            description: "Adjustments made quickly to keep your projects moving forward.",
-            items: [
-                "Unlimited Minor Revisions (Free of Charge)",
-                "Revision Turnaround: Within 12 Hours",
-                "Clear Change-Management Documentation",
-                "Priority Support for AHJ Corrections"
-            ]
+                "Performance Metrics Identification: Measure Data",
+                "Reporting and Monitoring Systems: Maintain Accurate Control",
+                "Opportunities for Improvements: Explore Potential Enhancements",
+                "Continuous Improvement Plans: Implement Progressive Strategies",
+                "Feedback Integration: Apply Client Insights"
+            ],
+            icon: <TrendingUp className="w-8 h-8" />,
+            color: "from-rsRed to-red-600"
         }
     ];
 
-    const additionalTerms = [
+    const interventions = [
         {
-            title: "Data Confidentiality",
-            icon: <Lock className="w-6 h-6" />,
-            text: "All project data, site information, and intellectual property remain strictly confidential. We utilize enterprise-grade encryption and secure servers for all data transfers."
+            title: "Lean Methodologies",
+            tagline: "Boost productivity with Lean @ RS, integrating innovative methods for streamlined operations.",
+            points: [
+                "Eliminate waste and optimize resource use",
+                "Increase operational speed and capacity by reducing lead times",
+                "Improve quality and efficiency through lean tools",
+                "Implement value stream mapping and Kaizen blitz",
+                "Utilize standardized work, 5S, and visual controls"
+            ],
+            icon: <Cpu className="w-6 h-6" />
         },
         {
-            title: "Resource Scalability",
-            icon: <RefreshCw className="w-6 h-6" />,
-            text: "Our workforce staffing ensures we can scale our outputs to match your seasonal demand peaks without compromising on delivery times."
+            title: "Agile Management",
+            tagline: "Foster flexibility and efficiency with our Agile approach, prioritizing adaptability.",
+            points: [
+                "Enhance flexibility and responsiveness",
+                "Deliver projects efficiently by adapting quickly to changes",
+                "Cultivate a culture of continuous feedback",
+                "Prioritize iterative progress",
+                "Embrace adaptability for improved project deliveries"
+            ],
+            icon: <Activity className="w-6 h-6" />
         },
         {
-            title: "Professional Indemnity",
-            icon: <ShieldCheck className="w-6 h-6" />,
-            text: "All engineering reviews and professional stamps are backed by comprehensive insurance and professional liability coverage."
+            title: "Six Sigma",
+            tagline: "Elevate standards with Six Sigma, ensuring unparalleled quality through data-driven precision.",
+            points: [
+                "Integrate Six Sigma with Lean methodologies",
+                "Maintain highest quality standards in operations",
+                "Utilize data-driven approach to minimize defects",
+                "Ensure consistency and reliability in processes",
+                "Deliver super quality to clients"
+            ],
+            icon: <Target className="w-6 h-6" />
+        }
+    ];
+
+    const workflowTools = [
+        {
+            name: "Management Information System (MIS)",
+            desc: "Centralizes and streamlines data management, integrating client and employee databases along with financial records. Enhances operational efficiency and supports informed decision-making.",
+            icon: <Info className="w-5 h-5" />
+        },
+        {
+            name: "Price Volume Revenue (PVR)",
+            desc: "Allows managers to log daily delivery volumes and update revenue in real-time. Integrated with MIS for growth analysis and strategic decision-making.",
+            icon: <BarChart3 className="w-5 h-5" />
+        },
+        {
+            name: "Design Center (DC)",
+            desc: "Specialized workflow tool tailored for customers, streamlining the design process through an intuitive interface. Facilitates project management and creative collaboration.",
+            icon: <Layout className="w-5 h-5" />
+        },
+        {
+            name: "Workforce Management Systems (WMS)",
+            desc: "Utilized by production teams to oversee the entire workflow, evaluating performance and enhancing efficiency, quality, and turnaround times.",
+            icon: <Users className="w-5 h-5" />
+        },
+        {
+            name: "Delivery Trackers",
+            desc: "Real-time monitoring and status updates, enhancing project transparency, reducing delays, and improving overall delivery efficiency.",
+            icon: <Clock className="w-5 h-5" />
         }
     ];
 
     return (
-        <div className="pt-20 min-h-screen bg-gray-50">
+        <div ref={containerRef} className="relative bg-[#fafbff] overflow-hidden pt-20">
             <SEO
-                title="Service Level Agreement (SLA)"
-                description="Our commitment to speed, accuracy, and reliability. Read our Service Level Agreement."
+                title="SLA & Quality | RS Solar CAD Group"
+                description="100% SLA Driven Performance. Synergizing Quality Control and Assurance for unparalleled global standards."
                 canonical="https://rscadgroup.com/sla"
             />
-            {/* Hero Section */}
-            <div className="relative bg-[#001528] py-24 px-4 overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-96 h-96 bg-rsRed rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
-                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
-                </div>
 
-                <div className="max-w-7xl mx-auto relative z-10 text-center">
+            {/* Hero Section */}
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#0d1b42]">
+                <div className="absolute inset-0 z-0 opacity-40">
+                    <img src={SLA_HERO} alt="SLA Hero" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b42]/80 via-[#0d1b42]/40 to-[#fafbff]"></div>
+
+                <div className="relative z-10 text-center px-4 max-w-5xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        className="inline-flex items-center gap-2 bg-rsRed/20 backdrop-blur-md px-6 py-2 rounded-full border border-rsRed/30 mb-8"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-rsRed text-sm font-semibold mb-6">
-                            <FileText className="w-4 h-4" />
-                            Reliability Guaranteed
-                        </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
-                            Service Level <span className="text-rsRed">Agreement</span>
-                        </h1>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            At RS Solar CAD Group, we don't just deliver designs; we deliver commitments.
-                            Our SLA ensures transparency, speed, and elite quality for every partner.
-                        </p>
+                        <ShieldCheck className="w-4 h-4 text-rsRed" />
+                        <span className="text-white text-xs font-bold uppercase tracking-[0.2em]">100% SLA Driven Performance</span>
                     </motion.div>
-                </div>
-            </div>
 
-            {/* Core Commitments Grid */}
-            <section className="py-24 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {slaFeatures.map((feature, index) => (
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-5xl md:text-8xl font-black text-white mb-6 leading-tight uppercase"
+                    >
+                        Quality <span className="text-rsRed italic">Scorecards.</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light"
+                    >
+                        Synergizing control and assurance for unparalleled global quality levels.
+                    </motion.p>
+                </div>
+            </section>
+
+            {/* Process Management Section */}
+            <section className="py-32 bg-white relative">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-24">
+                        <h2 className="text-sm font-bold text-rsRed uppercase tracking-widest mb-4">The RS Way</h2>
+                        <h3 className="text-4xl md:text-6xl font-black text-rsBlue">Our Process Management</h3>
+                        <p className="mt-6 text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                            Our process management program is maintained by three steps of optimization, standardization and continuous improvement as governed by our Quality Framework.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                        {processSteps.map((step, idx) => (
                             <motion.div
-                                key={index}
+                                key={idx}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-rsRed/20 transition-all duration-300"
+                                transition={{ delay: idx * 0.1 }}
+                                className="bg-[#fafbff] p-10 rounded-[3rem] border border-gray-100 hover:shadow-2xl transition-all"
                             >
-                                <div className="p-3 bg-gray-50 rounded-2xl inline-block mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    {feature.icon}
+                                <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg`}>
+                                    {step.icon}
                                 </div>
-                                <h3 className="text-2xl font-bold text-[#001528] mb-4">{feature.title}</h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    {feature.description}
-                                </p>
+                                <h4 className="text-2xl font-bold text-rsBlue mb-4">{step.title}</h4>
+                                <p className="text-sm text-gray-500 mb-8 leading-relaxed italic">{step.description}</p>
                                 <ul className="space-y-3">
-                                    {feature.items.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-gray-700">
-                                            <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                                            <span className="font-medium">{item}</span>
+                                    {step.items.map((item, i) => (
+                                        <li key={i} className="flex gap-3 text-xs text-gray-400 font-medium">
+                                            <div className="w-1.5 h-1.5 bg-rsRed rounded-full mt-1.5 flex-shrink-0"></div>
+                                            {item}
                                         </li>
                                     ))}
                                 </ul>
@@ -142,58 +228,220 @@ const SLAPage = () => {
                 </div>
             </section>
 
-            {/* Secondary Terms */}
-            <section className="py-20 bg-[#001528] text-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4">Enterprise-Grade Standards</h2>
-                        <div className="h-1 w-20 bg-rsRed mx-auto rounded-full"></div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        {additionalTerms.map((term, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2 }}
-                                className="text-center"
-                            >
-                                <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-white/10 text-rsRed">
-                                    {term.icon}
-                                </div>
-                                <h4 className="text-xl font-bold mb-4">{term.title}</h4>
-                                <p className="text-gray-400 leading-relaxed">
-                                    {term.text}
-                                </p>
-                            </motion.div>
-                        ))}
+            {/* Pillars of Excellence Section */}
+            <section className="py-32 bg-[#0d1b42] text-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative"
+                        >
+                            <img
+                                src={SLA_PILLARS}
+                                alt="Pillars of Excellence"
+                                className="w-full rounded-[3rem] shadow-2xl border-4 border-white/5 grayscale hover:grayscale-0 transition-all duration-700"
+                            />
+                            <div className="absolute inset-0 bg-rsRed/20 rounded-[3rem] pointer-events-none"></div>
+                        </motion.div>
+                        <div>
+                            <h2 className="text-rsRed font-bold uppercase tracking-widest mb-4">Our Foundation</h2>
+                            <h3 className="text-4xl md:text-7xl font-black mb-10">Pillars of <span className="text-rsRed italic">Excellence.</span></h3>
+                            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                                Our commitment to excellence is built upon a robust framework of core principles that guide every aspect of our operations. These pillars ensure consistent quality, innovation, and client satisfaction.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-4">
+                                    <div className="w-10 h-10 bg-rsRed/20 text-rsRed rounded-full flex items-center justify-center flex-shrink-0">
+                                        <Binary className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-1">Data-Driven Decisions</h4>
+                                        <p className="text-gray-400 text-sm">Leveraging analytics to inform strategies and optimize outcomes.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="w-10 h-10 bg-rsRed/20 text-rsRed rounded-full flex items-center justify-center flex-shrink-0">
+                                        <ShieldCheck className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-1">Rigorous Quality Control</h4>
+                                        <p className="text-gray-400 text-sm">Implementing stringent checks at every stage to ensure perfection.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="w-10 h-10 bg-rsRed/20 text-rsRed rounded-full flex items-center justify-center flex-shrink-0">
+                                        <TrendingUp className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-xl mb-1">Continuous Improvement</h4>
+                                        <p className="text-gray-400 text-sm">Fostering a culture of ongoing enhancement and innovation.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA */}
-            <section className="py-24 px-4 text-center">
-                <div className="max-w-3xl mx-auto bg-white p-12 rounded-[2rem] shadow-2xl border border-gray-100">
-                    <h2 className="text-3xl font-bold text-[#001528] mb-6">Need a custom SLA?</h2>
-                    <p className="text-gray-600 mb-10 text-lg">
-                        For partners with high-volume requirements or enterprise workflows, we offer tailored agreements to meet specific operational metrics.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="/contact-us"
-                            className="px-8 py-4 bg-rsRed text-white rounded-full font-bold shadow-lg shadow-rsRed/20 hover:bg-red-800 transition-all hover:scale-105"
-                        >
-                            Talk to our team
-                        </a>
-                        <button
-                            onClick={() => window.print()}
-                            className="px-8 py-4 bg-[#001528] text-white rounded-full font-bold hover:bg-[#1f3366] transition-all hover:scale-105"
-                        >
-                            Download PDF
-                        </button>
+            {/* Interventions Section */}
+            <section className="py-32 bg-[#0d1b42] text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rsRed/5 rounded-full blur-[120px] -mr-96 -mt-96"></div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="text-center mb-24">
+                        <h2 className="text-rsRed font-bold uppercase tracking-widest mb-4">Intervention Framework</h2>
+                        <h3 className="text-4xl md:text-7xl font-black mb-10">Enabling <span className="text-rsRed italic">Change.</span></h3>
                     </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative"
+                        >
+                            <img
+                                src={SLA_INTERVENTIONS}
+                                alt="Operational Interventions"
+                                className="w-full rounded-[3rem] shadow-2xl border-4 border-white/5 grayscale hover:grayscale-0 transition-all duration-700"
+                            />
+                            <div className="absolute inset-0 bg-rsBlue/20 rounded-[3rem] pointer-events-none"></div>
+                        </motion.div>
+                        <div className="space-y-6">
+                            {interventions.map((int, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 group cursor-default"
+                                >
+                                    <div className="flex gap-6 items-center mb-6">
+                                        <div className="w-14 h-14 bg-rsRed text-white rounded-2xl flex items-center justify-center group-hover:bg-rsBlue transition-colors">
+                                            {int.icon}
+                                        </div>
+                                        <h4 className="text-2xl font-bold text-white tracking-tight">{int.title}</h4>
+                                    </div>
+                                    <p className="text-gray-400 text-sm mb-6 font-light">{int.tagline}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {int.points.map((pt, pIdx) => (
+                                            <span key={pIdx} className="bg-white/10 text-white/60 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest group-hover:bg-rsRed/20 group-hover:text-white transition-colors uppercase">
+                                                {pt}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Quality Commitments Section */}
+            <section className="py-32 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                        <div>
+                            <h3 className="text-4xl font-black text-rsBlue mb-10">Quality Process</h3>
+                            <p className="text-gray-500 leading-relaxed mb-12 italic">
+                                Our quality process integrates robust Quality Control and Assurance practices. We adhere to high standards, fostering rapid improvement to meet the dynamic demands of our global clients.
+                            </p>
+
+                            <div className="space-y-10">
+                                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 group">
+                                    <h4 className="text-xl font-bold text-rsBlue mb-4 flex items-center gap-3">
+                                        <CheckCircle className="w-6 h-6 text-rsRed" />
+                                        Customer Satisfaction
+                                    </h4>
+                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {[
+                                            "Delight customers through exceptional delivery",
+                                            "Prioritize customer feedback",
+                                            "Exceed customer expectations",
+                                            "Proactive communication",
+                                            "Satisfaction metrics tracking"
+                                        ].map((item, i) => (
+                                            <li key={i} className="text-xs text-gray-400 flex items-center gap-2">
+                                                <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                    <h4 className="text-xl font-bold text-rsBlue mb-4 flex items-center gap-3">
+                                        <UserCheck className="w-6 h-6 text-rsRed" />
+                                        Talent Development
+                                    </h4>
+                                    <p className="text-xs text-gray-400 leading-relaxed">
+                                        Attract top talent through compelling opportunities, provide comprehensive training, and cultivate a culture of employees engagement and recognition.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-black text-rsRed uppercase tracking-widest mb-4">Workflow Tools</h3>
+                            {workflowTools.map((tool, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    whileHover={{ x: 10 }}
+                                    className="p-6 bg-[#fafbff] rounded-2xl border border-gray-100 flex gap-6"
+                                >
+                                    <div className="w-12 h-12 bg-rsBlue/5 text-rsBlue rounded-xl flex items-center justify-center flex-shrink-0">
+                                        {tool.icon}
+                                    </div>
+                                    <div>
+                                        <h5 className="font-bold text-rsBlue text-sm mb-2">{tool.name}</h5>
+                                        <p className="text-[11px] text-gray-500 leading-relaxed">{tool.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ISO Standards Highlight */}
+            <section className="py-20 bg-[#0d1b42] border-y border-white/5">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-wrap justify-between gap-12 items-center">
+                        <div className="flex-1 min-w-[300px]">
+                            <h4 className="text-2xl font-bold text-white mb-4">Certified for Excellence</h4>
+                            <p className="text-gray-400 text-sm">Adhering to strict global standards for quality and information security management.</p>
+                        </div>
+                        <div className="flex gap-12">
+                            <div className="text-center group">
+                                <Binary className="w-12 h-12 text-rsRed mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                                <div className="text-white font-black">ISO 9001:2015</div>
+                                <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Quality Management</div>
+                            </div>
+                            <div className="text-center group">
+                                <Lock className="w-12 h-12 text-rsRed mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                                <div className="text-white font-black">ISO 27001:2013</div>
+                                <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Information Security</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="py-40 bg-white text-center">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h3 className="text-4xl md:text-7xl font-black text-[#0d1b42] mb-12 tracking-tighter">
+                        100% SLA <span className="text-rsRed italic">ASSURANCE.</span>
+                    </h3>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-[#0d1b42] text-white px-16 py-8 rounded-[2rem] font-black text-2xl shadow-2xl hover:bg-rsRed transition-all flex items-center justify-center gap-4 mx-auto group"
+                    >
+                        Learn More
+                        <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
+                    </motion.button>
                 </div>
             </section>
         </div>
