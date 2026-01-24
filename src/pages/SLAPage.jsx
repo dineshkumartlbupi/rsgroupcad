@@ -19,17 +19,12 @@ import {
     UserCheck
 } from 'lucide-react';
 import SEO from '../components/SEO';
-
 import SLA_HERO from '../assets/sla_hero.png';
 import SLA_PILLARS from '../assets/sla_pillars.png';
 import SLA_INTERVENTIONS from '../assets/sla_interventions.png';
 
 const SLAPage = () => {
     const containerRef = useRef(null);
-
-
-
-
     const processSteps = [
         {
             title: "Optimization",
