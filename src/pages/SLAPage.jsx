@@ -404,29 +404,6 @@ const SLAPage = () => {
                 </div>
             </section>
 
-            {/* ISO Standards Highlight */}
-            <section className="py-20 bg-[#0d1b42] border-y border-white/5">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-wrap justify-between gap-12 items-center">
-                        <div className="flex-1 min-w-[300px]">
-                            <h4 className="text-2xl font-bold text-white mb-4">Certified for Excellence</h4>
-                            <p className="text-gray-400 text-sm">Adhering to strict global standards for quality and information security management.</p>
-                        </div>
-                        <div className="flex gap-12">
-                            <div className="text-center group">
-                                <Binary className="w-12 h-12 text-rsRed mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                                <div className="text-white font-black">ISO 9001:2015</div>
-                                <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Quality Management</div>
-                            </div>
-                            <div className="text-center group">
-                                <Lock className="w-12 h-12 text-rsRed mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                                <div className="text-white font-black">ISO 27001:2013</div>
-                                <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Information Security</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* CTA */}
             <section className="py-40 bg-white text-center">
