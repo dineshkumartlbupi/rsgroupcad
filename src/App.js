@@ -4,7 +4,7 @@ import { Loader2 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-
+// test
 // Lazy loaded pages
 const Home = lazy(() => import('./pages/Home'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
