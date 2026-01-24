@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     ShieldCheck,
     Zap,
@@ -7,7 +7,6 @@ import {
     Target,
     BarChart3,
     Cpu,
-    Lock,
     CheckCircle,
     ArrowRight,
     FileText,
@@ -27,12 +26,9 @@ import SLA_INTERVENTIONS from '../assets/sla_interventions.png';
 
 const SLAPage = () => {
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
 
-    const scaleLine = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+
 
     const processSteps = [
         {

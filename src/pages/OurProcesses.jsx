@@ -1,15 +1,13 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     Search,
     Lightbulb,
     Layers,
     Settings,
-    CheckCircle,
     TrendingUp,
     FileText,
     Users,
-    ShieldCheck,
     MessageSquare,
     ArrowRight,
     Zap,
@@ -27,13 +25,9 @@ import INTERNAL_ILLUSTRATION from '../assets/internal_process.png';
 
 const OurProcesses = () => {
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
 
-    const scaleLine = useTransform(scrollYProgress, [0, 1], [0, 1]);
-    const springLine = useSpring(scaleLine, { stiffness: 100, damping: 30 });
+
+
 
     const engagementSteps = [
         { title: "Know the Business", icon: <Search className="w-8 h-8" />, color: "from-blue-500 to-blue-700" },
