@@ -20,23 +20,23 @@ const BlogEditor = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        const fetchBlog = async () => {
+            try {
+                const response = await fetch(`http://localhost:5001/api/blogs/${id}`);
+                const data = await response.json();
+                setFormData({
+                    ...data,
+                    tags: data.tags ? data.tags.join(', ') : ''
+                });
+            } catch (error) {
+                console.error('Error fetching blog:', error);
+            }
+        };
+
         if (isEditing) {
             fetchBlog();
         }
-    }, [id]);
-
-    const fetchBlog = async () => {
-        try {
-            const response = await fetch(`http://localhost:5001/api/blogs/${id}`);
-            const data = await response.json();
-            setFormData({
-                ...data,
-                tags: data.tags ? data.tags.join(', ') : ''
-            });
-        } catch (error) {
-            console.error('Error fetching blog:', error);
-        }
-    };
+    }, [id, isEditing]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

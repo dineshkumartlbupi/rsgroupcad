@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, FileText, Mail, Briefcase, FileCheck, MessageSquare, LogOut, ShieldCheck, Home } from 'lucide-react';
+import { FileText, Mail, Briefcase, FileCheck, MessageSquare, LogOut, ShieldCheck, Home } from 'lucide-react';
 
 const AdminSidebar = () => {
     const navigate = useNavigate();

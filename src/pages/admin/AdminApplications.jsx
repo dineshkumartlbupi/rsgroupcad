@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileCheck, Download, Trash2, Mail } from 'lucide-react';
+import { FileCheck, Download, Mail } from 'lucide-react';
 import SEO from '../../components/SEO';
 
 const AdminApplications = () => {

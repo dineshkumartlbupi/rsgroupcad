@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquare, Phone, Building2, MapPin } from 'lucide-react';
+import { MessageSquare, Phone, Building2 } from 'lucide-react';
 import SEO from '../../components/SEO';
 
 const AdminConsultations = () => {

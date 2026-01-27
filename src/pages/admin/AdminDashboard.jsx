@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2, LogOut, FileText } from 'lucide-react';
+import { Plus, Edit2, Trash2, FileText } from 'lucide-react';
 import SEO from '../../components/SEO';
 
 const AdminDashboard = () => {
@@ -44,12 +44,6 @@ const AdminDashboard = () => {
         } catch (error) {
             console.error('Error deleting blog:', error);
         }
-    };
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('userInfo');
-        navigate('/admin');
     };
 
     return (

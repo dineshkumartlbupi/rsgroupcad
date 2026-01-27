@@ -13,8 +13,6 @@ const AdminCareers = () => {
         location: '',
         experience: '',
         description: '',
-        experience: '',
-        description: '',
         requirements: '',
         responsibilities: ''
     });
@@ -89,8 +87,6 @@ const AdminCareers = () => {
                     location: '',
                     experience: '',
                     description: '',
-                    experience: '',
-                    description: '',
                     requirements: '',
                     responsibilities: ''
                 });
@@ -138,7 +134,6 @@ const AdminCareers = () => {
                                 type: 'Full-time',
                                 location: '',
                                 experience: '',
-                                description: '',
                                 description: '',
                                 requirements: '',
                                 responsibilities: ''
