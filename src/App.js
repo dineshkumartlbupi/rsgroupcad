@@ -1,10 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Loader2 } from 'lucide-react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-// test
+import PageLoader from './components/PageLoader';
+import PlaceholderPage from './components/PlaceholderPage';
+
 // Lazy loaded pages
 const Home = lazy(() => import('./pages/Home'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
@@ -31,20 +30,16 @@ const SolarInstallation = lazy(() => import('./pages/services/SolarInstallation'
 const TradingProcurement = lazy(() => import('./pages/services/TradingProcurement'));
 const OurProcesses = lazy(() => import('./pages/OurProcesses'));
 
-// Placeholder pages for others if not yet fully implemented
-const PlaceholderPage = ({ title }) => (
-  <div className="pt-32 pb-20 text-center">
-    <h1 className="text-4xl font-bold text-gray-800 mb-4">{title}</h1>
-    <p className="text-gray-600">This page is under construction.</p>
-  </div>
-);
-
-// Loading Fallback
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-white">
-    <Loader2 className="w-10 h-10 text-[#0d1b42] animate-spin" />
-  </div>
-);
+// Admin Pages
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const BlogEditor = lazy(() => import('./pages/admin/BlogEditor'));
+const AdminContacts = lazy(() => import('./pages/admin/AdminContacts'));
+const AdminCareers = lazy(() => import('./pages/admin/AdminCareers'));
+const AdminApplications = lazy(() => import('./pages/admin/AdminApplications'));
+const AdminConsultations = lazy(() => import('./pages/admin/AdminConsultations'));
+const ProtectedRoute = lazy(() => import('./components/ProtectedRoute'));
+const PublicLayout = lazy(() => import('./components/PublicLayout'));
+const AdminLayout = lazy(() => import('./components/admin/AdminLayout'));
 
 function App() {
   return (
@@ -52,10 +47,10 @@ function App() {
       <ScrollToTop />
 
       <div className="font-sans antialiased text-gray-900 bg-white flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* Public Routes - Wrapped in PublicLayout */}
+            <Route element={<PublicLayout />}>
               <Route path="/" element={<Home />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/contact-us" element={<ContactUs />} />
@@ -84,13 +79,31 @@ function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/sla" element={<SLAPage />} />
               <Route path="/our-processes" element={<OurProcesses />} />
+            </Route>
 
-              {/* Fallback */}
-              <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
+            {/* Admin Routes */}
+            <Route path="/admin" element={<ClientPortal />} />
+            <Route element={<ProtectedRoute />}>
+              <Route element={<AdminLayout />}>
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/blog/new" element={<BlogEditor />} />
+                <Route path="/admin/blog/edit/:id" element={<BlogEditor />} />
+                <Route path="/admin/contact" element={<AdminContacts />} />
+                <Route path="/admin/careers" element={<AdminCareers />} />
+                <Route path="/admin/applications" element={<AdminApplications />} />
+                <Route path="/admin/consultations" element={<AdminConsultations />} />
+              </Route>
+            </Route>
+
+
+            {/* Fallback */}
+            <Route path="*" element={
+              <PublicLayout>
+                <PlaceholderPage title="Page Not Found" />
+              </PublicLayout>
+            } />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

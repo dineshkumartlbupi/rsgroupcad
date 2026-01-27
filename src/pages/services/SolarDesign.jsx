@@ -167,11 +167,11 @@ const SolarDesign = () => {
                                     <p className="text-gray-500 text-xl leading-relaxed font-light">
                                         RS Solar CAD Group provides end-to-end residential solar design services—from sales proposals to permit sets and as-built drawings. With strong expertise in NEC, AHJ, utility, and HOA requirements, we design roof and ground-mounted systems, including battery storage and EV charging, delivering high-quality, compliant drawings with fast 12–16 hour turnaround times.
                                     </p>
-                                    <div className="flex flex-wrap gap-4">
+                                    {/* <div className="flex flex-wrap gap-4">
                                         {["NEC 2023", "AHJ Standards", "Utility Compliance", "Quick Turnaround"].map((tag, i) => (
                                             <span key={i} className="px-4 py-2 bg-gray-50 rounded-xl text-[#001528] text-xs font-bold border border-gray-100 uppercase tracking-tighter">{tag}</span>
                                         ))}
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </motion.div>

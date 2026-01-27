@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle } from 'lu
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 const ContactUs = () => {
     const [formData, setFormData] = useState({
-        fullName: '',
+        name: '',
         email: '',
         phone: '',
         company: '',
@@ -22,7 +22,7 @@ const ContactUs = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(`${API_URL}/api/contact`, {
+            const response = await fetch(`${API_URL}/api/contacts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const ContactUs = () => {
             if (response.ok && result.success) {
                 setSubmitSuccess(true);
                 setFormData({
-                    fullName: '',
+                    name: '',
                     email: '',
                     phone: '',
                     company: '',
@@ -52,7 +52,7 @@ const ContactUs = () => {
             console.error('Error submitting contact form:', error);
 
             // Fallback to mailto
-            const mailtoLink = `mailto:Contact@rscadgroup.com?subject=Contact Form - ${formData.service}&body=Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+            const mailtoLink = `mailto:Contact@rscadgroup.com?subject=Contact Form - ${formData.service}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
 
             alert('Unable to send message automatically. Opening your email client...');
             window.location.href = mailtoLink;
@@ -199,8 +199,8 @@ const ContactUs = () => {
                                         <input
                                             type="text"
                                             required
-                                            value={formData.fullName}
-                                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1f3366] focus:border-transparent outline-none transition-all"
                                             placeholder="John Doe"
                                         />

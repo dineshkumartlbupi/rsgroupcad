@@ -1,0 +1,9 @@
+--- SERVER STARTING ---
+Environment Check:
+SMTP_HOST: Present
+SMTP_USER: Present
+SMTP_PASS: Present (Hidden)
+-----------------------
+✅ Server is running on port 5001
+📧 SMTP configured for: Contact@rscadgroup.com
+MongoDB Connected: 127.0.0.1

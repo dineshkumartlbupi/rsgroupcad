@@ -36,7 +36,7 @@ const Footer = () => {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch(`${API_URL}/api/consultation`, {
+            const response = await fetch(`${API_URL}/api/consultations`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

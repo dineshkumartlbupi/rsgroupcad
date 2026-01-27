@@ -35,9 +35,14 @@ const CareerApplication = () => {
     const [searchParams] = useSearchParams();
 
     // Get job from URL parameter or state
+    // Get job from URL parameter or state
     const jobSlug = searchParams.get('position');
     const stateJob = location.state?.job;
-    const job = jobSlug ? jobOpenings[jobSlug] : stateJob;
+    // const job = jobSlug ? jobOpenings[jobSlug] : stateJob; // Deprecated hardcoded lookup
+
+    const [job, setJob] = useState(stateJob || (jobOpenings[jobSlug] ? jobOpenings[jobSlug] : null));
+    const [loadingJob, setLoadingJob] = useState(!stateJob && !jobOpenings[jobSlug]);
+    const [fetchError, setFetchError] = useState(null);
 
     const [formData, setFormData] = useState({
         fullName: '',
@@ -59,10 +64,46 @@ const CareerApplication = () => {
     const [showShareTooltip, setShowShareTooltip] = useState(false);
 
     useEffect(() => {
-        if (!job) {
-            navigate('/career');
-        }
-    }, [job, navigate]);
+        const fetchJob = async () => {
+            if (!job && jobSlug) {
+                // If it's a hardcoded slug, we already handled it in initial state (jobOpenings[jobSlug])
+                // If it's not in jobOpenings, assume it's an ID and fetch from API
+                if (!jobOpenings[jobSlug]) {
+                    try {
+                        const response = await fetch(`${API_URL}/api/careers/${jobSlug}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            setJob(data);
+                        } else {
+                            setFetchError('Job not found');
+                        }
+                    } catch (error) {
+                        console.error('Error fetching job:', error);
+                        setFetchError('Error loading job details');
+                    } finally {
+                        setLoadingJob(false);
+                    }
+                }
+            } else {
+                setLoadingJob(false);
+            }
+        };
+
+        fetchJob();
+    }, [jobSlug, job]);
+
+    if (loadingJob) {
+        return <div className="min-h-screen pt-20 flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#0033A0]"></div></div>;
+    }
+
+    if (fetchError || !job) {
+        return (
+            <div className="min-h-screen pt-20 flex flex-col justify-center items-center">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">{fetchError || 'Job Not Found'}</h2>
+                <button onClick={() => navigate('/career')} className="px-6 py-2 bg-[#0033A0] text-white rounded-lg">Back to Careers</button>
+            </div>
+        );
+    }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -122,7 +163,7 @@ const CareerApplication = () => {
             }
 
             // Send to backend API
-            const response = await fetch(`${API_URL}/api/career/apply`, {
+            const response = await fetch(`${API_URL}/api/applications`, {
                 method: 'POST',
                 body: formDataToSend
             });
@@ -479,7 +520,7 @@ Application submitted via RS Solar CAD Group Career Portal
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Upload Resume <span className="text-red-500">*</span>
+                                        Upload Resume <span className="text-gray-400 font-normal">(Optional)</span>
                                     </label>
                                     <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-[#0033A0] transition-all bg-gray-50 hover:bg-blue-50">
                                         <input
@@ -488,7 +529,6 @@ Application submitted via RS Solar CAD Group Career Portal
                                             accept=".pdf,.doc,.docx"
                                             onChange={handleFileChange}
                                             className="hidden"
-                                            required
                                         />
                                         <label htmlFor="resume" className="cursor-pointer">
                                             <Upload className="w-16 h-16 text-gray-400 mx-auto mb-4" />

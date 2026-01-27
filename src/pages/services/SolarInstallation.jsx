@@ -140,7 +140,7 @@ const SolarInstallation = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(`${API_URL}/api/solar-installation`, {
+            const response = await fetch(`${API_URL}/api/consultations/solar-installation`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

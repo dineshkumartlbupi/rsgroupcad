@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Briefcase, Clock, CheckCircle, Mail } from 'lucide-react';
+import { MapPin, Briefcase, Clock, CheckCircle, Mail, Loader } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 const jobOpenings = [
     {
@@ -81,9 +83,27 @@ const jobOpenings = [
 
 const Careers = () => {
     const navigate = useNavigate();
+    const [jobOpenings, setJobOpenings] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCareers = async () => {
+            try {
+                const response = await fetch(`${API_URL}/api/careers`);
+                const data = await response.json();
+                setJobOpenings(data);
+            } catch (error) {
+                console.error('Error fetching careers:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCareers();
+    }, []);
 
     const handleApplyClick = (job) => {
-        navigate(`/career/apply?position=${job.slug}`, { state: { job } });
+        navigate(`/career/apply?position=${job.slug || job._id}`, { state: { job } });
     };
 
     return (
@@ -122,74 +142,90 @@ const Careers = () => {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {jobOpenings.map((job) => (
-                            <motion.div
-                                key={job.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5 }}
-                                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-                            >
-                                {/* Job Header */}
-                                <div className="bg-[#1f3366] text-white p-6">
-                                    <h3 className="text-2xl font-bold mb-3">{job.title}</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
-                                            <MapPin className="w-4 h-4" />
-                                            {job.location}
-                                        </span>
-                                        <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
-                                            <Briefcase className="w-4 h-4" />
-                                            {job.experience}
-                                        </span>
-                                        <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
-                                            <Clock className="w-4 h-4" />
-                                            {job.type}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Job Details */}
-                                <div className="p-6 space-y-6">
-                                    <div>
-                                        <h4 className="font-bold text-gray-800 mb-2">About the Role</h4>
-                                        <p className="text-gray-600 leading-relaxed">{job.description}</p>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-bold text-gray-800 mb-3">Key Responsibilities</h4>
-                                        <ul className="space-y-2">
-                                            {job.responsibilities.slice(0, 4).map((resp, idx) => (
-                                                <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                                                    <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
-                                                    <span>{resp}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                        {loading ? (
+                            <div className="col-span-full flex justify-center py-20">
+                                <Loader className="w-10 h-10 animate-spin text-[#e62e00]" />
+                            </div>
+                        ) : jobOpenings.length === 0 ? (
+                            <div className="col-span-full text-center py-10 text-gray-500">
+                                <p>No current openings. Please check back later.</p>
+                            </div>
+                        ) : (
+                            jobOpenings.map((job) => (
+                                <motion.div
+                                    key={job._id || job.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5 }}
+                                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                                >
+                                    {/* Job Header */}
+                                    <div className="bg-[#1f3366] text-white p-6">
+                                        <h3 className="text-2xl font-bold mb-3">{job.title}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
+                                                <MapPin className="w-4 h-4" />
+                                                {job.location}
+                                            </span>
+                                            <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
+                                                <Briefcase className="w-4 h-4" />
+                                                {job.experience}
+                                            </span>
+                                            <span className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full text-sm">
+                                                <Clock className="w-4 h-4" />
+                                                {job.type}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div>
-                                        <h4 className="font-bold text-gray-800 mb-3">Requirements</h4>
-                                        <ul className="space-y-2">
-                                            {job.requirements.slice(0, 4).map((req, idx) => (
-                                                <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                                                    <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
-                                                    <span>{req}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                    {/* Job Details */}
+                                    <div className="p-6 space-y-6">
+                                        <div>
+                                            <h4 className="font-bold text-gray-800 mb-2">About the Role</h4>
+                                            <p className="text-gray-600 leading-relaxed ">{job.description}</p>
+                                        </div>
 
-                                    <button
-                                        onClick={() => handleApplyClick(job)}
-                                        className="w-full bg-[#e62e00] text-white font-bold py-4 px-6 rounded-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all transform hover:scale-105"
-                                    >
-                                        Apply Now
-                                    </button>
-                                </div>
-                            </motion.div>
-                        ))}
+                                        {/* Responsibilities - Handle both array and string */}
+                                        {job.responsibilities && (
+                                            <div>
+                                                <h4 className="font-bold text-gray-800 mb-3">Key Responsibilities</h4>
+                                                <ul className="space-y-2">
+                                                    {(Array.isArray(job.responsibilities) ? job.responsibilities : job.responsibilities.split('\n')).map((resp, idx) => (
+                                                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                                                            <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
+                                                            <span>{resp}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+
+                                        {/* Requirements - Handle both array and string */}
+                                        {job.requirements && (
+                                            <div>
+                                                <h4 className="font-bold text-gray-800 mb-3">Requirements</h4>
+                                                <ul className="space-y-2">
+                                                    {(Array.isArray(job.requirements) ? job.requirements : job.requirements.split('\n')).map((req, idx) => (
+                                                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                                                            <CheckCircle className="w-4 h-4 text-[#e62e00] mt-0.5 flex-shrink-0" />
+                                                            <span>{req}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+
+                                        <button
+                                            onClick={() => handleApplyClick(job)}
+                                            className="w-full bg-[#e62e00] text-white font-bold py-4 px-6 rounded-lg hover:bg-white hover:text-[#e62e00] border border-[#e62e00] transition-all transform hover:scale-105"
+                                        >
+                                            View Details & Apply
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            ))
+                        )}
                     </div>
 
                     {/* Don't See a Fit Section */}
