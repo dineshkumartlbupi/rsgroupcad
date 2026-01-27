@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Trash2, CheckCircle, Clock } from 'lucide-react';
 import SEO from '../../components/SEO';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminContacts = () => {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ const AdminContacts = () => {
     const fetchContacts = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:5001/api/contacts', {
+            const response = await fetch(`${API_URL}/api/contacts`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();
@@ -29,7 +31,7 @@ const AdminContacts = () => {
         if (!window.confirm('Delete this message?')) return;
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5001/api/contacts/${id}`, {
+            const response = await fetch(`${API_URL}/api/contacts/${id}`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${token}` }
             });
