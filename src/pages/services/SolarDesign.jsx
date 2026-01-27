@@ -240,7 +240,7 @@ const SolarDesign = () => {
                             <div className="w-full lg:w-1/2">
                                 <div className="relative group">
                                     <div className="absolute -inset-4 bg-gradient-to-r from-[#e62e00] to-transparent opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"></div>
-                                    <img src={proposalDesignsImg} alt="Proposal" className="w-full h-auto rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 border-4 lg:border-8 border-white" />
+                                    <img src={proposalDesignsImg} alt="Proposal" className="w-full h-auto rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl group-hover:grayscale-0 transition-all duration-700 border-4 lg:border-8 border-white" />
                                     <div className="absolute top-4 left-4 lg:top-8 lg:left-8 w-12 h-12 lg:w-20 lg:h-20 bg-[#001528] text-white flex items-center justify-center font-black text-xl lg:text-3xl rounded-xl lg:rounded-3xl shadow-2xl rotate-12">01</div>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@ const SolarDesign = () => {
                                     RS Solar CAD Group delivers high-quality solar proposal designs that help installers, EPCs, and sales teams close deals faster. We create accurate, visually clear proposals using leading platforms to showcase optimized layouts, energy production, and financial benefits. With fast turnaround times as low as 12 hours and scalable support for high-volume teams, we enable confident selling and growth across the U.S., Canada, and Europe.
                                 </p>
                                 <ul className="space-y-4">
-                                    {["System Overview", "Site & Roof Layout", "Shade Analysis Repor"].map((item, i) => (
+                                    {["System Overview", "Site & Roof Layout", "Shade Analysis Report", "Energy Production Report", "Utility Bill Offset Analysis", "Financial Analysis", "Incentives & Tax Credits"].map((item, i) => (
                                         <li key={i} className="flex items-center gap-4 text-gray-700 font-bold uppercase text-xs tracking-widest">
                                             <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-[#e62e00]">✓</div>
                                             {item}
@@ -271,7 +271,7 @@ const SolarDesign = () => {
                             <div className="w-full lg:w-1/2">
                                 <div className="relative group">
                                     <div className="absolute -inset-4 bg-gradient-to-l from-[#1f3366] to-transparent opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"></div>
-                                    <img src={permitPlansetImg} alt="Permit Set" className="w-full h-auto rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 border-4 lg:border-8 border-white" />
+                                    <img src={permitPlansetImg} alt="Permit Set" className="w-full h-auto rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl group-hover:grayscale-0 transition-all duration-700 border-4 lg:border-8 border-white" />
                                     <div className="absolute top-4 right-4 lg:top-8 lg:right-8 w-12 h-12 lg:w-20 lg:h-20 bg-[#e62e00] text-white flex items-center justify-center font-black text-xl lg:text-3xl rounded-xl lg:rounded-3xl shadow-2xl -rotate-12">02</div>
                                 </div>
                             </div>
@@ -281,10 +281,24 @@ const SolarDesign = () => {
                                 <p className="text-gray-500 text-xl leading-relaxed font-light">
                                     A well-prepared permit plan set is key to fast approvals and smooth installations. RS Solar CAD Group delivers approval-ready, installer-friendly solar permit drawings that comply with NEC, AHJ, utility, fire, and HOA requirements—ensuring accurate, up-to-date, and code-compliant plans for every project.
                                 </p>
-                                <div className="grid grid-cols-2 gap-4">
-                                    {["Energy Production Report", "Utility Bill Offset Analysis", "Financial Analysis", "Incentives & Tax Credits"].map((item, i) => (
-                                        <div key={i} className="p-4 bg-white rounded-2xl border border-gray-100 font-bold text-xs uppercase tracking-tighter text-[#001528] shadow-sm">
-                                            {item}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {[
+                                        "Cover Sheet Governing codes (IBC, IRC, NEC, Fire Code, etc.)",
+                                        "Site Plan / Plot Plan",
+                                        "Roof Layout / Array Layout",
+                                        "Inverter / Equipment Layout",
+                                        "Structural Details",
+                                        "Electrical Single-Line / Three-Line Diagram",
+                                        "Wire Size & Voltage Drop Calculations",
+                                        "Warning Labels & Placards",
+                                        "Equipment Elevation",
+                                        "Bill of Materials (BOM)",
+                                        "Utility & AHJ Compliance Notes",
+                                        "Datasheets (DS+)"
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm">
+                                            <div className="mt-1 min-w-[1rem] h-4 rounded-full bg-[#1f3366]/10 flex items-center justify-center text-[#1f3366] text-[10px]">✓</div>
+                                            <span className="font-bold text-xs uppercase tracking-tighter text-[#001528] leading-tight">{item}</span>
                                         </div>
                                     ))}
                                 </div>
