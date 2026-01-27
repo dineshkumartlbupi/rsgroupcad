@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Lock, Mail, ArrowRight, ShieldCheck, Layout, User } from 'lucide-react';
 import SEO from '../../components/SEO';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,7 +19,7 @@ const AdminLogin = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5001/api/auth/login', {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

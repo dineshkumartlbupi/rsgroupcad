@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Briefcase, Plus, Trash2, MapPin, Edit } from 'lucide-react';
 import SEO from '../../components/SEO';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminCareers = () => {
     const [careers, setCareers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,7 +26,7 @@ const AdminCareers = () => {
     const fetchCareers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:5001/api/careers/admin', {
+            const response = await fetch(`${API_URL}/api/careers/admin`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();
@@ -40,7 +42,7 @@ const AdminCareers = () => {
         if (!window.confirm('Delete this job posting?')) return;
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5001/api/careers/${id}`, {
+            const response = await fetch(`${API_URL}/api/careers/${id}`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${token}` }
             });

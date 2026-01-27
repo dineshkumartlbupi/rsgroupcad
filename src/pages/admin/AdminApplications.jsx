@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FileCheck, Download, Mail } from 'lucide-react';
 import SEO from '../../components/SEO';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminApplications = () => {
     const [applications, setApplications] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ const AdminApplications = () => {
     const fetchApplications = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:5001/api/applications', {
+            const response = await fetch(`${API_URL}/api/applications`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();

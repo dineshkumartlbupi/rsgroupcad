@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Plus, Edit2, Trash2, FileText } from 'lucide-react';
 import SEO from '../../components/SEO';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminDashboard = () => {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ const AdminDashboard = () => {
 
     const fetchBlogs = async () => {
         try {
-            const response = await fetch('http://localhost:5001/api/blogs');
+            const response = await fetch(`${API_URL}/api/blogs`);
             const data = await response.json();
             setBlogs(data);
             setLoading(false);
@@ -28,7 +30,7 @@ const AdminDashboard = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5001/api/blogs/${id}`, {
+            const response = await fetch(`${API_URL}/api/blogs/${id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`
